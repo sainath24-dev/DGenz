@@ -1,7 +1,7 @@
 import { ArrowRight, ChevronRight, Play } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import ContactForm from './ContactForm';
-import LightPillar from '@/components/ui/LightPillar';
+import HeroVideoBackground from './HeroVideoBackground';
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -16,22 +16,8 @@ const Hero = () => {
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-center items-center overflow-hidden pt-12 pb-20 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
       
-      {/* Background Video Showcase (Consolidated vid1-vid7) */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.92] contrast-[1.05]"
-        >
-          <source src="/assets/hero-showcase.mp4" type="video/mp4" />
-        </video>
-        
-        {/* Crisp Light Gradient Overlays for High-Contrast Text Legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/70 to-white/95 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent pointer-events-none" />
-      </div>
+      {/* Background Multi-Video Cycler (vid1 to vid7 with 3.5s crossfade) */}
+      <HeroVideoBackground intervalSec={3.5} />
 
       {/* Hero Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col items-center text-center">
