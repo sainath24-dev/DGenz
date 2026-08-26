@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import Lightfall from '@/components/ui/Lightfall';
 import ContactForm from '@/components/ContactForm';
-import dataAnalytics from '@/assets/data-analytics.jpg';
-import aiIntentData from '@/assets/ai-intent-data.jpg';
+import dataAnalytics from '/assets/img6.jpg';
+import aiIntentData from '/assets/img7.jpg';
 
 const OurData = () => {
   const dataPoints = [

@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { Target, TrendingUp, BarChart3, Users, CheckCircle2, Monitor, ArrowRight, Award, Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Hyperspeed } from '@/components/ui/Hyperspeed';
-import realMarketingPhoto from '@/assets/digital-marketing-hero.jpg';
+import realMarketingPhoto from '/assets/img2.jpg';
 
 export const ABMLeadership = () => {
   const hyperspeedOptions = useMemo(() => ({

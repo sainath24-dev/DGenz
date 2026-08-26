@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { CheckCircle, ArrowRight, Search, Download } from 'lucide-react';
 import LightPillar from '@/components/ui/LightPillar';
 import ContactForm from '@/components/ContactForm';
-import resourceLibraryHero from '@/assets/resource-library-hero.jpg';
+import resourceLibraryHero from '/assets/img3.jpg';
 
 const ResourceLibrary = () => {
   const [searchTerm, setSearchTerm] = useState('');

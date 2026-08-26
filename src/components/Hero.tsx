@@ -14,26 +14,24 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center items-center bg-gradient-to-b from-slate-50/80 via-white to-slate-50/60 overflow-hidden pt-12 pb-20 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
-      {/* Dynamic WebGL 3D Light Pillar Background - Emerald & Teal Glow on White */}
-      <div className="absolute inset-0 z-0 opacity-70 pointer-events-none">
-        <LightPillar
-          topColor="#059669"
-          bottomColor="#10b981"
-          intensity={1.05}
-          rotationSpeed={0.25}
-          glowAmount={0.007}
-          pillarWidth={3.2}
-          pillarHeight={0.45}
-          noiseIntensity={0.25}
-          mixBlendMode="normal"
-          quality="high"
-        />
+    <section className="relative min-h-[90vh] flex flex-col justify-center items-center overflow-hidden pt-12 pb-20 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
+      
+      {/* Background Video Showcase (Consolidated vid1-vid7) */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.92] contrast-[1.05]"
+        >
+          <source src="/assets/hero-showcase.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Crisp Light Gradient Overlays for High-Contrast Text Legibility */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/70 to-white/95 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent pointer-events-none" />
       </div>
-
-      {/* Subtle Light Ambient Radial Glow */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-100/40 via-transparent to-transparent pointer-events-none" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-white/20 to-white pointer-events-none" />
 
       {/* Hero Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col items-center text-center">

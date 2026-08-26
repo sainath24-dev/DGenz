@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import LightPillar from '@/components/ui/LightPillar';
 import ContactForm from '@/components/ContactForm';
-import caseStudiesHero from '@/assets/case-studies-hero.jpg';
+import caseStudiesHero from '/assets/img7.jpg';
 
 const CaseStudies = () => {
   const [selectedIndustry, setSelectedIndustry] = useState('All');

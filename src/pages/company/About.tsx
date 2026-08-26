@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import Lightfall from '@/components/ui/Lightfall';
 import ContactForm from '@/components/ContactForm';
-import companyHero from '@/assets/company-hero.jpg';
-import executiveTeam from '@/assets/executive-team.jpg';
+import companyHero from '/assets/img1.jpg';
+import executiveTeam from '/assets/img3.jpg';
 
 const About = () => {
   const values = [

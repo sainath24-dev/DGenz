@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { CheckCircle, ArrowRight } from 'lucide-react';
 import Lightfall from '@/components/ui/Lightfall';
 import ContactForm from '@/components/ContactForm';
-import trustSecurity from '@/assets/trust-security.jpg';
+import trustSecurity from '/assets/img5.jpg';
 
 const WhyDGenz = () => {
   const differentiators = [
