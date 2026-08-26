@@ -79,7 +79,6 @@ export const HeroVideoBackground: React.FC<HeroVideoBackgroundProps> = ({
           ref={el => { videoRefs.current[idx] = el; }}
           src={src}
           muted
-          defaultMuted
           playsInline
           autoPlay
           loop

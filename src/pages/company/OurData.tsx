@@ -90,13 +90,13 @@ const OurData = () => {
       
       <main>
         {/* Hero Section with Lightfall WebGL Simulation */}
-        <section className="relative min-h-[85vh] flex items-center bg-gradient-to-b from-slate-50 via-slate-100/60 to-white py-20 lg:py-28 overflow-hidden text-slate-900 border-b border-slate-200">
+        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-gradient-to-b from-slate-50 via-slate-100/60 to-white pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-slate-900 border-b border-slate-200">
           
           {/* Subtle Geometric Dot Mesh Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
 
           {/* Dynamic Lightfall WebGL Simulation */}
-          <div className="absolute inset-0 pointer-events-auto z-0 opacity-80 overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none z-0 opacity-80 overflow-hidden">
             <Lightfall
               colors={['#059669', '#10b981', '#0284c7', '#06b6d4', '#6366f1']}
               speed={0.4}
@@ -109,7 +109,7 @@ const OurData = () => {
               zoom={1.0}
               backgroundGlow={0.15}
               opacity={0.85}
-              mouseInteraction={true}
+              mouseInteraction={false}
               mixBlendMode="normal"
               className="w-full h-full"
             />
@@ -119,16 +119,16 @@ const OurData = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/70 pointer-events-none z-1" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div className="grid lg:grid-cols-12 gap-12 items-center">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               
               {/* Left Column (7 cols) */}
-              <div className="lg:col-span-7 space-y-6">
+              <div className="lg:col-span-7 space-y-5 sm:space-y-6">
                 <div className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-xs uppercase tracking-wider shadow-xs">
                   Enterprise Data Graph
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-tight">
-                  The Data Foundation <br />
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                  The Data Foundation <br className="hidden sm:inline" />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700">
                     Powering B2B Growth
                   </span>
