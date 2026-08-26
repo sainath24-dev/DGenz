@@ -227,6 +227,11 @@ export const Lightfall: React.FC<LightfallProps> = ({
     const container = containerRef.current;
     if (!container) return;
 
+    // Do not initialize WebGL on mobile devices (<768px) to guarantee max performance & zero battery drain
+    if (typeof window !== 'undefined' && window.innerWidth < 768) {
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {

@@ -56,8 +56,8 @@ const About = () => {
           {/* Subtle Geometric Dot Mesh Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
 
-          {/* Dynamic Lightfall WebGL Simulation */}
-          <div className="absolute inset-0 pointer-events-none z-0 opacity-80 overflow-hidden">
+          {/* Dynamic Lightfall WebGL Simulation - Desktop Only */}
+          <div className="hidden md:block absolute inset-0 pointer-events-none z-0 opacity-80 overflow-hidden">
             <Lightfall
               colors={['#059669', '#10b981', '#0284c7', '#06b6d4', '#6366f1']}
               speed={0.35}
