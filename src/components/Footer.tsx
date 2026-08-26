@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Linkedin, Twitter, Facebook, ArrowRight } from 'lucide-react';
+import { Linkedin, Twitter, Facebook, ArrowRight, MapPin } from 'lucide-react';
 import dgenzLogo from '@/assets/dgenz-media-logo.png';
 import { GridScan } from '@/components/ui/GridScan';
 import ContactForm from '@/components/ContactForm';
@@ -118,9 +118,18 @@ const Footer = () => {
                 alt="DGenz Media" 
                 className="h-10 sm:h-12 w-auto mb-4 brightness-110"
               />
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
+              <p className="text-slate-400 text-sm leading-relaxed mb-4">
                 The leading B2B account-based marketing platform that unifies buyer intent data, multi-channel targeting, and pipeline acceleration.
               </p>
+
+              {/* Registered Office Address */}
+              <div className="flex items-start gap-2.5 text-xs text-slate-400 mb-5 leading-relaxed bg-slate-900/80 p-3 rounded-xl border border-slate-800/80">
+                <MapPin className="h-4 w-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>
+                  <strong className="text-slate-200 block font-semibold mb-0.5">Registered Office:</strong>
+                  2nd Floor, 17-21, St Mark's Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001
+                </span>
+              </div>
               
               {/* Social Media */}
               <div className="flex space-x-4">
@@ -218,11 +227,16 @@ const Footer = () => {
 
           </div>
 
-          {/* Bottom Copyright */}
-          <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-slate-500">
-              © {new Date().getFullYear()} DGENZ MEDIA PVT. LTD. All rights reserved.
-            </p>
+          {/* Bottom Copyright & Address */}
+          <div className="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <div className="space-y-1">
+              <p className="text-xs text-slate-400 font-medium">
+                © {new Date().getFullYear()} DGENZ MEDIA PVT. LTD. All rights reserved.
+              </p>
+              <p className="text-[11px] text-slate-500">
+                2nd Floor, 17-21, St Mark's Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001
+              </p>
+            </div>
             <div className="flex items-center gap-6 text-xs text-slate-400">
               <button onClick={() => handleLinkClick('/legal/privacy-policy')} className="hover:text-white transition-colors">
                 Privacy Policy
