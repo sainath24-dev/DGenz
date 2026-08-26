@@ -171,13 +171,12 @@ const CookiePolicy = () => {
                 If you have questions about our use of cookies or this Cookie Policy, please contact us:
               </p>
               <div className="bg-muted p-6 rounded-lg">
-                <p className="font-medium text-foreground mb-2">DGenz Media</p>
+                <p className="font-medium text-foreground mb-2">DGENZ MEDIA PVT. LTD.</p>
                 <p className="text-muted-foreground mb-2">
                   Email: privacy@dgenzmedia.com
                 </p>
                 <p className="text-muted-foreground">
-                  Address: WJ88+69V BMTC Complex, Outer Ring Rd, Old Madiwala, Kuvempu Nagar, 
-                  BTM 2nd Stage, BTM Layout, Bengaluru, Karnataka 560076, India
+                  Address: 2nd Floor, 17-21, St Mark's Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001
                 </p>
               </div>
             </section>

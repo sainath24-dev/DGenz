@@ -135,13 +135,12 @@ const DoNotSell = () => {
                 If you have questions about this policy or need assistance with your request:
               </p>
               <div className="bg-muted p-6 rounded-lg">
-                <p className="font-medium text-foreground mb-2">Privacy Team</p>
+                <p className="font-medium text-foreground mb-2">DGENZ MEDIA PVT. LTD.</p>
                 <p className="text-muted-foreground mb-2">
                   Email: privacy@dgenzmedia.com
                 </p>
                 <p className="text-muted-foreground">
-                  Address: WJ88+69V BMTC Complex, Outer Ring Rd, Old Madiwala, Kuvempu Nagar, 
-                  BTM 2nd Stage, BTM Layout, Bengaluru, Karnataka 560076, India
+                  Address: 2nd Floor, 17-21, St Mark's Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001
                 </p>
               </div>
             </section>

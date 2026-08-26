@@ -39,9 +39,9 @@ const GDPRPolicy = () => {
               For the purposes of GDPR, DGenz Media is the data controller responsible for your personal data. Our contact details are as follows:
             </p>
             <div className="bg-secondary/20 p-6 rounded-lg mb-4">
-              <p className="text-foreground/90 mb-2"><strong>Company Name:</strong> DGenz Media</p>
+              <p className="text-foreground/90 mb-2"><strong>Company Name:</strong> DGENZ MEDIA PVT. LTD.</p>
               <p className="text-foreground/90 mb-2"><strong>Email:</strong> contact@dgenzmedia.com</p>
-              <p className="text-foreground/90 mb-2"><strong>India Office:</strong> WJ88+69V BMTC Complex, Outer Ring Rd, Old Madiwala, Kuvempu Nagar, BTM 2nd Stage, BTM Layout, Bengaluru, Karnataka 560076, India</p>
+              <p className="text-foreground/90 mb-2"><strong>India Office:</strong> 2nd Floor, 17-21, St Mark's Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001</p>
               <p className="text-foreground/90"><strong>UAE Office:</strong> Street: 2, 17 Street, Dubai, United Arab Emirates</p>
             </div>
             <p className="text-foreground/90 mb-4 leading-relaxed">
@@ -534,7 +534,7 @@ const GDPRPolicy = () => {
               <p className="text-foreground/90 mb-4">Phone: Available upon request</p>
               
               <p className="text-foreground/90 mb-2"><strong>India Office:</strong></p>
-              <p className="text-foreground/90 mb-4">WJ88+69V BMTC Complex, Outer Ring Rd, Old Madiwala, Kuvempu Nagar, BTM 2nd Stage, BTM Layout, Bengaluru, Karnataka 560076, India</p>
+              <p className="text-foreground/90 mb-4">2nd Floor, 17-21, St Mark's Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560001</p>
               
               <p className="text-foreground/90 mb-2"><strong>UAE Office:</strong></p>
               <p className="text-foreground/90">Street: 2, 17 Street, Dubai, United Arab Emirates</p>

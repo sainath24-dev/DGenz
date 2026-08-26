@@ -221,7 +221,7 @@ const Footer = () => {
           {/* Bottom Copyright */}
           <div className="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-xs text-slate-500">
-              © {new Date().getFullYear()} DGenz Media Inc. All rights reserved.
+              © {new Date().getFullYear()} DGENZ MEDIA PVT. LTD. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-xs text-slate-400">
               <button onClick={() => handleLinkClick('/legal/privacy-policy')} className="hover:text-white transition-colors">
