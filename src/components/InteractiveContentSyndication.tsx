@@ -168,8 +168,13 @@ const InteractiveContentSyndication = () => {
             </svg>
           </div>
 
-          {/* Mobile Straight Spine */}
-          <div className="md:hidden absolute left-4 sm:left-6 top-6 bottom-6 w-0.5 bg-slate-200" />
+          {/* Mobile Animated Progress Spine */}
+          <div className="md:hidden absolute left-4 sm:left-6 top-6 bottom-6 w-1 bg-slate-200 rounded-full overflow-hidden">
+            <motion.div 
+              className="w-full bg-gradient-to-b from-indigo-600 via-sky-500 to-emerald-500 origin-top"
+              style={{ scaleY: smoothProgress, height: '100%' }}
+            />
+          </div>
 
           {/* Timeline Steps */}
           <div className="space-y-8 md:space-y-20 relative z-10">

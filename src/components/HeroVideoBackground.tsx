@@ -24,18 +24,41 @@ export const HeroVideoBackground: React.FC<HeroVideoBackgroundProps> = ({
   const videoRefA = useRef<HTMLVideoElement | null>(null);
   const videoRefB = useRef<HTMLVideoElement | null>(null);
 
-  // Initialize and play first video
+  // Play videos reliably on mobile and desktop
   useEffect(() => {
+    const playVideo = (v: HTMLVideoElement | null) => {
+      if (!v) return;
+      v.muted = true;
+      v.playsInline = true;
+      v.setAttribute('playsinline', 'true');
+      v.setAttribute('webkit-playsinline', 'true');
+      v.play().catch(() => {});
+    };
+
     if (videoRefA.current) {
       videoRefA.current.src = videos[0];
       videoRefA.current.load();
-      videoRefA.current.play().catch(() => {});
+      playVideo(videoRefA.current);
     }
     if (videoRefB.current && videos.length > 1) {
       videoRefB.current.src = videos[1];
       videoRefB.current.load();
     }
-  }, [videos]);
+
+    const handleUserInteraction = () => {
+      playVideo(activeLayer === 'A' ? videoRefA.current : videoRefB.current);
+    };
+
+    window.addEventListener('touchstart', handleUserInteraction, { once: true, passive: true });
+    window.addEventListener('scroll', handleUserInteraction, { once: true, passive: true });
+    window.addEventListener('click', handleUserInteraction, { once: true, passive: true });
+
+    return () => {
+      window.removeEventListener('touchstart', handleUserInteraction);
+      window.removeEventListener('scroll', handleUserInteraction);
+      window.removeEventListener('click', handleUserInteraction);
+    };
+  }, [videos, activeLayer]);
 
   // Playlist cycler every intervalSec
   useEffect(() => {
@@ -44,7 +67,6 @@ export const HeroVideoBackground: React.FC<HeroVideoBackgroundProps> = ({
       const followingIndex = (nextIndex + 1) % videos.length;
 
       if (activeLayer === 'A') {
-        // Activate B
         if (videoRefB.current) {
           videoRefB.current.src = videos[nextIndex];
           videoRefB.current.currentTime = 0;
@@ -52,7 +74,6 @@ export const HeroVideoBackground: React.FC<HeroVideoBackgroundProps> = ({
         }
         setActiveLayer('B');
 
-        // Preload next on A after fade
         setTimeout(() => {
           if (videoRefA.current) {
             videoRefA.current.src = videos[followingIndex];
@@ -60,7 +81,6 @@ export const HeroVideoBackground: React.FC<HeroVideoBackgroundProps> = ({
           }
         }, 800);
       } else {
-        // Activate A
         if (videoRefA.current) {
           videoRefA.current.src = videos[nextIndex];
           videoRefA.current.currentTime = 0;
@@ -68,7 +88,6 @@ export const HeroVideoBackground: React.FC<HeroVideoBackgroundProps> = ({
         }
         setActiveLayer('A');
 
-        // Preload next on B after fade
         setTimeout(() => {
           if (videoRefB.current) {
             videoRefB.current.src = videos[followingIndex];
@@ -86,33 +105,34 @@ export const HeroVideoBackground: React.FC<HeroVideoBackgroundProps> = ({
   return (
     <div className="absolute inset-0 z-0 overflow-hidden bg-slate-950 pointer-events-none">
       
-      {/* Video Layer A - 100% Full Video Opacity */}
+      {/* Video Layer A */}
       <video
         ref={videoRefA}
         muted
         playsInline
         autoPlay
         loop
+        preload="auto"
         className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out scale-100 ${
           activeLayer === 'A' ? 'opacity-100' : 'opacity-0'
         }`}
       />
 
-      {/* Video Layer B - 100% Full Video Opacity */}
+      {/* Video Layer B */}
       <video
         ref={videoRefB}
         muted
         playsInline
         autoPlay
         loop
+        preload="auto"
         className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out scale-100 ${
           activeLayer === 'B' ? 'opacity-100' : 'opacity-0'
         }`}
       />
 
-      {/* Ultra-Minimal Overlay so Video is 100% Clear & Prominent */}
-      <div className="absolute inset-0 bg-slate-950/25 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-40 pointer-events-none" />
+      {/* Subtle overlay */}
+      <div className="absolute inset-0 bg-slate-950/20 pointer-events-none" />
     </div>
   );
 };
