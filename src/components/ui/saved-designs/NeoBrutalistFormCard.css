@@ -1,0 +1,129 @@
+.neo-form {
+  --background: #f1f5f9;
+  --input-focus: #2d8cf0;
+  --font-color: #0f172a;
+  --font-color-sub: #64748b;
+  --bg-color: #ffffff;
+  --main-color: #0f172a;
+  padding: 24px;
+  background: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  border-radius: 12px;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  width: 100%;
+  max-width: 320px;
+}
+
+.neo-form__title {
+  color: var(--font-color);
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.neo-form__title span {
+  color: var(--font-color-sub);
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.neo-separator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+.neo-separator > div {
+  flex: 1;
+  height: 2px;
+  border-radius: 4px;
+  background-color: var(--font-color-sub);
+  opacity: 0.3;
+}
+
+.neo-separator > span {
+  color: var(--font-color-sub);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.neo-oauth-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 3px 3px var(--main-color);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--font-color);
+  cursor: pointer;
+  transition: all 250ms ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.neo-oauth-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--main-color);
+  z-index: -1;
+  transition: all 250ms ease;
+}
+
+.neo-oauth-btn:hover {
+  color: #ffffff;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px var(--main-color);
+}
+
+.neo-oauth-btn:hover::before {
+  width: 100%;
+}
+
+.neo-input {
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  border: 2px solid var(--main-color);
+  background-color: var(--bg-color);
+  box-shadow: 3px 3px var(--main-color);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--font-color);
+  padding: 8px 12px;
+  outline: none;
+  transition: border-color 200ms ease;
+}
+
+.neo-input:focus {
+  border-color: #10b981;
+}
+
+.neo-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
