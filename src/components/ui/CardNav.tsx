@@ -1,7 +1,6 @@
-import React, { useLayoutEffect, useEffect, useRef, useState, useCallback } from 'react';
-import { Link } from 'react-router-dom';
-import { gsap } from 'gsap';
-import { ArrowUpRight } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { ArrowUpRight, ChevronDown } from 'lucide-react';
 import KineticText from './kinetic-text';
 import './CardNav.css';
 
@@ -27,7 +26,6 @@ export interface CardNavProps {
   brandAccent?: string;
   items: CardNavItem[];
   className?: string;
-  ease?: string;
   baseColor?: string;
   menuColor?: string;
   buttonBgColor?: string;
@@ -44,7 +42,6 @@ const CardNav: React.FC<CardNavProps> = ({
   brandAccent,
   items,
   className = '',
-  ease = 'power3.out',
   baseColor = '#ffffff',
   menuColor = '#0f172a',
   buttonBgColor = '#0f172a',
@@ -52,164 +49,49 @@ const CardNav: React.FC<CardNavProps> = ({
   buttonText = 'Get Started',
   ctaElement
 }) => {
-  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
   const [activeItemIndex, setActiveItemIndex] = useState<number | null>(null);
-  const navRef = useRef<HTMLElement | null>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const tlRef = useRef<gsap.core.Timeline | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [expandedMobileIndex, setExpandedMobileIndex] = useState<number | null>(null);
+  const navRef = useRef<HTMLDivElement | null>(null);
+  const location = useLocation();
 
-  const calculateHeight = useCallback(() => {
-    const navEl = navRef.current;
-    if (!navEl) return 380;
-
-    const contentEl = navEl.querySelector<HTMLElement>('.card-nav-content');
-    if (contentEl) {
-      const wasVisible = contentEl.style.visibility;
-      const wasPointerEvents = contentEl.style.pointerEvents;
-      const wasPosition = contentEl.style.position;
-      const wasHeight = contentEl.style.height;
-
-      contentEl.style.visibility = 'visible';
-      contentEl.style.pointerEvents = 'auto';
-      contentEl.style.position = 'static';
-      contentEl.style.height = 'auto';
-
-      void contentEl.offsetHeight;
-
-      const topBar = 60;
-      const padding = 20;
-      const isMobile = window.matchMedia('(max-width: 768px)').matches;
-      const contentHeight = contentEl.scrollHeight;
-
-      contentEl.style.visibility = wasVisible;
-      contentEl.style.pointerEvents = wasPointerEvents;
-      contentEl.style.position = wasPosition;
-      contentEl.style.height = wasHeight;
-
-      if (isMobile) {
-        return topBar + contentHeight + padding;
-      }
-      return Math.max(340, topBar + contentHeight + padding);
-    }
-    return 360;
-  }, []);
-
-  const createTimeline = useCallback(() => {
-    const navEl = navRef.current;
-    if (!navEl) return null;
-
-    gsap.set(navEl, { height: 60, overflow: 'hidden' });
-    gsap.set(cardsRef.current.filter(Boolean), { y: 40, opacity: 0 });
-
-    const tl = gsap.timeline({ paused: true });
-
-    tl.to(navEl, {
-      height: calculateHeight,
-      duration: 0.35,
-      ease
-    });
-
-    tl.to(
-      cardsRef.current.filter(Boolean),
-      { y: 0, opacity: 1, duration: 0.3, ease, stagger: 0.06 },
-      '-=0.15'
-    );
-
-    return tl;
-  }, [calculateHeight, ease]);
-
-  useLayoutEffect(() => {
-    const tl = createTimeline();
-    tlRef.current = tl;
-
-    return () => {
-      tl?.kill();
-      tlRef.current = null;
-    };
-  }, [createTimeline, items]);
-
-  const openMenu = (idx?: number) => {
-    if (typeof idx === 'number') {
-      setActiveItemIndex(idx);
-    }
-    const tl = tlRef.current;
-    if (!tl) return;
-    if (!isExpanded) {
-      setIsHamburgerOpen(true);
-      setIsExpanded(true);
-      tl.play(0);
-    }
-  };
-
-  const closeMenu = () => {
-    const tl = tlRef.current;
-    if (!tl) return;
+  // Close menus on route change
+  useEffect(() => {
     setActiveItemIndex(null);
-    setIsHamburgerOpen(false);
-    tl.eventCallback('onReverseComplete', () => {
-      setIsExpanded(false);
-    });
-    tl.reverse();
-  };
+    setIsMobileMenuOpen(false);
+    setExpandedMobileIndex(null);
+  }, [location.pathname]);
 
-  const toggleMenu = (idx?: number) => {
-    if (!isExpanded) {
-      openMenu(idx);
-    } else {
-      if (typeof idx === 'number' && activeItemIndex !== idx) {
-        setActiveItemIndex(idx);
-      } else {
-        closeMenu();
-      }
-    }
-  };
-
-  // Close on click outside
+  // Click outside to close dropdowns
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
-        if (isExpanded) {
-          closeMenu();
-        }
+        setActiveItemIndex(null);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isExpanded]);
-
-  const setCardRef = (i: number) => (el: HTMLDivElement | null) => {
-    cardsRef.current[i] = el;
-  };
+  }, []);
 
   return (
-    <div 
-      className={`card-nav-container ${className}`}
-      onMouseLeave={() => {
-        if (isExpanded) {
-          closeMenu();
-        }
-      }}
-    >
-      <nav 
-        ref={navRef} 
-        className={`card-nav ${isExpanded ? 'open' : ''}`} 
-        style={{ backgroundColor: baseColor }}
-      >
+    <div ref={navRef} className={`card-nav-container ${className}`}>
+      <nav className="card-nav" style={{ backgroundColor: baseColor }}>
         <div className="card-nav-top">
+          
+          {/* Left: Mobile Hamburger & Logo */}
           <div className="card-nav-left-group">
             <div
-              className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''}`}
-              onClick={() => toggleMenu()}
+              className={`hamburger-menu ${isMobileMenuOpen ? 'open' : ''}`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               onKeyDown={e => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
-                  toggleMenu();
+                  setIsMobileMenuOpen(!isMobileMenuOpen);
                 }
               }}
               role="button"
-              aria-label={isExpanded ? 'Close menu' : 'Open menu'}
-              aria-expanded={isExpanded}
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMobileMenuOpen}
               tabIndex={0}
               style={{ color: menuColor }}
             >
@@ -217,7 +99,14 @@ const CardNav: React.FC<CardNavProps> = ({
               <div className="hamburger-line" />
             </div>
 
-            <Link to={logoHref} className="logo-container" onClick={closeMenu}>
+            <Link 
+              to={logoHref} 
+              className="logo-container"
+              onClick={() => {
+                setActiveItemIndex(null);
+                setIsMobileMenuOpen(false);
+              }}
+            >
               <img src={logo} alt={logoAlt} className="card-nav-logo" />
               {(brandName || brandAccent) && (
                 <div className="card-nav-brand">
@@ -241,25 +130,76 @@ const CardNav: React.FC<CardNavProps> = ({
             </Link>
           </div>
 
-          {/* Direct Visible Menu Items in Navbar */}
+          {/* Center: Desktop Navigation with Dedicated Separate Dropdowns */}
           <div className="card-nav-top-menu">
-            {(items || []).slice(0, 3).map((item, idx) => (
-              <button
-                key={`top-nav-${item.label}-${idx}`}
-                type="button"
-                className={`card-nav-top-menu-btn ${
-                  isExpanded && (activeItemIndex === null || activeItemIndex === idx) 
-                    ? 'active' 
-                    : ''
-                }`}
-                onClick={() => toggleMenu(idx)}
-                onMouseEnter={() => openMenu(idx)}
-              >
-                <span>{item.label}</span>
-              </button>
-            ))}
+            {(items || []).map((item, idx) => {
+              const isOpen = activeItemIndex === idx;
+
+              return (
+                <div
+                  key={`nav-item-${item.label}-${idx}`}
+                  className="card-nav-menu-item-wrapper"
+                  onMouseEnter={() => setActiveItemIndex(idx)}
+                  onMouseLeave={() => setActiveItemIndex(null)}
+                >
+                  <button
+                    type="button"
+                    className={`card-nav-top-menu-btn ${isOpen ? 'active' : ''}`}
+                    onClick={() => setActiveItemIndex(isOpen ? null : idx)}
+                    aria-expanded={isOpen}
+                  >
+                    <span>{item.label}</span>
+                    <ChevronDown className={`card-nav-chevron ${isOpen ? 'rotate' : ''}`} />
+                  </button>
+
+                  {/* Individual Separate Floating Dropdown Card */}
+                  {isOpen && (
+                    <div
+                      className="nav-card-individual-dropdown animate-in fade-in slide-in-from-top-2 duration-150"
+                      style={{ backgroundColor: item.bgColor, color: item.textColor }}
+                    >
+                      <div className="nav-card-label">{item.label}</div>
+                      <div className="nav-card-links">
+                        {item.links?.map((lnk, i) => {
+                          const isExternal = lnk.external || lnk.href.startsWith('http');
+                          if (isExternal) {
+                            return (
+                              <a
+                                key={`${lnk.label}-${i}`}
+                                className="nav-card-link"
+                                href={lnk.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label={lnk.ariaLabel || lnk.label}
+                                onClick={() => setActiveItemIndex(null)}
+                              >
+                                <ArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
+                                <span>{lnk.label}</span>
+                              </a>
+                            );
+                          }
+                          return (
+                            <Link
+                              key={`${lnk.label}-${i}`}
+                              className="nav-card-link"
+                              to={lnk.href}
+                              aria-label={lnk.ariaLabel || lnk.label}
+                              onClick={() => setActiveItemIndex(null)}
+                            >
+                              <ArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
+                              <span>{lnk.label}</span>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
+          {/* Right: CTA Button */}
           <div className="card-nav-cta-wrapper">
             {ctaElement ? (
               ctaElement
@@ -275,51 +215,47 @@ const CardNav: React.FC<CardNavProps> = ({
           </div>
         </div>
 
-        <div className="card-nav-content" aria-hidden={!isExpanded}>
-          {(items || []).slice(0, 3).map((item, idx) => (
-            <div
-              key={`${item.label}-${idx}`}
-              className={`nav-card ${activeItemIndex === idx ? 'focused' : ''}`}
-              ref={setCardRef(idx)}
-              style={{ backgroundColor: item.bgColor, color: item.textColor }}
-            >
-              <div className="nav-card-label">{item.label}</div>
-              <div className="nav-card-links">
-                {item.links?.map((lnk, i) => {
-                  const isExternal = lnk.external || lnk.href.startsWith('http');
-                  if (isExternal) {
-                    return (
-                      <a
-                        key={`${lnk.label}-${i}`}
-                        className="nav-card-link"
-                        href={lnk.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={lnk.ariaLabel || lnk.label}
-                        onClick={closeMenu}
-                      >
-                        <ArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
-                        <span>{lnk.label}</span>
-                      </a>
-                    );
-                  }
-                  return (
-                    <Link
-                      key={`${lnk.label}-${i}`}
-                      className="nav-card-link"
-                      to={lnk.href}
-                      aria-label={lnk.ariaLabel || lnk.label}
-                      onClick={closeMenu}
-                    >
-                      <ArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
-                      <span>{lnk.label}</span>
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Mobile Expandable Drawer */}
+        {isMobileMenuOpen && (
+          <div className="card-nav-mobile-dropdown animate-in slide-in-from-top duration-200">
+            {(items || []).map((item, idx) => {
+              const isExpanded = expandedMobileIndex === idx;
+
+              return (
+                <div 
+                  key={`mobile-${item.label}-${idx}`}
+                  className="card-nav-mobile-section"
+                  style={{ backgroundColor: item.bgColor, color: item.textColor }}
+                >
+                  <button
+                    type="button"
+                    className="card-nav-mobile-header"
+                    onClick={() => setExpandedMobileIndex(isExpanded ? null : idx)}
+                  >
+                    <span>{item.label}</span>
+                    <ChevronDown className={`card-nav-chevron ${isExpanded ? 'rotate' : ''}`} />
+                  </button>
+
+                  {isExpanded && (
+                    <div className="nav-card-links mobile-links">
+                      {item.links?.map((lnk, i) => (
+                        <Link
+                          key={`mobile-lnk-${lnk.label}-${i}`}
+                          className="nav-card-link"
+                          to={lnk.href}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          <ArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
+                          <span>{lnk.label}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
       </nav>
     </div>
   );

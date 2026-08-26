@@ -6,7 +6,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 92%;
-  max-width: 900px;
+  max-width: 920px;
   z-index: 99;
   box-sizing: border-box;
 }
@@ -20,17 +20,13 @@
   border-radius: 1rem;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
   position: relative;
-  overflow: hidden;
-  will-change: height;
+  overflow: visible;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
 
 .card-nav-top {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   height: 60px;
   display: flex;
   align-items: center;
@@ -39,9 +35,15 @@
   z-index: 2;
 }
 
+.card-nav-left-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .hamburger-menu {
   height: 100%;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -50,6 +52,12 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
   transition: background-color 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+  }
 }
 
 .hamburger-menu:hover {
@@ -80,12 +88,6 @@
   transform: translateY(-4px) rotate(-45deg);
 }
 
-.card-nav-left-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
 .logo-container {
   display: flex;
   align-items: center;
@@ -104,41 +106,6 @@
 
 .logo-container:hover .card-nav-logo {
   transform: scale(1.04);
-}
-
-.card-nav-top-menu {
-  display: none;
-  align-items: center;
-  gap: 6px;
-}
-
-@media (min-width: 769px) {
-  .card-nav-top-menu {
-    display: flex;
-  }
-}
-
-.card-nav-top-menu-btn {
-  background: transparent;
-  border: none;
-  font-size: 0.925rem;
-  font-weight: 600;
-  color: #334155;
-  padding: 0.4rem 0.85rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  user-select: none;
-}
-
-.card-nav-top-menu-btn:hover {
-  color: #0f172a;
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.card-nav-top-menu-btn.active {
-  color: #059669;
-  background-color: rgba(5, 150, 105, 0.08);
 }
 
 .card-nav-brand {
@@ -181,6 +148,79 @@
   width: 100%;
 }
 
+/* Center Desktop Navigation Menu with Individual Dropdown Cards */
+.card-nav-top-menu {
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (min-width: 769px) {
+  .card-nav-top-menu {
+    display: flex;
+  }
+}
+
+.card-nav-menu-item-wrapper {
+  position: relative;
+}
+
+.card-nav-top-menu-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.925rem;
+  font-weight: 600;
+  color: #334155;
+  padding: 0.45rem 0.85rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-nav-top-menu-btn:hover,
+.card-nav-top-menu-btn.active {
+  color: #0f172a;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.card-nav-chevron {
+  width: 14px;
+  height: 14px;
+  opacity: 0.55;
+  transition: transform 0.2s ease;
+}
+
+.card-nav-chevron.rotate {
+  transform: rotate(180deg);
+  opacity: 0.9;
+}
+
+/* Dedicated Individual Dropdown Card */
+.nav-card-individual-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 270px;
+  border-radius: 0.85rem;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  user-select: none;
+  box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.28), 0 8px 16px -4px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+.card-nav-cta-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .card-nav-cta-button {
   background-color: #0f172a;
   color: white;
@@ -204,50 +244,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.card-nav-content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 60px;
-  bottom: 0;
-  padding: 0.65rem;
-  display: flex;
-  align-items: stretch;
-  gap: 12px;
-  visibility: hidden;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.card-nav.open .card-nav-content {
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.nav-card {
-  height: 100%;
-  flex: 1 1 0;
-  min-width: 0;
-  border-radius: 0.75rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding: 16px 18px;
-  gap: 12px;
-  user-select: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.nav-card:hover,
-.nav-card.focused {
-  transform: translateY(-2px) scale(1.01);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
-}
-
 .nav-card-label {
-  font-weight: 600;
-  font-size: 1.25rem;
+  font-weight: 700;
+  font-size: 1.15rem;
   letter-spacing: -0.025em;
   opacity: 0.95;
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
@@ -255,11 +254,9 @@
 }
 
 .nav-card-links {
-  margin-top: auto;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  overflow-y: auto;
+  gap: 4px;
 }
 
 .nav-card-link {
@@ -272,131 +269,63 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 6px;
+  padding: 6px 8px;
   border-radius: 0.375rem;
   opacity: 0.85;
 }
 
 .nav-card-link:hover {
   opacity: 1;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.12);
   transform: translateX(3px);
 }
 
 .nav-card-link-icon {
   width: 14px;
   height: 14px;
-  opacity: 0.7;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.75;
   flex-shrink: 0;
 }
 
-.nav-card-link:hover .nav-card-link-icon {
-  opacity: 1;
-  transform: translate(2px, -2px);
+/* Mobile Dropdown Panel */
+.card-nav-mobile-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.18);
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 100;
 }
 
-@media (max-width: 768px) {
-  .card-nav-container {
-    width: 95%;
-    max-width: 100%;
-    top: 0.5rem;
-  }
-
-  .card-nav {
-    border-radius: 0.875rem;
-  }
-
-  .card-nav.open {
-    max-height: 85vh;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .card-nav-top {
-    padding: 0.5rem 0.75rem;
-  }
-
-  .hamburger-menu {
-    order: 1;
-    padding: 0.5rem 0.25rem;
-  }
-
-  .logo-container {
-    position: static;
-    transform: none;
-    order: 2;
-    gap: 6px;
-  }
-
-  .card-nav-logo {
-    height: 28px;
-  }
-
-  .card-nav-cta-wrapper {
-    order: 3;
-  }
-
-  .card-nav-cta-button {
-    padding: 0 0.75rem;
-    height: 36px;
-    font-size: 0.75rem;
-    white-space: nowrap;
-  }
-
-  .card-nav-content {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    padding: 0.65rem;
-    bottom: auto;
-    justify-content: flex-start;
-    overflow-y: visible;
-  }
-
-  .nav-card {
-    height: auto;
-    min-height: 70px;
-    flex: 1 1 auto;
-    max-height: none;
-    padding: 12px 14px;
-  }
-
-  .nav-card-label {
-    font-size: 1rem;
-    padding-bottom: 0.35rem;
-  }
-
-  .nav-card-links {
-    gap: 4px;
-  }
-
-  .nav-card-link {
-    font-size: 0.85rem;
-    padding: 8px 8px;
-    min-height: 38px;
-    display: flex;
-    align-items: center;
-  }
+.card-nav-mobile-section {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 480px) {
-  .card-nav-container {
-    width: 96%;
-    top: 0.4rem;
-  }
+.card-nav-mobile-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
 
-  .card-nav-brand {
-    display: none;
-  }
-
-  .card-nav-top {
-    padding: 0.4rem 0.6rem;
-  }
-
-  .card-nav-cta-button {
-    padding: 0 0.65rem;
-    font-size: 0.75rem;
-    height: 34px;
-  }
+.mobile-links {
+  padding: 0 14px 12px 14px;
 }
