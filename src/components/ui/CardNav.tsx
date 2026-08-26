@@ -139,8 +139,6 @@ const CardNav: React.FC<CardNavProps> = ({
                 <div
                   key={`nav-item-${item.label}-${idx}`}
                   className="card-nav-menu-item-wrapper"
-                  onMouseEnter={() => setActiveItemIndex(idx)}
-                  onMouseLeave={() => setActiveItemIndex(null)}
                 >
                   <button
                     type="button"
