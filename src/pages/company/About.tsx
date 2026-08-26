@@ -2,7 +2,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, ArrowRight } from 'lucide-react';
-import LightPillar from '@/components/ui/LightPillar';
+import Lightfall from '@/components/ui/Lightfall';
 import ContactForm from '@/components/ContactForm';
 import companyHero from '@/assets/company-hero.jpg';
 import executiveTeam from '@/assets/executive-team.jpg';
@@ -50,20 +50,27 @@ const About = () => {
       <Navigation />
       
       <main>
-        {/* Hero Section with LightPillar WebGL Simulation */}
+        {/* Hero Section with Lightfall WebGL Simulation */}
         <section className="relative min-h-[85vh] flex items-center bg-gradient-to-b from-slate-50 via-slate-100/60 to-white py-20 lg:py-28 overflow-hidden text-slate-900 border-b border-slate-200">
           
           {/* Subtle Geometric Dot Mesh Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
 
-          {/* Dynamic LightPillar WebGL Simulation */}
-          <div className="absolute inset-0 pointer-events-none opacity-85 overflow-hidden">
-            <LightPillar
-              topColor="#059669"
-              bottomColor="#0284c7"
-              intensity={1.2}
-              rotationSpeed={0.4}
-              interactive={true}
+          {/* Dynamic Lightfall WebGL Simulation */}
+          <div className="absolute inset-0 pointer-events-auto z-0 opacity-80 overflow-hidden">
+            <Lightfall
+              colors={['#059669', '#10b981', '#0284c7', '#06b6d4', '#6366f1']}
+              speed={0.4}
+              streakCount={10}
+              streakWidth={1.8}
+              streakLength={1.6}
+              glow={1.3}
+              density={1.1}
+              twinkle={0.35}
+              zoom={1.0}
+              backgroundGlow={0.15}
+              opacity={0.85}
+              mouseInteraction={true}
               mixBlendMode="normal"
               className="w-full h-full"
             />
