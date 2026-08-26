@@ -60,16 +60,16 @@ const About = () => {
           <div className="absolute inset-0 pointer-events-none z-0 opacity-80 overflow-hidden">
             <Lightfall
               colors={['#059669', '#10b981', '#0284c7', '#06b6d4', '#6366f1']}
-              speed={0.4}
-              streakCount={10}
-              streakWidth={1.8}
-              streakLength={1.6}
-              glow={1.3}
-              density={1.1}
-              twinkle={0.35}
-              zoom={1.0}
+              speed={0.35}
+              streakCount={4}
+              streakWidth={1.0}
+              streakLength={1.4}
+              glow={1.1}
+              density={0.45}
+              twinkle={0.3}
+              zoom={1.2}
               backgroundGlow={0.15}
-              opacity={0.85}
+              opacity={0.75}
               mouseInteraction={false}
               mixBlendMode="normal"
               className="w-full h-full"

@@ -13,7 +13,7 @@ const hexToRGB = (hex: string): [number, number, number] => {
 };
 
 const prepColors = (input?: string[]) => {
-  const base = (input && input.length ? input : ['#A6C8FF', '#5227FF', '#FF9FFC']).slice(0, MAX_COLORS);
+  const base = (input && input.length ? input : ['#059669', '#10b981', '#0284c7']).slice(0, MAX_COLORS);
   const count = base.length;
   const arr: [number, number, number][] = [];
   for (let i = 0; i < MAX_COLORS; i++) arr.push(hexToRGB(base[Math.min(i, base.length - 1)]));
@@ -94,13 +94,14 @@ vec3 tanhv(vec3 x) {
 }
 
 vec2 sceneC(vec2 frag, vec2 r) {
-  vec2 P = (frag + frag - r) / r.x;
+  float minDim = max(1.0, min(r.x, r.y));
+  vec2 P = (frag + frag - r) / minDim;
   float z = 0.0;
   float d = 1e3;
   vec4 O = vec4(0.0);
-  for (int k = 0; k < 18; k++) {
+  for (int k = 0; k < 16; k++) {
     if (d <= 1e-4) break;
-    O = z * normalize(vec4(P, uZoom, 0.0)) - vec4(0.0, 4.0, 1.0, 0.0) / 4.5;
+    O = z * normalize(vec4(P, uZoom, 0.0)) - vec4(0.0, 3.8, 1.0, 0.0) / 4.2;
     d = 1.0 - sqrt(length(O * O));
     z += d;
   }
@@ -109,8 +110,9 @@ vec2 sceneC(vec2 frag, vec2 r) {
 
 void mainImage(out vec4 o, vec2 C) {
   vec2 r = iResolution.xy;
-  vec2 uv0 = (C + C - r) / r.x;
-  float T = 0.1 * iTime * uSpeed + 9.0;
+  float minDim = max(1.0, min(r.x, r.y));
+  vec2 uv0 = (C + C - r) / minDim;
+  float T = 0.08 * iTime * uSpeed + 9.0;
   float angRings = max(1.0, floor(6.28318530718 * max(uDensity, 0.05) + 0.5));
   vec2 Y = vec2(5e-3, 6.28318530718 / angRings);
 
@@ -124,12 +126,12 @@ void mainImage(out vec4 o, vec2 C) {
   vec2 fw = abs(dCx) + abs(dCy);
   C = c0;
 
-  vec2 P = vec2(2.0, 1.0) * uv0 - (r / r.x) * vec2(0.0, 1.0);
-  vec4 O = vec4(uBgColor * 90.0 * uBgGlow / (1e3 * dot(P, P) + 6.0), 0.0);
+  vec2 P = vec2(2.0, 1.0) * uv0 - (r / minDim) * vec2(0.0, 1.0);
+  vec4 O = vec4(uBgColor * 80.0 * uBgGlow / (1e3 * dot(P, P) + 6.0), 0.0);
 
   float mGlow = 0.0;
   if (uMouseEnabled > 0.5) {
-    vec2 mN = (iMouse + iMouse - r) / r.x;
+    vec2 mN = (iMouse + iMouse - r) / minDim;
     float md = length(uv0 - mN);
     mGlow = exp(-md * md / max(uMouseRadius * uMouseRadius, 1e-4)) * uMouseStrength;
     O.rgb += uMouseColor * mGlow * 0.25;
@@ -137,9 +139,9 @@ void mainImage(out vec4 o, vec2 C) {
 
   float zr = 5e-4 * uStreakWidth;
   vec2 rr = vec2(max(length(fw), 1e-5));
-  float tail = 19.0 / max(uStreakLength, 0.05);
+  float tail = 18.0 / max(uStreakLength, 0.05);
 
-  for (int m = 0; m < 16; m++) {
+  for (int m = 0; m < 12; m++) {
     if (m >= uStreakCount) break;
     float jf = float(m) + 1.0;
     float ic = fract(sin(dot(vec2(jf, floor(C.x / Y.x + 0.5)), vec2(7.0, 11.0)) * 73.0));
@@ -147,7 +149,7 @@ void mainImage(out vec4 o, vec2 C) {
     Pp -= floor(Pp / Y + 0.5) * Y;
     float h = fract(8663.0 * ic);
     vec3 col = palette(h);
-    float weight = mix(1.5, 1.0 + sin(T + 7.0 * h + 4.0), uTwinkle);
+    float weight = mix(1.3, 1.0 + sin(T + 7.0 * h + 4.0), uTwinkle);
     weight *= (1.0 + mGlow * 2.0);
     vec2 inner = vec2(length(max(Pp, vec2(-1.0, 0.0))), length(Pp) - zr) - zr;
     vec2 sm = vec2(1.0) - smoothstep(-rr, rr, inner);
@@ -155,7 +157,7 @@ void mainImage(out vec4 o, vec2 C) {
     C.x += Y.x / 8.0;
   }
 
-  vec3 colr = sqrt(tanhv(max(O.rgb * uGlow - vec3(0.04, 0.08, 0.02), 0.0)));
+  vec3 colr = sqrt(tanhv(max(O.rgb * uGlow - vec3(0.02, 0.04, 0.01), 0.0)));
   o = vec4(colr, uOpacity);
 }
 
@@ -193,19 +195,19 @@ export const Lightfall: React.FC<LightfallProps> = ({
   className,
   dpr = 1,
   paused = false,
-  colors = ['#A6C8FF', '#5227FF', '#FF9FFC'],
-  backgroundColor = '#0A29FF',
-  speed = 0.5,
-  streakCount = 2,
-  streakWidth = 1,
-  streakLength = 1,
-  glow = 1,
-  density = 0.6,
-  twinkle = 1,
-  zoom = 3,
-  backgroundGlow = 0.5,
-  opacity = 1,
-  mouseInteraction = true,
+  colors = ['#059669', '#10b981', '#0284c7', '#06b6d4', '#6366f1'],
+  backgroundColor = '#0284c7',
+  speed = 0.35,
+  streakCount = 4,
+  streakWidth = 1.0,
+  streakLength = 1.4,
+  glow = 1.1,
+  density = 0.45,
+  twinkle = 0.3,
+  zoom = 1.2,
+  backgroundGlow = 0.15,
+  opacity = 0.75,
+  mouseInteraction = false,
   mouseStrength = 0.5,
   mouseRadius = 1,
   mouseDampening = 0.15,
@@ -225,7 +227,6 @@ export const Lightfall: React.FC<LightfallProps> = ({
     const container = containerRef.current;
     if (!container) return;
 
-    // Viewport intersection observer to pause rendering when offscreen
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -237,7 +238,7 @@ export const Lightfall: React.FC<LightfallProps> = ({
     observer.observe(container);
 
     const renderer = new Renderer({
-      dpr: Math.min(1.0, dpr || 1),
+      dpr: Math.min(1.2, dpr || 1),
       alpha: true,
       antialias: false
     });
@@ -251,6 +252,11 @@ export const Lightfall: React.FC<LightfallProps> = ({
     container.appendChild(canvas);
 
     const { arr, count, avg } = prepColors(colors);
+
+    const isNarrow = window.innerWidth < 768;
+    const effStreakCount = isNarrow ? Math.min(3, streakCount) : Math.min(12, Math.round(streakCount));
+    const effDensity = isNarrow ? Math.min(0.4, density) : density;
+    const effWidth = isNarrow ? Math.min(0.9, streakWidth) : streakWidth;
 
     const uniforms = {
       iResolution: { value: [gl.drawingBufferWidth, gl.drawingBufferHeight, 1] },
@@ -268,11 +274,11 @@ export const Lightfall: React.FC<LightfallProps> = ({
       uBgColor: { value: hexToRGB(backgroundColor) },
       uMouseColor: { value: avg },
       uSpeed: { value: speed },
-      uStreakCount: { value: Math.max(1, Math.min(16, Math.round(streakCount))) },
-      uStreakWidth: { value: streakWidth },
+      uStreakCount: { value: effStreakCount },
+      uStreakWidth: { value: effWidth },
       uStreakLength: { value: streakLength },
       uGlow: { value: glow },
-      uDensity: { value: density },
+      uDensity: { value: effDensity },
       uTwinkle: { value: twinkle },
       uZoom: { value: zoom },
       uBgGlow: { value: backgroundGlow },
@@ -319,52 +325,33 @@ export const Lightfall: React.FC<LightfallProps> = ({
       rafRef.current = requestAnimationFrame(loop);
       if (!isVisibleRef.current || paused) return;
 
-      uniforms.iTime.value = t * 0.001;
-      if (mouseDampening > 0) {
-        if (!lastTimeRef.current) lastTimeRef.current = t;
-        const dt = (t - lastTimeRef.current) / 1000;
-        lastTimeRef.current = t;
-        const tau = Math.max(1e-4, mouseDampening);
-        let factor = 1 - Math.exp(-dt / tau);
-        if (factor > 1) factor = 1;
-        const target = mouseTargetRef.current;
-        const cur = uniforms.iMouse.value;
-        cur[0] += (target[0] - cur[0]) * factor;
-        cur[1] += (target[1] - cur[1]) * factor;
-      } else {
-        lastTimeRef.current = t;
+      const dt = lastTimeRef.current ? Math.min((t - lastTimeRef.current) * 0.001, 0.1) : 0.016;
+      lastTimeRef.current = t;
+
+      uniforms.iTime.value += dt;
+
+      if (mouseInteraction && mouseDampening > 0) {
+        const cx = uniforms.iMouse.value[0];
+        const cy = uniforms.iMouse.value[1];
+        const tx = mouseTargetRef.current[0];
+        const ty = mouseTargetRef.current[1];
+        const factor = Math.min(1, dt / Math.max(1e-4, mouseDampening));
+        uniforms.iMouse.value[0] = cx + (tx - cx) * factor;
+        uniforms.iMouse.value[1] = cy + (ty - cy) * factor;
       }
-      if (programRef.current && meshRef.current) {
-        try {
-          renderer.render({ scene: meshRef.current });
-        } catch (e) {
-          console.error(e);
-        }
-      }
+
+      renderer.render({ scene: mesh });
     };
+
     rafRef.current = requestAnimationFrame(loop);
 
     return () => {
       observer.disconnect();
+      ro.disconnect();
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       if (mouseInteraction) canvas.removeEventListener('pointermove', onPointerMove);
-      ro.disconnect();
-      if (canvas.parentElement === container) {
-        container.removeChild(canvas);
-      }
-      const callIfFn = (obj: any, key: string) => {
-        if (obj && typeof obj[key] === 'function') {
-          obj[key].call(obj);
-        }
-      };
-      callIfFn(programRef.current, 'remove');
-      callIfFn(geometryRef.current, 'remove');
-      callIfFn(meshRef.current, 'remove');
-      callIfFn(rendererRef.current, 'destroy');
-      programRef.current = null;
-      geometryRef.current = null;
-      meshRef.current = null;
-      rendererRef.current = null;
+      if (canvas.parentNode) canvas.parentNode.removeChild(canvas);
+      gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
   }, [
     dpr,
@@ -390,10 +377,8 @@ export const Lightfall: React.FC<LightfallProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`lightfall-container ${className ?? ''}`}
-      style={{
-        ...(mixBlendMode && { mixBlendMode })
-      }}
+      className={`lightfall-container ${className || ''}`}
+      style={{ mixBlendMode: mixBlendMode || 'normal' }}
     />
   );
 };
