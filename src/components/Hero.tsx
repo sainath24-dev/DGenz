@@ -14,24 +14,16 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col justify-center items-center overflow-hidden pt-12 pb-20 px-4 sm:px-6 lg:px-8 border-b border-slate-200">
+    <section className="relative min-h-[90vh] flex flex-col justify-center items-start overflow-hidden pt-16 pb-20 px-4 sm:px-8 lg:px-16 border-b border-slate-200">
       
       {/* Background Multi-Video Cycler with High Opacity (vid1 to vid7 with 3.5s crossfade) */}
       <HeroVideoBackground intervalSec={3.5} />
 
-      {/* Hero Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto w-full flex flex-col items-center text-center">
+      {/* Hero Content Container - All Left-Aligned in One Unified Flow */}
+      <div className="relative z-10 max-w-4xl w-full flex flex-col items-start text-left">
         
-        {/* Main Headline */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-slate-950 leading-[1.08] mb-6 max-w-4xl pt-4">
-          From Insight to Impact—
-          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700">
-            Built for B2B
-          </span>
-        </h1>
-
         {/* Process Pipeline Flow */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10 text-xs sm:text-sm font-medium">
+        <div className="flex flex-wrap items-center justify-start gap-2 sm:gap-3 mb-6 text-xs sm:text-sm font-medium">
           {steps.map((step, index) => (
             <div key={step.id} className="flex items-center gap-2 sm:gap-3">
               <span className="px-3.5 py-1.5 rounded-lg bg-white/90 border border-slate-200 text-slate-800 backdrop-blur-md shadow-xs hover:border-emerald-500 hover:text-emerald-700 transition-all font-semibold">
@@ -44,8 +36,16 @@ const Hero = () => {
           ))}
         </div>
 
+        {/* Main Headline */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-slate-950 leading-[1.08] mb-8 max-w-3xl">
+          From Insight to Impact—
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700">
+            Built for B2B
+          </span>
+        </h1>
+
         {/* Call to Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full sm:w-auto mb-16">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 sm:gap-5 w-full sm:w-auto mb-12">
           <ContactForm 
             type="get-started"
             trigger={
@@ -72,8 +72,8 @@ const Hero = () => {
           </button>
         </div>
 
-        {/* Horizontal Stats Glass Bar */}
-        <div className="w-full max-w-3xl mx-auto rounded-2xl bg-white/90 border border-slate-200/90 backdrop-blur-xl p-6 sm:p-7 shadow-xl">
+        {/* Horizontal Stats Glass Bar - Left Aligned */}
+        <div className="w-full max-w-2xl rounded-2xl bg-white/90 border border-slate-200/90 backdrop-blur-xl p-5 sm:p-6 shadow-xl">
           <div className="grid grid-cols-3 divide-x divide-slate-200 text-center">
             <div className="px-2 sm:px-4">
               <div className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-950 tracking-tight">
