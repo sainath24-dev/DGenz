@@ -47,7 +47,7 @@ const Footer = () => {
   return (
     <>
       {/* Master Interactive GridScan CTA Section */}
-      <section className="relative w-full min-h-[600px] overflow-hidden bg-gradient-to-b from-white via-slate-50 to-slate-100 flex items-center justify-center py-20 px-4 border-t border-slate-200">
+      <section className="relative w-full min-h-[500px] sm:min-h-[600px] overflow-hidden bg-gradient-to-b from-white via-slate-50 to-slate-100 flex items-center justify-center py-16 sm:py-20 px-4 border-t border-slate-200">
         
         {/* GridScan Background Component */}
         <div className="absolute inset-0 pointer-events-auto opacity-70">
@@ -68,23 +68,23 @@ const Footer = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-white/80 pointer-events-none" />
 
         {/* Content Card */}
-        <div className="relative z-10 max-w-3xl mx-auto text-center backdrop-blur-md bg-white/95 p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-2xl text-slate-900">
+        <div className="relative z-10 max-w-3xl mx-auto text-center backdrop-blur-md bg-white/95 p-5 sm:p-12 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-2xl text-slate-900">
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-xs">
             Accelerate Growth
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
             Ready to Experience the #1 Rated ABM Platform?
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-slate-600 mb-8 max-w-xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-slate-600 mb-6 sm:mb-8 max-w-xl mx-auto leading-relaxed">
             Transform your B2B marketing with intelligent targeting and data-driven insights. Join hundreds of enterprise brands who trust DGenz Media to drive scalable revenue.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3.5 sm:gap-4 justify-center items-center">
             {/* High-Visibility Primary Button */}
             <ContactForm 
               type="demo"
               trigger={
-                <button className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base transition-all duration-200 shadow-lg shadow-emerald-600/25 hover:shadow-xl hover:shadow-emerald-600/35 hover:scale-102 cursor-pointer">
+                <button className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base transition-all duration-200 shadow-lg shadow-emerald-600/25 hover:shadow-xl hover:shadow-emerald-600/35 hover:scale-102 cursor-pointer">
                   <span>Schedule Live Demo</span>
                   <ArrowRight className="h-4 w-4 text-white" />
                 </button>
@@ -95,7 +95,7 @@ const Footer = () => {
             <ContactForm 
               type="get-started"
               trigger={
-                <button className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-900 font-bold text-sm sm:text-base border border-slate-200 hover:border-slate-300 transition-all duration-200 shadow-xs cursor-pointer">
+                <button className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-900 font-bold text-sm sm:text-base border border-slate-200 hover:border-slate-300 transition-all duration-200 shadow-xs cursor-pointer">
                   <span>Get Started Today</span>
                 </button>
               }
@@ -106,13 +106,13 @@ const Footer = () => {
 
       {/* Main Footer */}
       <footer className="bg-slate-950 text-slate-200 border-t border-slate-800/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-14">
           
           {/* Main Footer Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 mb-12">
             
             {/* Company Info */}
-            <div className="col-span-1 sm:col-span-2 md:col-span-4 lg:col-span-1">
+            <div className="col-span-2 md:col-span-4 lg:col-span-1">
               <img 
                 src={dgenzLogo}
                 alt="DGenz Media" 

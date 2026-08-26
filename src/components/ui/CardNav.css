@@ -259,22 +259,39 @@
 
 @media (max-width: 768px) {
   .card-nav-container {
-    width: 94%;
-    top: 0.75rem;
+    width: 95%;
+    max-width: 100%;
+    top: 0.5rem;
+  }
+
+  .card-nav {
+    border-radius: 0.875rem;
+  }
+
+  .card-nav.open {
+    max-height: 85vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .card-nav-top {
-    padding: 0.5rem 0.85rem;
+    padding: 0.5rem 0.75rem;
   }
 
   .hamburger-menu {
     order: 1;
+    padding: 0.5rem 0.25rem;
   }
 
   .logo-container {
     position: static;
     transform: none;
     order: 2;
+    gap: 6px;
+  }
+
+  .card-nav-logo {
+    height: 28px;
   }
 
   .card-nav-cta-wrapper {
@@ -282,9 +299,10 @@
   }
 
   .card-nav-cta-button {
-    padding: 0 0.85rem;
+    padding: 0 0.75rem;
     height: 36px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
   }
 
   .card-nav-content {
@@ -294,23 +312,52 @@
     padding: 0.65rem;
     bottom: auto;
     justify-content: flex-start;
+    overflow-y: visible;
   }
 
   .nav-card {
     height: auto;
-    min-height: 80px;
+    min-height: 70px;
     flex: 1 1 auto;
     max-height: none;
     padding: 12px 14px;
   }
 
   .nav-card-label {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding-bottom: 0.35rem;
+  }
+
+  .nav-card-links {
+    gap: 4px;
   }
 
   .nav-card-link {
     font-size: 0.85rem;
-    padding: 4px 6px;
+    padding: 8px 8px;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-nav-container {
+    width: 96%;
+    top: 0.4rem;
+  }
+
+  .card-nav-brand {
+    display: none;
+  }
+
+  .card-nav-top {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .card-nav-cta-button {
+    padding: 0 0.65rem;
+    font-size: 0.75rem;
+    height: 34px;
   }
 }

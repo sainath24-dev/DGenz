@@ -114,31 +114,31 @@ export const ABMLeadership = () => {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* Left Column (7 cols): Original Crisp White Card */}
-          <div className="lg:col-span-7 space-y-6 bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-xl text-slate-900">
+          <div className="lg:col-span-7 space-y-6 bg-white p-5 sm:p-10 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl text-slate-900">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider">
               <Monitor className="h-3.5 w-3.5 text-slate-700" />
               <span>ABM Display Advertising</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Build the brand with <span className="text-emerald-700">targeted display ads</span>
             </h2>
 
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">
               Stay top of mind with display ads that capture the attention of key decision-makers across the digital landscape.
             </p>
 
             {/* 3 Bento Feature Cards */}
-            <div className="grid sm:grid-cols-3 gap-3.5 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
               {adFeatures.map((feature, idx) => {
                 const Icon = feature.icon;
                 return (
-                  <div key={idx} className="p-4 rounded-2xl bg-slate-50 border border-slate-200 hover:border-slate-300 hover:bg-white hover:shadow-sm transition-all duration-200 flex flex-col justify-between">
+                  <div key={idx} className="p-4 rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-200 hover:border-slate-300 hover:bg-white hover:shadow-sm transition-all duration-200 flex flex-col justify-between">
                     <div>
-                      <div className="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-3 text-slate-800 shadow-2xs">
+                      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-2.5 sm:mb-3 text-slate-800 shadow-2xs">
                         <Icon className="w-4 h-4 text-slate-700" />
                       </div>
-                      <h3 className="font-bold text-slate-900 text-xs sm:text-sm mb-1.5">
+                      <h3 className="font-bold text-slate-900 text-xs sm:text-sm mb-1">
                         {feature.title}
                       </h3>
                       <p className="text-slate-600 text-xs leading-relaxed">
@@ -154,7 +154,7 @@ export const ABMLeadership = () => {
             <div className="pt-2">
               <Link 
                 to="/solutions/paid-advertising-ppc"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-all duration-200 shadow-sm cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-all duration-200 shadow-sm cursor-pointer"
               >
                 <span>View ABM Display Advertising</span>
                 <ArrowRight className="w-4 h-4 text-white" />

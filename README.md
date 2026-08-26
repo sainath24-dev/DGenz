@@ -1,73 +1,78 @@
-# Welcome to your Lovable project
+# DGenz Media — Precision B2B Demand Generation & Intent Engine
 
-## Project info
+DGenz Media is a modern, high-performance B2B account-based marketing (ABM) and demand generation platform. It unifies deterministic buyer intent data, multi-channel targeting, content syndication, and pipeline acceleration to drive predictable revenue growth for enterprise brands.
 
-**URL**: https://lovable.dev/projects/18001713-57ff-485b-8ff0-6d97477225eb
+---
 
-## How can I edit this code?
+## Key Features
 
-There are several ways of editing your application.
+- **Multi-Channel ABM Solutions**: Full-Funnel Marketing, Lead Generation Strategy, Content Syndication, PPC & Programmatic Advertising, and Outbound Prospecting.
+- **Interactive Global Reach & TAM Visualizer**: 3D interactive WebGL Earth Globe and 2D continental routing maps showcasing 42M+ decision-makers across 100+ nations.
+- **Dynamic WebGL & Micro-Interactions**: Smooth 60fps WebGL shaders (FloatingLines, LightPillar, GridScan, Hyperspeed) with lightweight, responsive fallback behaviors.
+- **Adaptive Mobile Architecture**: 100% mobile-friendly responsive navigation with expandable card drawers, touch-optimized tap targets, and smooth layout scaling.
+- **Optimized Bundle Splitting**: Rollup chunk splitting separating core React runtimes, WebGL/Three.js shaders, animation engines, and iconography for sub-second page loads.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/18001713-57ff-485b-8ff0-6d97477225eb) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Framework**: React 18, Vite 5 (SWC)
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS, CSS Custom Properties, Vanilla CSS
+- **3D & WebGL**: Three.js, OGL, Framer Motion, GSAP
+- **Components & Primitives**: Radix UI, Lucide Icons, Sonner
+- **Routing**: React Router v6
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Prerequisites
+- Node.js 18+ & npm
 
-Follow these steps:
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/sainath24-dev/DGenz.git
+cd DGenz
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Install dependencies
+npm install
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start local development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Production Build
+```bash
+# Type check and build optimized bundle
+npm run build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Preview production build locally
+npm run preview
+```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+├── public/                 # Static public assets & favicons
+├── src/
+│   ├── assets/             # Brand logos, photography & media
+│   ├── components/         # Core page components & interactive sections
+│   │   └── ui/             # WebGL shaders & reusable UI primitives
+│   ├── hooks/              # Custom React hooks
+│   ├── lib/                # Utility helpers & class merger
+│   ├── pages/              # Solutions, Company, Resources, and Legal pages
+│   ├── App.tsx             # Application router & providers
+│   ├── index.css           # Design tokens, typography & animations
+│   └── main.tsx            # React application entry point
+├── tailwind.config.ts      # Tailwind configuration & design theme
+└── vite.config.ts          # Vite build config with manual chunk splitting
+```
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/18001713-57ff-485b-8ff0-6d97477225eb) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## License
+Private & Proprietary — © DGenz Media. All rights reserved.

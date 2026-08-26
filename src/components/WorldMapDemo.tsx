@@ -173,7 +173,7 @@ export function WorldMapDemo() {
         </div>
 
         {/* Region Selector Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 mb-8 sm:mb-10">
           {(Object.keys(regions) as RegionKey[]).map((key) => {
             const isActive = selectedRegion === key;
             const region = regions[key];
@@ -183,14 +183,14 @@ export function WorldMapDemo() {
                 key={key}
                 type="button"
                 onClick={() => setSelectedRegion(key)}
-                className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer border ${
+                className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer border ${
                   isActive
                     ? 'bg-slate-900 text-white border-slate-900 shadow-md scale-102'
                     : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
                 }`}
               >
                 <span>{region.name}</span>
-                <span className={`ml-2 text-xs py-0.5 px-1.5 rounded-md ${
+                <span className={`ml-1.5 sm:ml-2 text-[10px] sm:text-xs py-0.5 px-1.5 rounded-md ${
                   isActive ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-500'
                 }`}>
                   {region.professionals}
@@ -202,7 +202,7 @@ export function WorldMapDemo() {
 
         {/* Master Screen Container */}
         <div 
-          className={`rounded-3xl border transition-colors duration-300 p-6 sm:p-10 mb-16 relative overflow-hidden ${
+          className={`rounded-2xl sm:rounded-3xl border transition-colors duration-300 p-4 sm:p-10 mb-12 sm:mb-16 relative overflow-hidden ${
             is3D 
               ? 'bg-slate-900 border-slate-800 shadow-2xl text-white' 
               : 'bg-white border-slate-200/90 shadow-xl text-slate-900'
@@ -268,7 +268,7 @@ export function WorldMapDemo() {
           </div>
 
           {/* Instant 3D ➔ 2D Canvas Layering (0ms delay) */}
-          <div className="relative w-full h-[380px] sm:h-[480px] relative z-10">
+          <div className="relative w-full h-[280px] sm:h-[380px] md:h-[480px] z-10">
             
             {/* 3D Earth Globe Layer */}
             <div className={`absolute inset-0 transition-opacity duration-300 ${
@@ -292,7 +292,7 @@ export function WorldMapDemo() {
                 <button
                   type="button"
                   onClick={() => setSelectedRegion('all')}
-                  className="px-3.5 py-1.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 text-xs font-semibold transition-colors flex items-center gap-2 cursor-pointer shadow-md"
+                  className="px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer shadow-md"
                 >
                   <Globe className="w-3.5 h-3.5 text-indigo-600" />
                   <span>Back to 3D Earth</span>
@@ -303,60 +303,60 @@ export function WorldMapDemo() {
           </div>
 
           {/* 4 Bottom HUD Counters */}
-          <div className={`grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-6 border-t mt-6 relative z-10 transition-colors duration-300 ${
+          <div className={`grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6 pt-4 sm:pt-6 border-t mt-4 sm:mt-6 relative z-10 transition-colors duration-300 ${
             is3D ? 'border-slate-800/80' : 'border-slate-100'
           }`}>
             
-            <div className={`p-4 rounded-2xl border ${
+            <div className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border ${
               is3D ? 'bg-slate-900/70 border-slate-800' : 'bg-slate-50 border-slate-200/80'
             }`}>
-              <div className={`flex items-center gap-2 mb-1 text-xs font-semibold ${is3D ? 'text-slate-400' : 'text-slate-500'}`}>
-                <Building2 className={`w-4 h-4 ${is3D ? 'text-indigo-400' : 'text-indigo-600'}`} />
-                <span>Verified Accounts</span>
+              <div className={`flex items-center gap-1.5 sm:gap-2 mb-1 text-[11px] sm:text-xs font-semibold ${is3D ? 'text-slate-400' : 'text-slate-500'}`}>
+                <Building2 className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${is3D ? 'text-indigo-400' : 'text-indigo-600'}`} />
+                <span className="truncate">Verified Accounts</span>
               </div>
-              <div className={`text-2xl sm:text-3xl font-black tracking-tight ${is3D ? 'text-white' : 'text-slate-900'}`}>
+              <div className={`text-xl sm:text-2xl md:text-3xl font-black tracking-tight ${is3D ? 'text-white' : 'text-slate-900'}`}>
                 {currentData.companies}
               </div>
-              <div className="text-xs text-slate-500 mt-0.5">Enterprise & Mid-Market</div>
+              <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5 truncate">Enterprise & Mid-Market</div>
             </div>
 
-            <div className={`p-4 rounded-2xl border ${
+            <div className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border ${
               is3D ? 'bg-slate-900/70 border-slate-800' : 'bg-slate-50 border-slate-200/80'
             }`}>
-              <div className={`flex items-center gap-2 mb-1 text-xs font-semibold ${is3D ? 'text-slate-400' : 'text-slate-500'}`}>
-                <Users className={`w-4 h-4 ${is3D ? 'text-sky-400' : 'text-sky-600'}`} />
-                <span>Active Decision-Makers</span>
+              <div className={`flex items-center gap-1.5 sm:gap-2 mb-1 text-[11px] sm:text-xs font-semibold ${is3D ? 'text-slate-400' : 'text-slate-500'}`}>
+                <Users className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${is3D ? 'text-sky-400' : 'text-sky-600'}`} />
+                <span className="truncate">Decision-Makers</span>
               </div>
-              <div className={`text-2xl sm:text-3xl font-black tracking-tight ${is3D ? 'text-sky-400' : 'text-indigo-600'}`}>
+              <div className={`text-xl sm:text-2xl md:text-3xl font-black tracking-tight ${is3D ? 'text-sky-400' : 'text-indigo-600'}`}>
                 {currentData.professionals}
               </div>
-              <div className="text-xs text-slate-500 mt-0.5">C-Suite, VP & Directors</div>
+              <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5 truncate">C-Suite, VP & Directors</div>
             </div>
 
-            <div className={`p-4 rounded-2xl border ${
+            <div className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border ${
               is3D ? 'bg-slate-900/70 border-slate-800' : 'bg-slate-50 border-slate-200/80'
             }`}>
-              <div className={`flex items-center gap-2 mb-1 text-xs font-semibold ${is3D ? 'text-slate-400' : 'text-slate-500'}`}>
-                <Layers className={`w-4 h-4 ${is3D ? 'text-purple-400' : 'text-purple-600'}`} />
-                <span>Industry Verticals</span>
+              <div className={`flex items-center gap-1.5 sm:gap-2 mb-1 text-[11px] sm:text-xs font-semibold ${is3D ? 'text-slate-400' : 'text-slate-500'}`}>
+                <Layers className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${is3D ? 'text-purple-400' : 'text-purple-600'}`} />
+                <span className="truncate">Industry Verticals</span>
               </div>
-              <div className={`text-2xl sm:text-3xl font-black tracking-tight ${is3D ? 'text-white' : 'text-slate-900'}`}>
+              <div className={`text-xl sm:text-2xl md:text-3xl font-black tracking-tight ${is3D ? 'text-white' : 'text-slate-900'}`}>
                 12
               </div>
-              <div className="text-xs text-slate-500 mt-0.5">Standardized NAICS/SIC</div>
+              <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5 truncate">Standardized NAICS/SIC</div>
             </div>
 
-            <div className={`p-4 rounded-2xl border ${
+            <div className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border ${
               is3D ? 'bg-slate-900/70 border-slate-800' : 'bg-slate-50 border-slate-200/80'
             }`}>
-              <div className={`flex items-center gap-2 mb-1 text-xs font-semibold ${is3D ? 'text-slate-400' : 'text-slate-500'}`}>
-                <ShieldCheck className={`w-4 h-4 ${is3D ? 'text-emerald-400' : 'text-emerald-600'}`} />
-                <span>Compliance Standards</span>
+              <div className={`flex items-center gap-1.5 sm:gap-2 mb-1 text-[11px] sm:text-xs font-semibold ${is3D ? 'text-slate-400' : 'text-slate-500'}`}>
+                <ShieldCheck className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${is3D ? 'text-emerald-400' : 'text-emerald-600'}`} />
+                <span className="truncate">Compliance</span>
               </div>
-              <div className={`text-2xl sm:text-3xl font-black tracking-tight ${is3D ? 'text-emerald-400' : 'text-emerald-600'}`}>
+              <div className={`text-xl sm:text-2xl md:text-3xl font-black tracking-tight ${is3D ? 'text-emerald-400' : 'text-emerald-600'}`}>
                 100%
               </div>
-              <div className="text-xs text-slate-500 mt-0.5">GDPR & CCPA Compliant</div>
+              <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5 truncate">GDPR & CCPA Compliant</div>
             </div>
 
           </div>

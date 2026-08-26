@@ -147,29 +147,29 @@ export const TrustAndCapabilities = () => {
         <div>
           {/* Top Headline & Trust Metric Pills */}
           <div className="text-center mb-16">
-            <p className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 mb-8 max-w-4xl mx-auto leading-relaxed tracking-tight">
+            <p className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed tracking-tight px-2">
               Trusted by <span className="text-emerald-600 font-black">100+ leading brands</span> to engage over <span className="text-teal-600 font-black">42M professionals</span> globally
             </p>
             
-            <div className="flex justify-center items-center gap-6 sm:gap-10 flex-wrap">
+            <div className="flex justify-center items-center gap-4 sm:gap-8 flex-wrap">
               {/* 100+ Brands Clean White Card */}
-              <div className="group flex items-center gap-4 px-8 py-4.5 rounded-3xl bg-white border border-slate-200 shadow-md hover:shadow-xl hover:scale-102 transition-all duration-300">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <Users className="h-6 w-6 text-emerald-700" />
+              <div className="group flex items-center gap-3.5 sm:gap-4 px-5 sm:px-8 py-3.5 sm:py-4 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-md hover:shadow-xl hover:scale-102 transition-all duration-300 w-full sm:w-auto">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <Users className="h-5 w-5 sm:h-6 sm:w-6 text-emerald-700" />
                 </div>
                 <div className="text-left">
-                  <div className="text-3xl font-black text-slate-900 tracking-tight">100+</div>
+                  <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">100+</div>
                   <div className="text-xs sm:text-sm font-bold text-slate-500">Leading Brands</div>
                 </div>
               </div>
               
               {/* 42M+ Professionals Clean White Card */}
-              <div className="group flex items-center gap-4 px-8 py-4.5 rounded-3xl bg-white border border-slate-200 shadow-md hover:shadow-xl hover:scale-102 transition-all duration-300">
-                <div className="w-12 h-12 rounded-2xl bg-teal-50 border border-teal-200 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <Globe className="h-6 w-6 text-teal-700" />
+              <div className="group flex items-center gap-3.5 sm:gap-4 px-5 sm:px-8 py-3.5 sm:py-4 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-md hover:shadow-xl hover:scale-102 transition-all duration-300 w-full sm:w-auto">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-teal-50 border border-teal-200 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <Globe className="h-5 w-5 sm:h-6 sm:w-6 text-teal-700" />
                 </div>
                 <div className="text-left">
-                  <div className="text-3xl font-black text-slate-900 tracking-tight">42M+</div>
+                  <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">42M+</div>
                   <div className="text-xs sm:text-sm font-bold text-slate-500">Professionals</div>
                 </div>
               </div>

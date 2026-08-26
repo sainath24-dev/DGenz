@@ -169,10 +169,10 @@ const InteractiveContentSyndication = () => {
           </div>
 
           {/* Mobile Straight Spine */}
-          <div className="md:hidden absolute left-6 top-8 bottom-8 w-0.5 bg-slate-200" />
+          <div className="md:hidden absolute left-4 sm:left-6 top-6 bottom-6 w-0.5 bg-slate-200" />
 
           {/* Timeline Steps */}
-          <div className="space-y-12 md:space-y-20 relative z-10">
+          <div className="space-y-8 md:space-y-20 relative z-10">
             {workflowSteps.map((item, index) => {
               const isEven = index % 2 === 0;
               const StepIcon = item.icon;
@@ -186,7 +186,7 @@ const InteractiveContentSyndication = () => {
                 >
                   
                   {/* Center Milestone Node */}
-                  <div className="absolute left-6 md:left-1/2 -translate-x-1/2 top-6 w-11 h-11 rounded-full bg-white border-2 border-slate-900 flex items-center justify-center font-bold text-sm text-slate-900 shadow-sm z-20 transition-all duration-300 group-hover:scale-105">
+                  <div className="absolute left-4 sm:left-6 md:left-1/2 -translate-x-1/2 top-4 sm:top-6 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-white border-2 border-slate-900 flex items-center justify-center font-bold text-xs sm:text-sm text-slate-900 shadow-xs z-20 transition-all duration-300 group-hover:scale-105">
                     {item.step}
                   </div>
 
@@ -194,8 +194,8 @@ const InteractiveContentSyndication = () => {
                   <div className="hidden md:block md:w-1/2" />
 
                   {/* Content Card Column */}
-                  <div className={`w-full md:w-1/2 pl-16 md:pl-0 ${isEven ? 'md:pr-14' : 'md:pl-14'}`}>
-                    <div className="bg-white hover:bg-slate-50/50 border border-slate-200/90 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-md hover:border-slate-300">
+                  <div className={`w-full md:w-1/2 pl-11 sm:pl-16 md:pl-0 ${isEven ? 'md:pr-14' : 'md:pl-14'}`}>
+                    <div className="bg-white hover:bg-slate-50/50 border border-slate-200/90 rounded-2xl p-5 sm:p-8 transition-all duration-300 hover:shadow-md hover:border-slate-300">
                       
                       {/* Top Row: Category Badge + Timeframe */}
                       <div className="flex items-center justify-between gap-3 mb-4">
