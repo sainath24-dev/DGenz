@@ -84,35 +84,35 @@ export const HeroVideoBackground: React.FC<HeroVideoBackgroundProps> = ({
   }, [currentIdx, activeLayer, videos, intervalSec]);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900 pointer-events-none">
+    <div className="absolute inset-0 z-0 overflow-hidden bg-slate-950 pointer-events-none">
       
-      {/* Video Layer A - Rich Opacity & Sharpness */}
+      {/* Video Layer A - 100% Full Video Opacity */}
       <video
         ref={videoRefA}
         muted
         playsInline
         autoPlay
         loop
-        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out scale-105 filter brightness-[0.95] contrast-[1.05] ${
+        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out scale-100 ${
           activeLayer === 'A' ? 'opacity-100' : 'opacity-0'
         }`}
       />
 
-      {/* Video Layer B - Rich Opacity & Sharpness */}
+      {/* Video Layer B - 100% Full Video Opacity */}
       <video
         ref={videoRefB}
         muted
         playsInline
         autoPlay
         loop
-        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out scale-105 filter brightness-[0.95] contrast-[1.05] ${
+        className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out scale-100 ${
           activeLayer === 'B' ? 'opacity-100' : 'opacity-0'
         }`}
       />
 
-      {/* Translucent Frosted Gradient Overlay for Maximum Video Opacity & Readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/45 via-white/25 to-white/70 backdrop-blur-[1px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-500/20 via-transparent to-transparent pointer-events-none" />
+      {/* Ultra-Minimal Overlay so Video is 100% Clear & Prominent */}
+      <div className="absolute inset-0 bg-slate-950/25 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-40 pointer-events-none" />
     </div>
   );
 };
