@@ -189,47 +189,63 @@ const CardNav: React.FC<CardNavProps> = ({
     <div className={`card-nav-container ${className}`}>
       <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
         <div className="card-nav-top">
-          <div
-            className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''}`}
-            onClick={toggleMenu}
-            onKeyDown={e => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                toggleMenu();
-              }
-            }}
-            role="button"
-            aria-label={isExpanded ? 'Close menu' : 'Open menu'}
-            aria-expanded={isExpanded}
-            tabIndex={0}
-            style={{ color: menuColor }}
-          >
-            <div className="hamburger-line" />
-            <div className="hamburger-line" />
+          <div className="card-nav-left-group">
+            <div
+              className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''}`}
+              onClick={toggleMenu}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  toggleMenu();
+                }
+              }}
+              role="button"
+              aria-label={isExpanded ? 'Close menu' : 'Open menu'}
+              aria-expanded={isExpanded}
+              tabIndex={0}
+              style={{ color: menuColor }}
+            >
+              <div className="hamburger-line" />
+              <div className="hamburger-line" />
+            </div>
+
+            <Link to={logoHref} className="logo-container" onClick={closeMenu}>
+              <img src={logo} alt={logoAlt} className="card-nav-logo" />
+              {(brandName || brandAccent) && (
+                <div className="card-nav-brand">
+                  {brandName && (
+                    <KineticText 
+                      text={brandName} 
+                      as="span" 
+                      className="brand-primary text-slate-900 font-bold" 
+                    />
+                  )}
+                  {brandAccent && (
+                    <KineticText 
+                      text={brandAccent} 
+                      as="span" 
+                      className="brand-accent text-emerald-600 font-bold ml-1" 
+                    />
+                  )}
+                  <span className="brand-underline" aria-hidden="true" />
+                </div>
+              )}
+            </Link>
           </div>
 
-          <Link to={logoHref} className="logo-container" onClick={closeMenu}>
-            <img src={logo} alt={logoAlt} className="card-nav-logo" />
-            {(brandName || brandAccent) && (
-              <div className="card-nav-brand">
-                {brandName && (
-                  <KineticText 
-                    text={brandName} 
-                    as="span" 
-                    className="brand-primary text-slate-900 font-bold" 
-                  />
-                )}
-                {brandAccent && (
-                  <KineticText 
-                    text={brandAccent} 
-                    as="span" 
-                    className="brand-accent text-emerald-600 font-bold ml-1" 
-                  />
-                )}
-                <span className="brand-underline" aria-hidden="true" />
-              </div>
-            )}
-          </Link>
+          {/* Direct Visible Menu Items in Navbar */}
+          <div className="card-nav-top-menu">
+            {(items || []).slice(0, 3).map((item, idx) => (
+              <button
+                key={`top-nav-${item.label}-${idx}`}
+                type="button"
+                className={`card-nav-top-menu-btn ${isExpanded ? 'active' : ''}`}
+                onClick={toggleMenu}
+              >
+                <span>{item.label}</span>
+              </button>
+            ))}
+          </div>
 
           <div className="card-nav-cta-wrapper">
             {ctaElement ? (
