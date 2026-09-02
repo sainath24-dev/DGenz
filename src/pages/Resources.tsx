@@ -79,14 +79,14 @@ const Resources = () => {
       <Navigation />
       
       <main>
-        {/* Hero Section with LightPillar WebGL Simulation */}
-        <section className="relative min-h-[85vh] flex items-center bg-gradient-to-b from-slate-50 via-slate-100/60 to-white py-20 lg:py-28 overflow-hidden text-slate-900 border-b border-slate-200">
+        {/* Hero Section with WebGL LightPillar Simulation */}
+        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-gradient-to-b from-[#f0f4f8] via-[#e5ecf6] to-[#dbe8f5] pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-[#161616] border-b border-[#cbdff0]">
           
           {/* Subtle Geometric Dot Mesh Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
 
-          {/* Dynamic LightPillar WebGL Simulation */}
-          <div className="absolute inset-0 pointer-events-none opacity-85 overflow-hidden">
+          {/* Dynamic LightPillar Simulation - Desktop Only */}
+          <div className="hidden md:block absolute inset-0 pointer-events-none z-0 opacity-80 overflow-hidden">
             <LightPillar
               topColor="#059669"
               bottomColor="#0284c7"
@@ -110,14 +110,14 @@ const Resources = () => {
                   Knowledge & Intelligence Hub
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#161616] tracking-tight leading-tight">
                   Actionable Resources for <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700">
                     B2B Revenue Leaders
                   </span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
+                <p className="text-base sm:text-lg text-[#525252] max-w-xl leading-relaxed">
                   Explore our curated repository of playbooks, intent research benchmarks, case studies, and practical guides designed to scale your pipeline.
                 </p>
 
@@ -172,7 +172,7 @@ const Resources = () => {
         </section>
 
         {/* Section 2: Explore by Category (Clean White Cards) */}
-        <section id="categories" className="py-24 bg-slate-50 border-b border-slate-200 scroll-mt-20">
+        <section id="categories" className="py-24 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0] scroll-mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -225,7 +225,7 @@ const Resources = () => {
         </section>
 
         {/* Section 3: Featured Research & Playbooks (Clean White Cards) */}
-        <section className="py-24 bg-white border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5] border-b border-[#cdbfe8]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -286,7 +286,7 @@ const Resources = () => {
         </section>
 
         {/* Section 4: Grand Finale CTA Card (Clean White) */}
-        <section className="py-24 bg-slate-50">
+        <section className="py-24 bg-gradient-to-b from-[#dfd5f5] via-[#d6eff0] to-[#bfe3e5]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="rounded-3xl bg-white border border-slate-200 p-8 sm:p-12 text-slate-900 shadow-2xl space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">

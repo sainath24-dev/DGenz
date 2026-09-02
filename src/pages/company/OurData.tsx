@@ -162,11 +162,11 @@ const OurData = () => {
                 <div className="flex flex-wrap items-center gap-6 pt-4 text-xs sm:text-sm font-semibold text-slate-700">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-emerald-600" />
-                    <span>415M+ Verified Global Records</span>
+                    <span>415M+ Verified B2B Decision Makers</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-emerald-600" />
-                    <span>95%+ Data Delivery Accuracy</span>
+                    <span>100% GDPR & CCPA Compliant</span>
                   </div>
                 </div>
               </div>
@@ -176,8 +176,8 @@ const OurData = () => {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 bg-white p-3">
                   <div className="rounded-2xl overflow-hidden aspect-[4/3]">
                     <img 
-                      src={dataAnalytics} 
-                      alt="DGenz Media data analytics graph" 
+                      src={aiIntentData} 
+                      alt="DGenz Media AI intent data and audience graph" 
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -189,13 +189,13 @@ const OurData = () => {
         </section>
 
         {/* Section 2: Data Coverage Pillars (Clean White Cards) */}
-        <section className="py-24 bg-slate-50 border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
-                Audience Infrastructure
+                Audience Universe
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
                 Global B2B Data <span className="text-emerald-700">Coverage</span>
@@ -236,7 +236,7 @@ const OurData = () => {
         </section>
 
         {/* Section 3: Verified Sources & Freshness (Clean White Cards) */}
-        <section className="py-24 bg-white border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5] border-b border-[#cdbfe8]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-12 gap-10 items-center">
               
@@ -302,7 +302,7 @@ const OurData = () => {
         </section>
 
         {/* Section 4: 4-Phase Quality Methodology (Clean White Process Cards) */}
-        <section className="py-24 bg-slate-50 border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#dfd5f5] via-[#d6eff0] to-[#bfe3e5] border-b border-[#a8d6d9]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -350,7 +350,7 @@ const OurData = () => {
         </section>
 
         {/* Section 5: Standards & Compliance (Clean White Cards) */}
-        <section className="py-24 bg-white border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#bfe3e5] via-[#cbdcf7] to-[#b8d1f7] border-b border-[#9ec0f4]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -394,7 +394,7 @@ const OurData = () => {
         </section>
 
         {/* Section 6: Grand Finale CTA Card (Clean White) */}
-        <section className="py-24 bg-slate-50">
+        <section className="py-24 bg-gradient-to-b from-[#b8d1f7] via-[#a8c6f7] to-[#99baf5]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="rounded-3xl bg-white border border-slate-200 p-8 sm:p-12 text-slate-900 shadow-2xl space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">

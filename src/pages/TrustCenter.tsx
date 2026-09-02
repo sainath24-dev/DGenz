@@ -89,7 +89,7 @@ const TrustCenter = () => {
       
       <main>
         {/* Hero Section with LightPillar WebGL Simulation */}
-        <section className="relative min-h-[85vh] flex items-center bg-gradient-to-b from-slate-50 via-slate-100/60 to-white py-20 lg:py-28 overflow-hidden text-slate-900 border-b border-slate-200">
+        <section className="relative min-h-[85vh] flex items-center bg-gradient-to-b from-[#f0f4f8] via-[#e5ecf6] to-[#dbe8f5] py-20 lg:py-28 overflow-hidden text-[#161616] border-b border-[#cbdff0]">
           
           {/* Subtle Geometric Dot Mesh Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
@@ -119,14 +119,14 @@ const TrustCenter = () => {
                   Security & Trust Center
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#161616] tracking-tight leading-tight">
                   Enterprise-Grade Security <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700">
                     & Continuous Compliance
                   </span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
+                <p className="text-base sm:text-lg text-[#525252] max-w-xl leading-relaxed">
                   Your corporate data integrity, confidentiality, and regulatory compliance are our utmost priority. Learn about our encryption standards, certifications, and security protocols.
                 </p>
 
@@ -160,7 +160,7 @@ const TrustCenter = () => {
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-emerald-600" />
-                    <span>100% GDPR, CCPA & Privacy Compliant</span>
+                    <span>Zero Data Leakage Architecture</span>
                   </div>
                 </div>
               </div>
@@ -171,7 +171,7 @@ const TrustCenter = () => {
                   <div className="rounded-2xl overflow-hidden aspect-[4/3]">
                     <img 
                       src={trustSecurity} 
-                      alt="DGenz Media enterprise trust and security infrastructure" 
+                      alt="DGenz Media enterprise trust and data security" 
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -183,7 +183,7 @@ const TrustCenter = () => {
         </section>
 
         {/* Section 2: Compliance Frameworks & Audits (Clean White Cards) */}
-        <section className="py-24 bg-slate-50 border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -230,7 +230,7 @@ const TrustCenter = () => {
         </section>
 
         {/* Section 3: Technical Security Pillars (Clean White Cards) */}
-        <section className="py-24 bg-white border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5] border-b border-[#cdbfe8]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -278,7 +278,7 @@ const TrustCenter = () => {
         </section>
 
         {/* Section 4: Privacy Governance & Operations (Clean White Cards) */}
-        <section className="py-24 bg-slate-50 border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#dfd5f5] via-[#d6eff0] to-[#bfe3e5] border-b border-[#a8d6d9]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -315,7 +315,7 @@ const TrustCenter = () => {
         </section>
 
         {/* Section 5: Grand Finale CTA Card (Clean White) */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-gradient-to-b from-[#bfe3e5] via-[#cbdcf7] to-[#b8d1f7]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="rounded-3xl bg-slate-900 border border-slate-800 p-8 sm:p-12 text-white shadow-2xl space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">

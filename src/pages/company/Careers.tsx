@@ -225,11 +225,11 @@ const Careers = () => {
                 <div className="flex flex-wrap items-center gap-6 pt-4 text-xs sm:text-sm font-semibold text-slate-700">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-emerald-600" />
-                    <span>Remote-First & Flexible Hours</span>
+                    <span>Global Remote-First Team</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-emerald-600" />
-                    <span>Top-Tier Compensation & Equity</span>
+                    <span>High Autonomy & Growth Culture</span>
                   </div>
                 </div>
               </div>
@@ -252,7 +252,7 @@ const Careers = () => {
         </section>
 
         {/* Section 2: Perks & Benefits (Clean White Cards) */}
-        <section className="py-24 bg-slate-50 border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -299,7 +299,7 @@ const Careers = () => {
         </section>
 
         {/* Section 3: Open Positions (Clean White Cards) */}
-        <section id="open-positions" className="py-24 bg-white border-b border-slate-200 scroll-mt-20">
+        <section id="open-positions" className="py-24 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5] border-b border-[#cdbfe8] scroll-mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -373,7 +373,7 @@ const Careers = () => {
         </section>
 
         {/* Section 4: Culture & Values (Clean White Cards) */}
-        <section className="py-24 bg-slate-50 border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#dfd5f5] via-[#d6eff0] to-[#bfe3e5] border-b border-[#a8d6d9]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -410,7 +410,7 @@ const Careers = () => {
         </section>
 
         {/* Section 5: Transparent Hiring Process (Clean White Process Cards) */}
-        <section className="py-24 bg-white border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#bfe3e5] via-[#cbdcf7] to-[#b8d1f7] border-b border-[#9ec0f4]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -452,7 +452,7 @@ const Careers = () => {
         </section>
 
         {/* Section 6: Grand Finale CTA Card (Clean White) */}
-        <section className="py-24 bg-slate-50">
+        <section className="py-24 bg-gradient-to-b from-[#b8d1f7] via-[#a8c6f7] to-[#99baf5]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="rounded-3xl bg-white border border-slate-200 p-8 sm:p-12 text-slate-900 shadow-2xl space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">

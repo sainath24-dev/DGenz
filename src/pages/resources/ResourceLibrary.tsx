@@ -86,13 +86,13 @@ const ResourceLibrary = () => {
       
       <main>
         {/* Hero Section with LightPillar WebGL Simulation */}
-        <section className="relative min-h-[85vh] flex items-center bg-gradient-to-b from-slate-50 via-slate-100/60 to-white py-20 lg:py-28 overflow-hidden text-slate-900 border-b border-slate-200">
+        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-gradient-to-b from-[#f0f4f8] via-[#e5ecf6] to-[#dbe8f5] pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-[#161616] border-b border-[#cbdff0]">
           
           {/* Subtle Geometric Dot Mesh Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
 
-          {/* Dynamic LightPillar WebGL Simulation */}
-          <div className="absolute inset-0 pointer-events-none opacity-85 overflow-hidden">
+          {/* Dynamic LightPillar WebGL Simulation - Desktop Only */}
+          <div className="hidden md:block absolute inset-0 pointer-events-none z-0 opacity-80 overflow-hidden">
             <LightPillar
               topColor="#059669"
               bottomColor="#0284c7"
@@ -116,14 +116,14 @@ const ResourceLibrary = () => {
                   Resource Library
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#161616] tracking-tight leading-tight">
                   Whitepapers, Playbooks <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700">
                     & Tactical Frameworks
                   </span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
+                <p className="text-base sm:text-lg text-[#525252] max-w-xl leading-relaxed">
                   Access our full library of peer-reviewed B2B growth whitepapers, intent benchmark reports, and operational templates ready for immediate execution.
                 </p>
 
@@ -172,31 +172,28 @@ const ResourceLibrary = () => {
         </section>
 
         {/* Section 2: Filters Bar */}
-        <section className="py-6 bg-white border-b border-slate-200 sticky top-16 z-20 backdrop-blur-md bg-white/95">
+        <section className="py-6 bg-white/95 border-b border-slate-200 sticky top-16 z-20 backdrop-blur-md">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
               
               {/* Category Filter Pills */}
               <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 w-full sm:w-auto scrollbar-none">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-400 mr-2 flex-shrink-0">
-                  Category:
-                </span>
-                {categories.map((cat) => (
+                {categories.map((category) => (
                   <button
-                    key={cat}
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
-                      selectedCategory === cat
+                    key={category}
+                    onClick={() => setSelectedCategory(category)}
+                    className={`px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer ${
+                      selectedCategory === category
                         ? 'bg-emerald-600 text-white shadow-sm'
                         : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200'
                     }`}
                   >
-                    {cat}
+                    {category}
                   </button>
                 ))}
               </div>
 
-              {/* Type Filter Select */}
+              {/* Format Dropdown */}
               <div className="flex items-center gap-2 flex-shrink-0">
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Format:</span>
                 <select
@@ -215,7 +212,7 @@ const ResourceLibrary = () => {
         </section>
 
         {/* Section 3: Resources Grid (Clean White Cards) */}
-        <section className="py-24 bg-slate-50 border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -275,7 +272,7 @@ const ResourceLibrary = () => {
         </section>
 
         {/* Section 4: Grand Finale CTA Card (Clean White) */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="rounded-3xl bg-slate-900 border border-slate-800 p-8 sm:p-12 text-white shadow-2xl space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">

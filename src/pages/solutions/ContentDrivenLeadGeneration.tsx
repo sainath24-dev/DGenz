@@ -160,18 +160,18 @@ const ContentDrivenLeadGeneration = () => {
               {/* Left Column (7 cols) */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-xs uppercase tracking-wider shadow-xs">
-                  Content Marketing Excellence
+                  Content Marketing & Syndication
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-tight">
-                  Content That Converts <br />
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#161616] tracking-tight leading-tight">
+                  Content-Driven Lead Gen <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700">
-                    Visitors Into Qualified Leads
+                    That Educates & Converts
                   </span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
-                  Create high-impact, educational content assets that attract your ideal executive prospects, establish authoritative credibility, and drive consistent inbound pipeline.
+                <p className="text-base sm:text-lg text-[#525252] max-w-xl leading-relaxed">
+                  Turn your expertise into a steady stream of enterprise leads with high-value whitepapers, research reports, and verified publisher syndication.
                 </p>
 
                 {/* CTAs */}
@@ -180,7 +180,7 @@ const ContentDrivenLeadGeneration = () => {
                     type="demo"
                     trigger={
                       <button className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base transition-all duration-200 shadow-lg shadow-emerald-600/25 hover:scale-102 cursor-pointer">
-                        <span>Start Content Strategy</span>
+                        <span>Launch Content Campaign</span>
                         <ArrowRight className="w-4 h-4 text-white" />
                       </button>
                     }
@@ -191,11 +191,11 @@ const ContentDrivenLeadGeneration = () => {
                 <div className="flex flex-wrap items-center gap-6 pt-4 text-xs sm:text-sm font-semibold text-slate-700">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-emerald-600" />
-                    <span>300% Average Traffic Increase</span>
+                    <span>Vetted B2B Publisher Network</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-emerald-600" />
-                    <span>Expert Technical Content Writers</span>
+                    <span>100% Opt-In & Intent Verified</span>
                   </div>
                 </div>
               </div>
@@ -206,7 +206,7 @@ const ContentDrivenLeadGeneration = () => {
                   <div className="rounded-2xl overflow-hidden aspect-[4/3]">
                     <img 
                       src={contentDrivenHero} 
-                      alt="Content-driven lead generation and marketing strategy"
+                      alt="Business presentation showcasing content marketing strategy"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -218,7 +218,7 @@ const ContentDrivenLeadGeneration = () => {
         </section>
 
         {/* Section 2: Core Strategic Pillars with Curved Gradient Cards */}
-        <section className="py-24 bg-slate-50 border-b border-slate-200 relative overflow-hidden">
+        <section className="py-24 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0] relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
             {/* Header */}
@@ -401,7 +401,7 @@ const ContentDrivenLeadGeneration = () => {
         </section>
 
         {/* Section 4: Combined Process & Grand Finale CTA with LiquidEther */}
-        <section className="relative py-24 lg:py-32 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/50 overflow-hidden border-t border-slate-200">
+        <section className="relative py-24 lg:py-32 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5] overflow-hidden border-t border-[#cdbfe8]">
           
           {/* Dynamic Liquid Ether WebGL Fluid Simulation Background */}
           <div className="absolute inset-0 pointer-events-auto z-0 opacity-40">

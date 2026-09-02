@@ -123,7 +123,7 @@ const WhyDGenz = () => {
       
       <main>
         {/* Hero Section with Lightfall WebGL Simulation */}
-        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-gradient-to-b from-slate-50 via-slate-100/60 to-white pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-slate-900 border-b border-slate-200">
+        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-gradient-to-b from-[#f0f4f8] via-[#e5ecf6] to-[#dbe8f5] pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-[#161616] border-b border-[#cbdff0]">
           
           {/* Subtle Geometric Dot Mesh Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
@@ -138,13 +138,6 @@ const WhyDGenz = () => {
               streakLength={1.4}
               glow={1.1}
               density={0.45}
-              twinkle={0.3}
-              zoom={1.2}
-              backgroundGlow={0.15}
-              opacity={0.75}
-              mouseInteraction={false}
-              mixBlendMode="normal"
-              className="w-full h-full"
             />
           </div>
 
@@ -157,18 +150,18 @@ const WhyDGenz = () => {
               {/* Left Column (7 cols) */}
               <div className="lg:col-span-7 space-y-5 sm:space-y-6">
                 <div className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-xs uppercase tracking-wider shadow-xs">
-                  Why DGenz Media
+                  The DGenz Advantage
                 </div>
 
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-tight">
-                  The Enterprise Standard for <br className="hidden sm:inline" />
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#161616] tracking-tight leading-tight">
+                  Why Enterprise Leaders <br className="hidden sm:inline" />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700">
-                    Account-Based Growth
+                    Choose DGenz Media
                   </span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
-                  Discover why 500+ global B2B brands partner with DGenz Media to identify high-intent buying committees and scale revenue with precision.
+                <p className="text-base sm:text-lg text-[#525252] max-w-xl leading-relaxed">
+                  We combine deterministic buyer intent telemetry, multi-channel orchestration, and direct CRM attribution to deliver predictable enterprise pipeline growth.
                 </p>
 
                 {/* CTAs */}
@@ -177,7 +170,7 @@ const WhyDGenz = () => {
                     type="demo"
                     trigger={
                       <button className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm sm:text-base transition-all duration-200 shadow-lg shadow-emerald-600/25 hover:scale-102 cursor-pointer">
-                        <span>Schedule Consultation</span>
+                        <span>Schedule Strategy Consultation</span>
                         <ArrowRight className="w-4 h-4 text-white" />
                       </button>
                     }
@@ -195,11 +188,11 @@ const WhyDGenz = () => {
                 <div className="flex flex-wrap items-center gap-6 pt-4 text-xs sm:text-sm font-semibold text-slate-700">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-emerald-600" />
-                    <span>500+ Enterprise Brands Powered</span>
+                    <span>3.8x Higher Pipeline Velocity</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-emerald-600" />
-                    <span>95%+ Intent Data Accuracy</span>
+                    <span>99.2% Verified Account Accuracy</span>
                   </div>
                 </div>
               </div>
@@ -210,7 +203,7 @@ const WhyDGenz = () => {
                   <div className="rounded-2xl overflow-hidden aspect-[4/3]">
                     <img 
                       src={trustSecurity} 
-                      alt="DGenz Media enterprise trust and security" 
+                      alt="DGenz Media executive leadership team" 
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -221,24 +214,24 @@ const WhyDGenz = () => {
           </div>
         </section>
 
-        {/* Section 2: Key Differentiators (Clean White Cards) */}
-        <section className="py-24 bg-slate-50 border-b border-slate-200">
+        {/* Section 2: Core Differentiators (Clean White Cards) */}
+        <section className="py-24 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
-                Core Advantages
+                Core Differentiators
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-                What Sets DGenz Media <span className="text-emerald-700">Apart</span>
+                Engineered for <span className="text-emerald-700">Predictable Revenue</span>
               </h2>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                We combine proprietary intent telemetry, multi-channel execution, and senior strategists to deliver superior pipeline outcomes.
+                Traditional ABM tools provide disjointed signals. We deliver a complete, deterministic revenue engine.
               </p>
             </div>
 
-            {/* Differentiators Grid (Clean White Cards) */}
+            {/* Differentiators Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {differentiators.map((item) => (
                 <div 
@@ -246,29 +239,30 @@ const WhyDGenz = () => {
                   className="rounded-3xl bg-white border border-slate-200 p-8 shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
-                    <div className="inline-flex items-center px-3 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold uppercase tracking-wider mb-5">
+                    <span className="inline-block px-3 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold uppercase tracking-wider mb-4">
                       {item.badge}
-                    </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">
+                    </span>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3">
                       {item.title}
                     </h3>
                     <p className="text-slate-600 text-sm leading-relaxed mb-6">
                       {item.description}
                     </p>
                   </div>
-
-                  <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-emerald-700">
-                    <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                  
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-emerald-700">
                     <span>{item.benefit}</span>
+                    <CheckCircle className="w-4 h-4 text-emerald-600" />
                   </div>
                 </div>
               ))}
             </div>
+
           </div>
         </section>
 
         {/* Section 3: Competitive Comparison (Clean White Card Table) */}
-        <section className="py-24 bg-white border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5] border-b border-[#cdbfe8]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -321,7 +315,7 @@ const WhyDGenz = () => {
         </section>
 
         {/* Section 4: Proven ROI Impact (Clean White Metric Cards) */}
-        <section className="py-24 bg-slate-50 border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#dfd5f5] via-[#d6eff0] to-[#bfe3e5] border-b border-[#a8d6d9]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -358,7 +352,7 @@ const WhyDGenz = () => {
         </section>
 
         {/* Section 5: Grand Finale CTA Card (Clean White) */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-gradient-to-b from-[#bfe3e5] via-[#cbdcf7] to-[#b8d1f7]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="rounded-3xl bg-white border border-slate-200 p-8 sm:p-12 text-slate-900 shadow-2xl space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">

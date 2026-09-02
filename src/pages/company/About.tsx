@@ -80,22 +80,22 @@ const About = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/70 pointer-events-none z-1" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="grid lg:grid-cols-12 gap-12 items-center">
               
               {/* Left Column (7 cols) */}
-              <div className="lg:col-span-7 space-y-5 sm:space-y-6">
+              <div className="lg:col-span-7 space-y-6">
                 <div className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 font-bold text-xs uppercase tracking-wider shadow-xs">
-                  About DGenz Media
+                  Company Overview
                 </div>
 
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#161616] tracking-tight leading-tight">
                   Pioneering the Next Era of <br className="hidden sm:inline" />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700">
                     B2B Account Growth
                   </span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
+                <p className="text-base sm:text-lg text-[#525252] max-w-xl leading-relaxed">
                   We empower enterprise revenue teams to identify in-market buying committees, execute precision multi-touch acquisition, and convert account engagement into predictable pipeline.
                 </p>
 
@@ -150,7 +150,7 @@ const About = () => {
         </section>
 
         {/* Mission & Vision Section (Clean White Cards) */}
-        <section className="py-24 bg-slate-50 border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-8">
               
@@ -159,22 +159,22 @@ const About = () => {
                   Our Mission
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4">
-                  Transforming Pipeline Acceleration with Data-First Rigor
+                  Precision Demand Without Guesswork
                 </h2>
-                <p className="text-slate-600 text-base leading-relaxed">
-                  To empower B2B revenue teams with deterministic intent data and multi-channel execution strategies that transform how companies discover, engage, and convert their highest-value accounts. We champion precision over vanity volume and measurable ARR growth over empty promises.
+                <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+                  To eliminate wasted advertising spend and accelerate B2B revenue by connecting global enterprise brands with high-intent decision-makers through verified, data-backed demand programs.
                 </p>
               </div>
 
               <div className="rounded-3xl bg-white border border-slate-200 p-8 sm:p-10 shadow-md">
-                <div className="inline-flex items-center px-3 py-1 rounded-md bg-indigo-50 text-indigo-800 border border-indigo-200 text-xs font-bold uppercase tracking-wider mb-4">
+                <div className="inline-flex items-center px-3 py-1 rounded-md bg-teal-50 text-teal-800 border border-teal-200 text-xs font-bold uppercase tracking-wider mb-4">
                   Our Vision
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-4">
-                  Setting the Global Standard for Intelligent ABM
+                  The Global Standard in Buyer Telemetry
                 </h2>
-                <p className="text-slate-600 text-base leading-relaxed">
-                  To become the world's most trusted partner in account-based growth, creating unified marketing and sales ecosystems where every interaction is personalized, every dollar is attributable, and every qualified opportunity converts with maximum velocity.
+                <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+                  To be the world's most trusted buyer intent platform—delivering deterministic account intelligence and seamless multi-channel execution that revenue teams rely on daily.
                 </p>
               </div>
 
@@ -183,7 +183,7 @@ const About = () => {
         </section>
 
         {/* Values Section (Clean White Feature Cards) */}
-        <section className="py-24 bg-white border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5] border-b border-[#cdbfe8]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
@@ -221,7 +221,7 @@ const About = () => {
         </section>
 
         {/* Timeline / Journey Section (Wavy Timeline Form) */}
-        <section className="py-28 bg-slate-50 border-b border-slate-200 relative overflow-hidden">
+        <section className="py-28 bg-gradient-to-b from-[#dfd5f5] via-[#d6eff0] to-[#bfe3e5] border-b border-[#a8d6d9] relative overflow-hidden">
           
           {/* Subtle background ambient glow */}
           <div className="absolute top-1/4 -left-48 w-96 h-96 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none" />

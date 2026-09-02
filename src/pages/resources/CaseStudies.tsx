@@ -109,13 +109,13 @@ const CaseStudies = () => {
       
       <main>
         {/* Hero Section with LightPillar WebGL Simulation */}
-        <section className="relative min-h-[85vh] flex items-center bg-gradient-to-b from-slate-50 via-slate-100/60 to-white py-20 lg:py-28 overflow-hidden text-slate-900 border-b border-slate-200">
+        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-gradient-to-b from-[#f0f4f8] via-[#e5ecf6] to-[#dbe8f5] pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-[#161616] border-b border-[#cbdff0]">
           
           {/* Subtle Geometric Dot Mesh Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
 
-          {/* Dynamic LightPillar WebGL Simulation */}
-          <div className="absolute inset-0 pointer-events-none opacity-85 overflow-hidden">
+          {/* Dynamic LightPillar WebGL Simulation - Desktop Only */}
+          <div className="hidden md:block absolute inset-0 pointer-events-none z-0 opacity-80 overflow-hidden">
             <LightPillar
               topColor="#059669"
               bottomColor="#0284c7"
@@ -139,14 +139,14 @@ const CaseStudies = () => {
                   Verified Client Outcomes
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#161616] tracking-tight leading-tight">
                   Proven Enterprise Results <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700">
                     Driven by Intent ABM
                   </span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
+                <p className="text-base sm:text-lg text-[#525252] max-w-xl leading-relaxed">
                   Discover how 500+ global brands use DGenz Media to identify high-value accounts, accelerate deal velocity, and maximize closed-won pipeline.
                 </p>
 
@@ -190,7 +190,7 @@ const CaseStudies = () => {
                   <div className="rounded-2xl overflow-hidden aspect-[4/3]">
                     <img 
                       src={caseStudiesHero} 
-                      alt="DGenz Media case study client growth analytics" 
+                      alt="DGenz Media enterprise case studies" 
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -202,7 +202,7 @@ const CaseStudies = () => {
         </section>
 
         {/* Section 2: Filter by Industry */}
-        <section className="py-6 bg-white border-b border-slate-200 sticky top-16 z-20 backdrop-blur-md bg-white/95">
+        <section className="py-6 bg-white/95 border-b border-slate-200 sticky top-16 z-20 backdrop-blur-md">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-none">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-400 mr-2 flex-shrink-0">
@@ -226,7 +226,7 @@ const CaseStudies = () => {
         </section>
 
         {/* Section 3: Case Studies Grid (Clean White Cards) */}
-        <section className="py-24 bg-slate-50 border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -314,7 +314,7 @@ const CaseStudies = () => {
         </section>
 
         {/* Section 4: Grand Finale CTA Card (Clean White) */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="rounded-3xl bg-slate-900 border border-slate-800 p-8 sm:p-12 text-white shadow-2xl space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
