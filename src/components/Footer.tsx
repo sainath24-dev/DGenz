@@ -45,14 +45,14 @@ const Footer = () => {
 
   return (
     <>
-      {/* ================= CARBON CTA BANNER (#0f62fe Blue Solid Banner) ================= */}
-      <section className="bg-[#0f62fe] text-white py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+      {/* ================= FULL-BLEED ROYAL BLUE CTA BANNER ================= */}
+      <section className="bg-gradient-to-r from-[#0038a8] via-[#0f62fe] to-[#002d9c] text-white py-16 md:py-20 px-4 sm:px-6 lg:px-8 border-b border-[#002d9c] shadow-lg">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div className="max-w-3xl">
             <span className="text-xs font-mono text-white/80 block mb-2 tracking-[0.32px]">
               NEXT STEP: CAMPAIGN DEPLOYMENT
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-white mb-4">
               Ready to accelerate your enterprise pipeline with deterministic intent?
             </h2>
             <p className="text-white/90 text-sm sm:text-base leading-relaxed">
@@ -66,7 +66,7 @@ const Footer = () => {
               trigger={
                 <button 
                   type="button" 
-                  className="inline-flex items-center justify-between gap-4 bg-white text-[#0f62fe] hover:bg-[#f4f4f4] text-sm font-medium tracking-[0.16px] px-6 py-4 rounded-none cursor-pointer transition-colors"
+                  className="inline-flex items-center justify-between gap-4 bg-white text-[#0f62fe] hover:bg-[#f0f6fc] text-sm font-medium tracking-[0.16px] px-6 py-4 rounded-none cursor-pointer transition-all shadow-md"
                 >
                   <span>Start your campaign</span>
                   <ArrowRight className="w-4 h-4" />
@@ -79,7 +79,7 @@ const Footer = () => {
               trigger={
                 <button 
                   type="button" 
-                  className="inline-flex items-center justify-between gap-4 bg-[#002d9c] text-white hover:bg-[#0043ce] border border-transparent text-sm font-normal tracking-[0.16px] px-6 py-4 rounded-none cursor-pointer transition-colors"
+                  className="inline-flex items-center justify-between gap-4 bg-[#001f6e] text-white hover:bg-[#002d9c] border border-white/20 text-sm font-medium tracking-[0.16px] px-6 py-4 rounded-none cursor-pointer transition-colors"
                 >
                   <span>Schedule consultation</span>
                   <ChevronRight className="w-4 h-4" />
@@ -90,8 +90,8 @@ const Footer = () => {
         </div>
       </section>
 
-      {/* ================= CARBON FOOTER (#161616 Charcoal Inverse Canvas) ================= */}
-      <footer className="bg-[#161616] text-[#c6c6c6] border-t border-[#262626]">
+      {/* ================= FOOTER (#0d1422 Obsidian Inverse Canvas) ================= */}
+      <footer className="bg-[#0d1422] text-[#c6c6c6] border-t border-[#1c2840]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
           
           {/* Main Footer Grid */}

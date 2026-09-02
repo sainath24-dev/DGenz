@@ -14,12 +14,12 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-[88vh] flex flex-col justify-center items-start overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-8 lg:px-16 border-b border-[#e0e0e0]">
+    <section className="relative min-h-[88vh] flex flex-col justify-center items-start overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-8 lg:px-16 border-b border-[#cbdff0] bg-gradient-to-b from-[#f0f4f8] via-[#e5ecf6] to-[#dbe8f5]">
       
-      {/* Madison Logic Scraped Video Background Layer */}
+      {/* Motion Video Layer */}
       <HeroVideoBackground />
 
-      {/* Carbon Hero Grid Content Container */}
+      {/* Hero Content Container */}
       <div className="relative z-10 max-w-5xl w-full flex flex-col items-start text-left">
         
         {/* Sentence Case Eyebrow / Pipeline Strip */}
@@ -37,24 +37,24 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* Carbon Display-XL Headline with Signature Weight 300 */}
-        <h1 className="carbon-display-xl text-[#161616] max-w-4xl mb-6">
+        {/* Display Headline */}
+        <h1 className="carbon-display-xl text-[#161616] max-w-4xl mb-6 font-medium">
           Deterministic intent intelligence engineered for enterprise B2B revenue.
         </h1>
 
-        {/* Carbon Lead Body */}
-        <p className="carbon-body-lg text-[#525252] max-w-3xl mb-10">
+        {/* Lead Body */}
+        <p className="carbon-body-lg text-[#525252] max-w-3xl mb-10 leading-relaxed font-normal">
           Unify multi-source buyer intent telemetry, account-based orchestration, and verified decision-maker networks to generate qualified enterprise opportunities with predictable ROI.
         </p>
 
-        {/* Carbon CTA Actions */}
+        {/* CTA Actions */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 w-full sm:w-auto mb-14">
           <ContactForm 
             type="get-started"
             trigger={
               <button
                 type="button"
-                className="carbon-btn-primary h-12 px-6 text-sm font-normal cursor-pointer"
+                className="carbon-btn-primary h-12 px-6 text-sm font-normal cursor-pointer shadow-sm"
               >
                 <span>Start your campaign</span>
                 <ArrowRight className="w-4 h-4 ml-3" />
@@ -65,20 +65,20 @@ const Hero = () => {
           <button
             onClick={() => navigate('/resources')}
             type="button"
-            className="carbon-btn-tertiary h-12 px-6 text-sm font-normal cursor-pointer"
+            className="carbon-btn-tertiary h-12 px-6 text-sm font-normal cursor-pointer bg-white"
           >
             <span>Explore data methodology</span>
             <ChevronRight className="w-4 h-4 ml-2" />
           </button>
         </div>
 
-        {/* Carbon 4-Column Stat Tile Grid (0px corners, 1px hairlines) */}
-        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-0 border border-[#e0e0e0] bg-white/95 backdrop-blur-sm">
+        {/* 4-Column Stat Tile Grid */}
+        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-0 border border-[#e0e0e0] bg-white shadow-sm">
           <div className="p-6 border-r border-b md:border-b-0 border-[#e0e0e0] hover:bg-[#f4f4f4] transition-colors">
             <div className="text-3xl lg:text-4xl font-light text-[#161616] tracking-tight">
               3.8M+
             </div>
-            <div className="text-xs text-[#525252] tracking-[0.32px] mt-1">
+            <div className="text-xs text-[#525252] tracking-[0.32px] mt-1 font-normal">
               Global Verified Companies
             </div>
           </div>
@@ -87,16 +87,16 @@ const Hero = () => {
             <div className="text-3xl lg:text-4xl font-light text-[#161616] tracking-tight">
               42M+
             </div>
-            <div className="text-xs text-[#525252] tracking-[0.32px] mt-1">
+            <div className="text-xs text-[#525252] tracking-[0.32px] mt-1 font-normal">
               Active Decision Makers
             </div>
           </div>
           
           <div className="p-6 border-r border-[#e0e0e0] hover:bg-[#f4f4f4] transition-colors">
-            <div className="text-3xl lg:text-4xl font-light text-[#161616] tracking-tight">
+            <div className="text-3xl lg:text-4xl font-light text-[#161616] tracking-tight font-normal">
               99.4%
             </div>
-            <div className="text-xs text-[#525252] tracking-[0.32px] mt-1">
+            <div className="text-xs text-[#525252] tracking-[0.32px] mt-1 font-normal">
               Deterministic ICP Match
             </div>
           </div>
@@ -105,7 +105,7 @@ const Hero = () => {
             <div className="text-3xl lg:text-4xl font-light text-[#161616] tracking-tight">
               12+
             </div>
-            <div className="text-xs text-[#525252] tracking-[0.32px] mt-1">
+            <div className="text-xs text-[#525252] tracking-[0.32px] mt-1 font-normal">
               Enterprise Verticals
             </div>
           </div>

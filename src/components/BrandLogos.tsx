@@ -140,16 +140,16 @@ const brandLogos: BrandItem[] = [
 
 const BrandLogos = () => {
   return (
-    <section className="py-12 bg-[#f4f4f4] border-b border-[#e0e0e0] relative overflow-hidden">
+    <section className="py-14 bg-gradient-to-b from-[#dbe8f5] via-[#f3ede4] to-[#ede3d4] border-b border-[#e0d6c5] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Carbon Eyebrow + Section Headline */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-[#e0e0e0]">
+        {/* Eyebrow + Section Headline */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-[#e0d6c5]">
           <div>
-            <span className="carbon-eyebrow block mb-1">
+            <span className="carbon-eyebrow block mb-1 text-[#525252]">
               Enterprise customer ecosystem
             </span>
-            <h2 className="text-xl md:text-2xl font-light text-[#161616] tracking-tight">
+            <h2 className="text-xl md:text-2xl font-medium text-[#161616] tracking-tight">
               Trusted by global revenue and demand marketing teams
             </h2>
           </div>
@@ -170,7 +170,7 @@ const BrandLogos = () => {
             {[...brandLogos, ...brandLogos].map((brand, index) => (
               <div 
                 key={`${brand.name}-${index}`} 
-                className="carbon-logo-tile h-16 w-44 bg-white border border-[#e0e0e0] rounded-none px-5 py-3 flex items-center justify-center transition-all hover:border-[#161616] hover:bg-white cursor-pointer group shadow-none"
+                className="h-16 w-44 bg-white border border-[#e0e0e0] rounded-none px-5 py-3 flex items-center justify-center transition-all hover:border-[#161616] hover:bg-white hover:shadow-md cursor-pointer group shadow-2xs"
                 title={brand.name}
               >
                 <div className="flex items-center justify-center transition-transform group-hover:scale-105 duration-200">

@@ -10,15 +10,13 @@ export const HeroVideoBackground: React.FC = () => {
       videoRef.current.playsInline = true;
       videoRef.current.setAttribute('playsinline', 'true');
       videoRef.current.setAttribute('webkit-playsinline', 'true');
-      videoRef.current.play().catch(() => {
-        // Autoplay policy fallback
-      });
+      videoRef.current.play().catch(() => {});
     }
   }, []);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-white">
-      {/* High-Opacity Video Element */}
+    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-[#edf2f7]">
+      {/* High-Fidelity Video Layer */}
       <video
         ref={videoRef}
         src="/assets/madisonlogic-hero.mp4"
@@ -28,13 +26,13 @@ export const HeroVideoBackground: React.FC = () => {
         muted
         playsInline
         preload="auto"
-        className="w-full h-full object-cover object-right lg:object-center opacity-85 filter brightness-105 contrast-110"
+        className="w-full h-full object-cover object-right lg:object-center opacity-85 filter brightness-105 contrast-105"
       />
 
-      {/* Gentle Left Gradient Wash to keep text legible while letting video shine through */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-white/20 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#edf5ff]/40 via-transparent to-white/80 pointer-events-none" />
+      {/* Gentle Platinum Scrim */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#f8fafc]/95 via-[#f8fafc]/75 to-transparent w-full lg:w-4/5 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#f1f5f9] via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc]/70 via-transparent to-[#f1f5f9] pointer-events-none" />
     </div>
   );
 };

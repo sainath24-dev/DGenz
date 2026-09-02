@@ -252,6 +252,7 @@ const Navigation = () => {
                     <Link
                       key={child.href}
                       to={child.href}
+                      onClick={() => setMobileMenuOpen(false)}
                       className="block py-2 text-sm text-[#161616] hover:text-[#0f62fe] transition-colors"
                     >
                       <div className="font-medium">{child.title}</div>

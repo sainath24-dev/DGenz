@@ -6,18 +6,18 @@ export const ABMLeadership = () => {
   const adFeatures = [
     {
       icon: Target,
-      title: 'Target in-market accounts',
-      description: 'Leverage multi-source intent data to isolate active buying groups before competitors.'
+      title: 'Buying Group Precision',
+      description: 'Zero waste by serving impressions solely to verified decision-makers.'
     },
     {
       icon: TrendingUp,
-      title: 'Full-funnel influence',
-      description: 'Deploy coordinated display touches supporting every milestone from awareness to contract.'
+      title: 'Intent-Triggered Activation',
+      description: 'Automatically trigger ad flights when accounts show research spikes.'
     },
     {
       icon: BarChart3,
-      title: 'Real-time optimization',
-      description: 'Continuous algorithmic bid adjustment and creative testing to maximize pipeline velocity.'
+      title: 'Full-Funnel Measurement',
+      description: 'Direct pipeline attribution and account engagement lift analytics.'
     }
   ];
 
@@ -37,7 +37,7 @@ export const ABMLeadership = () => {
       benefits: ['Multi-source intent correlation', '99.4% precision ICP match', 'Buying group member mapping']
     },
     {
-      icon: TrendingUp,
+      icon: Monitor,
       title: 'Precision Account-Based Advertising', 
       description: 'Deliver targeted media to buying committees on high-authority business networks.',
       category: 'Targeted Media',
@@ -60,11 +60,11 @@ export const ABMLeadership = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[#f4f4f4] border-b border-[#e0e0e0] text-[#161616]">
+    <section className="py-20 lg:py-28 bg-gradient-to-b from-[#bfe3e5] via-[#cbdcf7] to-[#b8d1f7] border-b border-[#a0beee] text-[#161616]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
         
         {/* ================= PART 1: ABM DISPLAY ADVERTISING SHOWCASE ================= */}
-        <div className="border border-[#e0e0e0] bg-white p-8 md:p-12">
+        <div className="border border-[#e0e0e0] bg-white p-8 md:p-12 shadow-sm">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
             {/* Left Column: 7 cols */}
@@ -159,7 +159,7 @@ export const ABMLeadership = () => {
         {/* ================= PART 2: ENTERPRISE ROI & CATEGORY LEADERSHIP ================= */}
         <div>
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-[#e0e0e0]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-[#a0beee]">
             <div>
               <span className="carbon-eyebrow block mb-1">
                 Category leadership & outcomes
@@ -174,7 +174,7 @@ export const ABMLeadership = () => {
           </div>
 
           {/* 4 Impact Stat Tiles */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border border-[#e0e0e0] bg-white mb-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border border-[#e0e0e0] bg-white mb-10 shadow-sm">
             {stats.map((stat, index) => (
               <div 
                 key={index} 
@@ -202,10 +202,10 @@ export const ABMLeadership = () => {
               return (
                 <div 
                   key={index} 
-                  className="carbon-feature-card flex flex-col justify-between"
+                  className="carbon-feature-card flex flex-col justify-between group bg-white border border-[#e0e0e0] hover:border-[#161616] transition-colors"
                 >
                   <div>
-                    <div className="text-[11px] font-mono text-[#525252] mb-3">
+                    <div className="text-[11px] font-mono text-[#8c8c8c] mb-3">
                       {achievement.category}
                     </div>
 

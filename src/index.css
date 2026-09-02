@@ -122,7 +122,7 @@
     min-height: 100vh;
   }
 
-  /* Headlines adhere strictly to IBM Carbon light display type */
+  /* Headlines adhere to IBM Carbon crisp medium display type */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'IBM Plex Sans', sans-serif;
     color: #161616;
@@ -130,17 +130,17 @@
   }
 
   h1 {
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: -0.5px;
   }
 
   h2 {
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: -0.4px;
   }
 
   h3 {
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0;
   }
 
@@ -222,13 +222,13 @@
 }
 
 /* ==========================================================================
-   CARBON TYPOGRAPHY HIERARCHY
+   CARBON TYPOGRAPHY TOKENS (IBM Plex Sans)
    ========================================================================== */
 
 .carbon-display-xl {
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: clamp(36px, 5.5vw, 76px);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.17;
   letter-spacing: -0.5px;
   color: #161616;
@@ -237,7 +237,7 @@
 .carbon-display-lg {
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: clamp(30px, 4.2vw, 60px);
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.17;
   letter-spacing: -0.4px;
   color: #161616;
@@ -246,16 +246,16 @@
 .carbon-display-md {
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: clamp(24px, 3.2vw, 42px);
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.20;
-  letter-spacing: 0;
+  letter-spacing: -0.2px;
   color: #161616;
 }
 
 .carbon-headline {
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: clamp(22px, 2.5vw, 32px);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.25;
   letter-spacing: 0;
   color: #161616;
@@ -264,7 +264,7 @@
 .carbon-card-title {
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.33;
   letter-spacing: 0;
   color: #161616;
