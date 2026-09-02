@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { 
   Globe, 
   Building2, 
@@ -21,7 +20,6 @@ import {
 } from 'lucide-react';
 import { InteractiveGlobe } from '@/components/ui/InteractiveGlobe';
 import { WorldMap } from '@/components/ui/world-map';
-import { Meteors } from '@/components/ui/Meteors';
 import ContactForm from '@/components/ContactForm';
 
 type RegionKey = 'all' | 'na' | 'emea' | 'apac' | 'latam';
@@ -54,12 +52,12 @@ const regions: Record<RegionKey, RegionData> = {
     deliverySLA: '< 24 Hours',
     hubs: ['New York', 'San Francisco', 'London', 'Frankfurt', 'Singapore', 'Tokyo', 'Sydney', 'São Paulo'],
     dots: [
-      { start: { lat: 40.7128, lng: -74.006 }, end: { lat: 51.5074, lng: -0.1278 } }, // NY -> London
-      { start: { lat: 37.7749, lng: -122.4194 }, end: { lat: 35.6762, lng: 139.6503 } }, // SF -> Tokyo
-      { start: { lat: 51.5074, lng: -0.1278 }, end: { lat: 1.3521, lng: 103.8198 } }, // London -> Singapore
-      { start: { lat: 1.3521, lng: 103.8198 }, end: { lat: -33.8688, lng: 151.2093 } }, // Singapore -> Sydney
-      { start: { lat: 50.1109, lng: 8.6821 }, end: { lat: 25.2048, lng: 55.2708 } }, // Frankfurt -> Dubai
-      { start: { lat: 40.7128, lng: -74.006 }, end: { lat: -23.5505, lng: -46.6333 } }, // NY -> São Paulo
+      { start: { lat: 40.7128, lng: -74.006 }, end: { lat: 51.5074, lng: -0.1278 } },
+      { start: { lat: 37.7749, lng: -122.4194 }, end: { lat: 35.6762, lng: 139.6503 } },
+      { start: { lat: 51.5074, lng: -0.1278 }, end: { lat: 1.3521, lng: 103.8198 } },
+      { start: { lat: 1.3521, lng: 103.8198 }, end: { lat: -33.8688, lng: 151.2093 } },
+      { start: { lat: 50.1109, lng: 8.6821 }, end: { lat: 25.2048, lng: 55.2708 } },
+      { start: { lat: 40.7128, lng: -74.006 }, end: { lat: -23.5505, lng: -46.6333 } },
     ]
   },
   na: {
@@ -73,9 +71,9 @@ const regions: Record<RegionKey, RegionData> = {
     deliverySLA: '< 12 Hours',
     hubs: ['New York', 'San Francisco', 'Chicago', 'Austin', 'Toronto', 'Seattle'],
     dots: [
-      { start: { lat: 40.7128, lng: -74.006 }, end: { lat: 37.7749, lng: -122.4194 } }, // NY -> SF
-      { start: { lat: 41.8781, lng: -87.6298 }, end: { lat: 30.2672, lng: -97.7431 } }, // Chicago -> Austin
-      { start: { lat: 47.6062, lng: -122.3321 }, end: { lat: 43.6532, lng: -79.3832 } }, // Seattle -> Toronto
+      { start: { lat: 40.7128, lng: -74.006 }, end: { lat: 37.7749, lng: -122.4194 } },
+      { start: { lat: 41.8781, lng: -87.6298 }, end: { lat: 30.2672, lng: -97.7431 } },
+      { start: { lat: 47.6062, lng: -122.3321 }, end: { lat: 43.6532, lng: -79.3832 } },
       { start: { lat: 37.7749, lng: -122.4194 }, end: { lat: 40.7128, lng: -74.006 } }
     ]
   },
@@ -90,66 +88,62 @@ const regions: Record<RegionKey, RegionData> = {
     deliverySLA: '< 24 Hours',
     hubs: ['London', 'Frankfurt', 'Paris', 'Amsterdam', 'Dubai', 'Stockholm'],
     dots: [
-      { start: { lat: 51.5074, lng: -0.1278 }, end: { lat: 50.1109, lng: 8.6821 } }, // London -> Frankfurt
-      { start: { lat: 50.1109, lng: 8.6821 }, end: { lat: 48.8566, lng: 2.3522 } }, // Frankfurt -> Paris
-      { start: { lat: 51.5074, lng: -0.1278 }, end: { lat: 52.3676, lng: 4.9041 } }, // London -> Amsterdam
-      { start: { lat: 50.1109, lng: 8.6821 }, end: { lat: 25.2048, lng: 55.2708 } }, // Frankfurt -> Dubai
-      { start: { lat: 51.5074, lng: -0.1278 }, end: { lat: 59.3293, lng: 18.0686 } } // London -> Stockholm
+      { start: { lat: 51.5074, lng: -0.1278 }, end: { lat: 50.1109, lng: 8.6821 } },
+      { start: { lat: 50.1109, lng: 8.6821 }, end: { lat: 48.8566, lng: 2.3522 } },
+      { start: { lat: 51.5074, lng: -0.1278 }, end: { lat: 52.3676, lng: 4.9041 } },
+      { start: { lat: 50.1109, lng: 8.6821 }, end: { lat: 25.2048, lng: 55.2708 } },
+      { start: { lat: 51.5074, lng: -0.1278 }, end: { lat: 59.3293, lng: 18.0686 } }
     ]
   },
   apac: {
     name: 'Asia-Pacific',
-    badge: '8.6M Contacts Available',
-    companies: '750K+',
-    professionals: '8.6M+',
-    countries: '18 Countries (Singapore, Japan, ANZ, India)',
-    accuracy: '98.8%',
+    badge: '7.8M Contacts Available',
+    companies: '720K+',
+    professionals: '7.8M+',
+    countries: '14 Countries (ANZ, Singapore, Japan, India)',
+    accuracy: '98.9%',
     directDial: '78.5%',
     deliverySLA: '< 24 Hours',
-    hubs: ['Singapore', 'Tokyo', 'Sydney', 'Mumbai', 'Seoul', 'Melbourne'],
+    hubs: ['Singapore', 'Tokyo', 'Sydney', 'Mumbai', 'Hong Kong'],
     dots: [
-      { start: { lat: 1.3521, lng: 103.8198 }, end: { lat: 35.6762, lng: 139.6503 } }, // Singapore -> Tokyo
-      { start: { lat: 1.3521, lng: 103.8198 }, end: { lat: -33.8688, lng: 151.2093 } }, // Singapore -> Sydney
-      { start: { lat: 19.0760, lng: 72.8777 }, end: { lat: 1.3521, lng: 103.8198 } }, // Mumbai -> Singapore
-      { start: { lat: 35.6762, lng: 139.6503 }, end: { lat: 37.5665, lng: 126.9780 } } // Tokyo -> Seoul
+      { start: { lat: 1.3521, lng: 103.8198 }, end: { lat: 35.6762, lng: 139.6503 } },
+      { start: { lat: 1.3521, lng: 103.8198 }, end: { lat: -33.8688, lng: 151.2093 } },
+      { start: { lat: 1.3521, lng: 103.8198 }, end: { lat: 19.0760, lng: 72.8777 } }
     ]
   },
   latam: {
     name: 'Latin America',
-    badge: '2.4M Contacts Available',
-    companies: '220K+',
-    professionals: '2.4M+',
-    countries: '12 Countries (Brazil, Mexico, Colombia)',
-    accuracy: '98.5%',
+    badge: '2.2M Contacts Available',
+    companies: '210K+',
+    professionals: '2.2M+',
+    countries: '8 Countries (Brazil, Mexico, Colombia, Chile)',
+    accuracy: '98.4%',
     directDial: '74.2%',
     deliverySLA: '< 48 Hours',
     hubs: ['São Paulo', 'Mexico City', 'Bogotá', 'Santiago'],
     dots: [
-      { start: { lat: 19.4326, lng: -99.1332 }, end: { lat: -23.5505, lng: -46.6333 } }, // Mexico City -> São Paulo
-      { start: { lat: 4.7110, lng: -74.0721 }, end: { lat: -33.4489, lng: -70.6693 } }, // Bogotá -> Santiago
-      { start: { lat: -23.5505, lng: -46.6333 }, end: { lat: -34.6037, lng: -58.3816 } } // São Paulo -> Buenos Aires
+      { start: { lat: -23.5505, lng: -46.6333 }, end: { lat: 19.4326, lng: -99.1332 } },
+      { start: { lat: -23.5505, lng: -46.6333 }, end: { lat: 4.7110, lng: -74.0721 } }
     ]
   }
 };
 
-// Row 1 Verticals (Loops Left)
 const industriesRow1 = [
-  { name: 'Technology & Cloud', icon: Cpu, professionals: '13.2M', companies: '178K', color: 'text-indigo-600', bg: 'bg-indigo-50 border-indigo-200/60' },
-  { name: 'Manufacturing & Industrial', icon: Factory, professionals: '8.9M', companies: '1.9M', color: 'text-sky-600', bg: 'bg-sky-50 border-sky-200/60' },
-  { name: 'IT & Enterprise Services', icon: Briefcase, professionals: '5.2M', companies: '790K', color: 'text-purple-600', bg: 'bg-purple-50 border-purple-200/60' },
-  { name: 'BFSI & Fintech', icon: Landmark, professionals: '5.1M', companies: '200K', color: 'text-emerald-600', bg: 'bg-emerald-50 border-emerald-200/60' },
-  { name: 'Telecommunications', icon: Radio, professionals: '3.4M', companies: '112K', color: 'text-cyan-600', bg: 'bg-cyan-50 border-cyan-200/60' },
-  { name: 'Energy & Utilities', icon: Flame, professionals: '1.8M', companies: '95K', color: 'text-amber-600', bg: 'bg-amber-50 border-amber-200/60' }
+  { name: 'Technology & Cloud', icon: Cpu, professionals: '8.4M', companies: '620K' },
+  { name: 'Financial Services', icon: Landmark, professionals: '5.2M', companies: '390K' },
+  { name: 'Healthcare & Pharma', icon: HeartPulse, professionals: '4.6M', companies: '340K' },
+  { name: 'Industrial & Manufacturing', icon: Factory, professionals: '3.8M', companies: '290K' },
+  { name: 'Professional Services', icon: Briefcase, professionals: '3.4M', companies: '260K' },
+  { name: 'Energy & Utilities', icon: Flame, professionals: '1.9M', companies: '180K' }
 ];
 
-// Row 2 Verticals (Loops Right in Opposite Direction)
 const industriesRow2 = [
-  { name: 'Construction & Real Estate', icon: HardHat, professionals: '2.7M', companies: '386K', color: 'text-amber-600', bg: 'bg-amber-50 border-amber-200/60' },
-  { name: 'Media & Communications', icon: Tv, professionals: '2.4M', companies: '164K', color: 'text-rose-600', bg: 'bg-rose-50 border-rose-200/60' },
-  { name: 'Healthcare & Pharma', icon: HeartPulse, professionals: '1.6M', companies: '187K', color: 'text-teal-600', bg: 'bg-teal-50 border-teal-200/60' },
-  { name: 'Logistics & Supply Chain', icon: Truck, professionals: '1.0M', companies: '143K', color: 'text-blue-600', bg: 'bg-blue-50 border-blue-200/60' },
-  { name: 'Hospitality & Retail', icon: Building2, professionals: '1.3M', companies: '126K', color: 'text-indigo-600', bg: 'bg-indigo-50 border-indigo-200/60' },
-  { name: 'Metals & Mining', icon: Layers, professionals: '1.3M', companies: '87K', color: 'text-slate-600', bg: 'bg-slate-100 border-slate-200' }
+  { name: 'Telecom & Networks', icon: Radio, professionals: '1.8M', companies: '160K' },
+  { name: 'Engineering & Construction', icon: HardHat, professionals: '1.5M', companies: '150K' },
+  { name: 'Media & Communications', icon: Tv, professionals: '1.4M', companies: '130K' },
+  { name: 'Logistics & Supply Chain', icon: Truck, professionals: '1.2M', companies: '140K' },
+  { name: 'Hospitality & Retail', icon: Building2, professionals: '1.1M', companies: '120K' },
+  { name: 'Metals & Mining', icon: Layers, professionals: '1.0M', companies: '90K' }
 ];
 
 export function WorldMapDemo() {
@@ -159,21 +153,26 @@ export function WorldMapDemo() {
   const is3D = selectedRegion === 'all';
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white via-slate-50 to-white border-b border-slate-200/80 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-20 lg:py-28 bg-white border-b border-[#e0e0e0] text-[#161616]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-5">
-            Global Reach, <span className="text-indigo-600">Local Authority</span>
-          </h2>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            Connect with 42M+ verified decision-makers across 100+ countries. Select any region below to inspect live audience availability and regional connection routes.
+        {/* Carbon Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-[#e0e0e0]">
+          <div>
+            <span className="carbon-eyebrow block mb-1">
+              Deterministic global coverage
+            </span>
+            <h2 className="carbon-display-md text-[#161616]">
+              Global footprint, verified local accuracy
+            </h2>
+          </div>
+          <p className="carbon-body-sm text-[#525252] max-w-md mt-2 md:mt-0">
+            Query 42M+ verified decision-makers across 100+ countries with deterministic verification and SLA guarantees.
           </p>
         </div>
 
-        {/* Region Selector Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-3 mb-8 sm:mb-10">
+        {/* Carbon Tab Strip for Region Selection */}
+        <div className="flex flex-wrap items-center justify-start border-b border-[#e0e0e0] mb-8 overflow-x-auto">
           {(Object.keys(regions) as RegionKey[]).map((key) => {
             const isActive = selectedRegion === key;
             const region = regions[key];
@@ -183,93 +182,65 @@ export function WorldMapDemo() {
                 key={key}
                 type="button"
                 onClick={() => setSelectedRegion(key)}
-                className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer border ${
-                  isActive
-                    ? 'bg-slate-900 text-white border-slate-900 shadow-md scale-102'
-                    : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
-                }`}
+                className={`carbon-tab-item ${isActive ? 'active' : ''}`}
               >
                 <span>{region.name}</span>
-                <span className={`ml-1.5 sm:ml-2 text-[10px] sm:text-xs py-0.5 px-1.5 rounded-md ${
-                  isActive ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-500'
-                }`}>
-                  {region.professionals}
+                <span className="ml-2 text-xs opacity-75 font-mono">
+                  ({region.professionals})
                 </span>
               </button>
             );
           })}
         </div>
 
-        {/* Master Screen Container */}
+        {/* Master Screen Container (Flat 0px Box with 1px Hairlines) */}
         <div 
-          className={`rounded-2xl sm:rounded-3xl border transition-colors duration-300 p-4 sm:p-10 mb-12 sm:mb-16 relative overflow-hidden ${
+          className={`border border-[#e0e0e0] p-6 lg:p-10 mb-16 relative overflow-hidden transition-colors ${
             is3D 
-              ? 'bg-slate-900 border-slate-800 shadow-2xl text-white' 
-              : 'bg-white border-slate-200/90 shadow-xl text-slate-900'
+              ? 'bg-[#161616] text-white border-[#262626]' 
+              : 'bg-[#ffffff] text-[#161616]'
           }`}
         >
-          
-          {/* Background Meteoroids (Visible in 3D Mode) */}
-          <div className={`absolute inset-0 transition-opacity duration-300 pointer-events-none ${is3D ? 'opacity-100' : 'opacity-0'}`}>
-            <Meteors number={24} />
-          </div>
-
-          {/* Screen Top Status Bar */}
-          <div className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b mb-8 relative z-10 transition-colors duration-300 ${
-            is3D ? 'border-slate-800' : 'border-slate-100'
+          {/* Status Header */}
+          <div className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b mb-6 ${
+            is3D ? 'border-[#262626]' : 'border-[#e0e0e0]'
           }`}>
             <div>
-              <div className="flex items-center gap-2 mb-1.5">
-                <span className={`inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-0.5 rounded-md border ${
+              <div className="flex items-center gap-2 mb-1">
+                <span className={`text-xs font-mono px-2 py-0.5 border ${
                   is3D 
-                    ? 'bg-sky-500/10 text-sky-400 border-sky-500/30' 
-                    : 'bg-indigo-50 text-indigo-700 border-indigo-200/80'
+                    ? 'bg-[#262626] text-[#0f62fe] border-[#262626]' 
+                    : 'bg-[#f4f4f4] text-[#0f62fe] border-[#e0e0e0]'
                 }`}>
-                  <Globe className="w-3.5 h-3.5" />
                   {currentData.badge}
                 </span>
-                <span className={`text-xs ${is3D ? 'text-slate-500' : 'text-slate-400'}`}>•</span>
-                <span className={`text-xs font-semibold ${is3D ? 'text-slate-400' : 'text-slate-600'}`}>
-                  {currentData.countries}
-                </span>
+                <span className="text-xs text-[#8c8c8c]">{currentData.countries}</span>
               </div>
-              <h3 className={`text-2xl sm:text-3xl font-extrabold tracking-tight ${
-                is3D ? 'text-white' : 'text-slate-900'
-              }`}>
-                {currentData.name} Audience Availability
+              <h3 className={`text-2xl font-light tracking-tight ${is3D ? 'text-white' : 'text-[#161616]'}`}>
+                {currentData.name} Audience Telemetry
               </h3>
             </div>
 
             {/* Hubs Badges */}
-            <div className="flex items-center flex-wrap gap-1.5">
-              <span className={`text-xs font-bold mr-1 flex items-center gap-1 ${
-                is3D ? 'text-slate-400' : 'text-slate-500'
-              }`}>
-                <MapPin className={`w-3.5 h-3.5 ${is3D ? 'text-sky-400' : 'text-indigo-600'}`} />
-                Active Hubs:
+            <div className="flex items-center flex-wrap gap-1.5 text-xs">
+              <span className={`mr-1 flex items-center gap-1 ${is3D ? 'text-[#8c8c8c]' : 'text-[#525252]'}`}>
+                <MapPin className="w-3.5 h-3.5 text-[#0f62fe]" />
+                Regional Hubs:
               </span>
               {currentData.hubs.slice(0, 4).map((hub) => (
-                <span key={hub} className={`px-2.5 py-1 rounded-lg text-xs font-medium border ${
+                <span key={hub} className={`px-2 py-0.5 border ${
                   is3D 
-                    ? 'bg-slate-900 border-slate-800 text-slate-300' 
-                    : 'bg-slate-50 border-slate-200 text-slate-700'
+                    ? 'bg-[#262626] border-[#393939] text-[#c6c6c6]' 
+                    : 'bg-[#f4f4f4] border-[#e0e0e0] text-[#525252]'
                 }`}>
                   {hub}
                 </span>
               ))}
-              {currentData.hubs.length > 4 && (
-                <span className={`px-2 py-1 rounded-lg text-xs font-semibold ${
-                  is3D ? 'bg-slate-800 text-slate-400' : 'bg-slate-100 text-slate-600'
-                }`}>
-                  +{currentData.hubs.length - 4} more
-                </span>
-              )}
             </div>
           </div>
 
-          {/* Instant 3D ➔ 2D Canvas Layering (0ms delay) */}
-          <div className="relative w-full h-[280px] sm:h-[380px] md:h-[480px] z-10">
-            
+          {/* Map Display Frame */}
+          <div className="relative w-full h-[280px] sm:h-[380px] md:h-[440px]">
             {/* 3D Earth Globe Layer */}
             <div className={`absolute inset-0 transition-opacity duration-300 ${
               is3D ? 'opacity-100 pointer-events-auto z-10' : 'opacity-0 pointer-events-none z-0'
@@ -283,7 +254,7 @@ export function WorldMapDemo() {
             }`}>
               <WorldMap
                 dots={currentData.dots}
-                lineColor="#2563eb"
+                lineColor="#0f62fe"
                 variant="light"
               />
 
@@ -292,149 +263,141 @@ export function WorldMapDemo() {
                 <button
                   type="button"
                   onClick={() => setSelectedRegion('all')}
-                  className="px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 text-xs font-semibold transition-colors flex items-center gap-1.5 cursor-pointer shadow-md"
+                  className="carbon-btn-secondary text-xs py-2 px-3"
                 >
-                  <Globe className="w-3.5 h-3.5 text-indigo-600" />
-                  <span>Back to 3D Earth</span>
+                  <Globe className="w-3.5 h-3.5" />
+                  <span>Global Globe View</span>
                 </button>
               </div>
             </div>
-
           </div>
 
-          {/* 4 Bottom HUD Counters */}
-          <div className={`grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6 pt-4 sm:pt-6 border-t mt-4 sm:mt-6 relative z-10 transition-colors duration-300 ${
-            is3D ? 'border-slate-800/80' : 'border-slate-100'
+          {/* 4 Bottom Metric Counters */}
+          <div className={`grid grid-cols-2 lg:grid-cols-4 gap-0 border-t mt-6 pt-6 ${
+            is3D ? 'border-[#262626] divide-[#262626]' : 'border-[#e0e0e0] divide-[#e0e0e0]'
           }`}>
-            
-            <div className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border ${
-              is3D ? 'bg-slate-900/70 border-slate-800' : 'bg-slate-50 border-slate-200/80'
-            }`}>
-              <div className={`flex items-center gap-1.5 sm:gap-2 mb-1 text-[11px] sm:text-xs font-semibold ${is3D ? 'text-slate-400' : 'text-slate-500'}`}>
-                <Building2 className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${is3D ? 'text-indigo-400' : 'text-indigo-600'}`} />
-                <span className="truncate">Verified Accounts</span>
+            <div className="p-4">
+              <div className="text-xs text-[#8c8c8c] flex items-center gap-1.5 mb-1">
+                <Building2 className="w-3.5 h-3.5 text-[#0f62fe]" />
+                <span>Verified Accounts</span>
               </div>
-              <div className={`text-xl sm:text-2xl md:text-3xl font-black tracking-tight ${is3D ? 'text-white' : 'text-slate-900'}`}>
+              <div className={`text-2xl font-light ${is3D ? 'text-white' : 'text-[#161616]'}`}>
                 {currentData.companies}
               </div>
-              <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5 truncate">Enterprise & Mid-Market</div>
+              <div className="text-[11px] text-[#8c8c8c] mt-0.5">Enterprise & Mid-Market</div>
             </div>
 
-            <div className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border ${
-              is3D ? 'bg-slate-900/70 border-slate-800' : 'bg-slate-50 border-slate-200/80'
-            }`}>
-              <div className={`flex items-center gap-1.5 sm:gap-2 mb-1 text-[11px] sm:text-xs font-semibold ${is3D ? 'text-slate-400' : 'text-slate-500'}`}>
-                <Users className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${is3D ? 'text-sky-400' : 'text-sky-600'}`} />
-                <span className="truncate">Decision-Makers</span>
+            <div className="p-4 border-l">
+              <div className="text-xs text-[#8c8c8c] flex items-center gap-1.5 mb-1">
+                <Users className="w-3.5 h-3.5 text-[#0f62fe]" />
+                <span>Decision Makers</span>
               </div>
-              <div className={`text-xl sm:text-2xl md:text-3xl font-black tracking-tight ${is3D ? 'text-sky-400' : 'text-indigo-600'}`}>
+              <div className={`text-2xl font-light ${is3D ? 'text-white' : 'text-[#161616]'}`}>
                 {currentData.professionals}
               </div>
-              <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5 truncate">C-Suite, VP & Directors</div>
+              <div className="text-[11px] text-[#8c8c8c] mt-0.5">Buying Committee Leads</div>
             </div>
 
-            <div className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border ${
-              is3D ? 'bg-slate-900/70 border-slate-800' : 'bg-slate-50 border-slate-200/80'
-            }`}>
-              <div className={`flex items-center gap-1.5 sm:gap-2 mb-1 text-[11px] sm:text-xs font-semibold ${is3D ? 'text-slate-400' : 'text-slate-500'}`}>
-                <Layers className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${is3D ? 'text-purple-400' : 'text-purple-600'}`} />
-                <span className="truncate">Industry Verticals</span>
+            <div className="p-4 border-l">
+              <div className="text-xs text-[#8c8c8c] flex items-center gap-1.5 mb-1">
+                <Layers className="w-3.5 h-3.5 text-[#0f62fe]" />
+                <span>Industry Sectors</span>
               </div>
-              <div className={`text-xl sm:text-2xl md:text-3xl font-black tracking-tight ${is3D ? 'text-white' : 'text-slate-900'}`}>
-                12
+              <div className={`text-2xl font-light ${is3D ? 'text-white' : 'text-[#161616]'}`}>
+                12 Verticals
               </div>
-              <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5 truncate">Standardized NAICS/SIC</div>
+              <div className="text-[11px] text-[#8c8c8c] mt-0.5">Standardized Taxonomy</div>
             </div>
 
-            <div className={`p-3 sm:p-4 rounded-xl sm:rounded-2xl border ${
-              is3D ? 'bg-slate-900/70 border-slate-800' : 'bg-slate-50 border-slate-200/80'
-            }`}>
-              <div className={`flex items-center gap-1.5 sm:gap-2 mb-1 text-[11px] sm:text-xs font-semibold ${is3D ? 'text-slate-400' : 'text-slate-500'}`}>
-                <ShieldCheck className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${is3D ? 'text-emerald-400' : 'text-emerald-600'}`} />
-                <span className="truncate">Compliance</span>
+            <div className="p-4 border-l">
+              <div className="text-xs text-[#8c8c8c] flex items-center gap-1.5 mb-1">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#0f62fe]" />
+                <span>ICP Accuracy</span>
               </div>
-              <div className={`text-xl sm:text-2xl md:text-3xl font-black tracking-tight ${is3D ? 'text-emerald-400' : 'text-emerald-600'}`}>
-                100%
+              <div className={`text-2xl font-light text-[#0f62fe]`}>
+                {currentData.accuracy}
               </div>
-              <div className="text-[10px] sm:text-xs text-slate-500 mt-0.5 truncate">GDPR & CCPA Compliant</div>
+              <div className="text-[11px] text-[#8c8c8c] mt-0.5">Dual-Stage Verified</div>
             </div>
-
           </div>
-
         </div>
 
-        {/* Industry Verticals Intelligence Section: Dual Opposite Loop Marquees */}
+        {/* ================= INDUSTRY VERTICALS CONTINUOUS DUAL-LOOP MARQUEE ================= */}
         <div className="mb-20">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2">
-              Audience Breakdown
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              Deep Coverage Across Key Verticals
-            </h3>
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-[#e0e0e0]">
+            <div>
+              <span className="carbon-eyebrow block mb-1">
+                Taxonomy coverage
+              </span>
+              <h3 className="carbon-headline text-[#161616]">
+                Deep representation across core industry verticals
+              </h3>
+            </div>
+            <p className="text-xs text-[#525252] font-mono tracking-[0.32px] mt-2 md:mt-0">
+              12 ACTIVE ENTERPRISE VERTICALS
+            </p>
           </div>
 
-          {/* Masked Marquee Container with Smooth Edge Fades */}
+          {/* Masked Continuous Dual Marquee Container */}
           <div 
             className="relative w-full overflow-hidden py-2 space-y-4"
             style={{
-              maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-              WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+              maskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)'
             }}
           >
-            
-            {/* Loop Row 1: Moving Left */}
-            <div className="animate-marquee-left flex gap-5 py-1">
+            {/* Loop Row 1: Scrolling Left */}
+            <div className="industry-marquee-left flex gap-4 w-max py-1">
               {[...industriesRow1, ...industriesRow1, ...industriesRow1].map((ind, idx) => {
                 const IndIcon = ind.icon;
                 return (
                   <div
                     key={`row1-${ind.name}-${idx}`}
-                    className="w-72 sm:w-80 flex-shrink-0 p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-slate-300 hover:shadow-md transition-all duration-300 group cursor-default"
+                    className="w-72 sm:w-80 flex-shrink-0 p-5 bg-[#f4f4f4] border border-[#e0e0e0] hover:bg-white hover:border-[#161616] transition-all cursor-pointer group shadow-none"
                   >
                     <div className="flex items-center justify-between gap-3 mb-3">
-                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center border ${ind.bg}`}>
-                        <IndIcon className={`w-4 h-4 ${ind.color}`} />
+                      <div className="w-8 h-8 bg-white border border-[#e0e0e0] flex items-center justify-center text-[#0f62fe] group-hover:bg-[#0f62fe] group-hover:text-white group-hover:border-[#0f62fe] transition-colors">
+                        <IndIcon className="w-4 h-4" />
                       </div>
-                      <span className="text-xs font-bold text-slate-500">{ind.companies} Accounts</span>
+                      <span className="text-xs font-mono text-[#525252]">{ind.companies} Accounts</span>
                     </div>
 
-                    <h4 className="text-sm font-bold text-slate-900 mb-1 group-hover:text-indigo-600 transition-colors">
+                    <h4 className="text-sm font-medium text-[#161616] mb-1 group-hover:text-[#0f62fe] transition-colors">
                       {ind.name}
                     </h4>
 
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="text-lg font-extrabold text-slate-900">{ind.professionals}</span>
-                      <span className="text-xs text-slate-500 font-medium">verified contacts</span>
+                    <div className="flex items-baseline gap-1.5 pt-2 border-t border-[#e0e0e0] mt-2">
+                      <span className="text-base font-semibold text-[#161616]">{ind.professionals}</span>
+                      <span className="text-xs text-[#525252]">verified decision-makers</span>
                     </div>
                   </div>
                 );
               })}
             </div>
 
-            {/* Loop Row 2: Moving in Opposite Direction (Right) */}
-            <div className="animate-marquee-right flex gap-5 py-1">
+            {/* Loop Row 2: Scrolling in Opposite Direction (Right) */}
+            <div className="industry-marquee-right flex gap-4 w-max py-1">
               {[...industriesRow2, ...industriesRow2, ...industriesRow2].map((ind, idx) => {
                 const IndIcon = ind.icon;
                 return (
                   <div
                     key={`row2-${ind.name}-${idx}`}
-                    className="w-72 sm:w-80 flex-shrink-0 p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-slate-300 hover:shadow-md transition-all duration-300 group cursor-default"
+                    className="w-72 sm:w-80 flex-shrink-0 p-5 bg-[#f4f4f4] border border-[#e0e0e0] hover:bg-white hover:border-[#161616] transition-all cursor-pointer group shadow-none"
                   >
                     <div className="flex items-center justify-between gap-3 mb-3">
-                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center border ${ind.bg}`}>
-                        <IndIcon className={`w-4 h-4 ${ind.color}`} />
+                      <div className="w-8 h-8 bg-white border border-[#e0e0e0] flex items-center justify-center text-[#0f62fe] group-hover:bg-[#0f62fe] group-hover:text-white group-hover:border-[#0f62fe] transition-colors">
+                        <IndIcon className="w-4 h-4" />
                       </div>
-                      <span className="text-xs font-bold text-slate-500">{ind.companies} Accounts</span>
+                      <span className="text-xs font-mono text-[#525252]">{ind.companies} Accounts</span>
                     </div>
 
-                    <h4 className="text-sm font-bold text-slate-900 mb-1 group-hover:text-indigo-600 transition-colors">
+                    <h4 className="text-sm font-medium text-[#161616] mb-1 group-hover:text-[#0f62fe] transition-colors">
                       {ind.name}
                     </h4>
 
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="text-lg font-extrabold text-slate-900">{ind.professionals}</span>
-                      <span className="text-xs text-slate-500 font-medium">verified contacts</span>
+                    <div className="flex items-baseline gap-1.5 pt-2 border-t border-[#e0e0e0] mt-2">
+                      <span className="text-base font-semibold text-[#161616]">{ind.professionals}</span>
+                      <span className="text-xs text-[#525252]">verified decision-makers</span>
                     </div>
                   </div>
                 );
@@ -444,31 +407,65 @@ export function WorldMapDemo() {
           </div>
         </div>
 
-        {/* Bottom Call to Action Card */}
-        <div className="max-w-4xl mx-auto text-center p-8 sm:p-10 rounded-3xl bg-slate-900 text-white shadow-xl">
-          <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-3">
-            Looking for Custom Audience Counts?
-          </h3>
-          <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-6 leading-relaxed">
-            Request a free custom Total Addressable Market (TAM) analysis filtered by your exact titles, regions, and tech stack criteria.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <ContactForm
-              type="get-started"
-              trigger={
-                <button
-                  type="button"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white text-slate-900 font-bold text-sm hover:bg-slate-100 transition-colors shadow-sm cursor-pointer"
-                >
-                  <span>Request Custom TAM Count</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-              }
-            />
+        {/* Custom TAM Request Card */}
+        <div className="border border-[#e0e0e0] bg-[#f4f4f4] p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div>
+            <span className="carbon-eyebrow block mb-1">
+              Custom market sizing
+            </span>
+            <h3 className="text-2xl font-light text-[#161616] mb-2">
+              Request a custom Total Addressable Market (TAM) count
+            </h3>
+            <p className="text-xs text-[#525252] max-w-xl">
+              Receive a comprehensive TAM audit segmented by company headcount, revenue tiers, tech install-base, and geographic parameters.
+            </p>
           </div>
+          <ContactForm
+            type="demo"
+            trigger={
+              <button
+                type="button"
+                className="carbon-btn-primary shrink-0"
+              >
+                <span>Request TAM Audit</span>
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </button>
+            }
+          />
         </div>
 
       </div>
+
+      <style>{`
+        @keyframes industryMarqueeLeft {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-33.333%);
+          }
+        }
+        @keyframes industryMarqueeRight {
+          0% {
+            transform: translateX(-33.333%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+        .industry-marquee-left {
+          animation: industryMarqueeLeft 30s linear infinite;
+          will-change: transform;
+        }
+        .industry-marquee-right {
+          animation: industryMarqueeRight 30s linear infinite;
+          will-change: transform;
+        }
+        .industry-marquee-left:hover,
+        .industry-marquee-right:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 }

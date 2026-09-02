@@ -1,285 +1,234 @@
-import { useMemo } from 'react';
-import { Target, TrendingUp, BarChart3, Users, CheckCircle2, Monitor, ArrowRight, Award, Eye } from 'lucide-react';
+import { Target, TrendingUp, BarChart3, Users, Check, Monitor, ArrowRight, Award } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Hyperspeed } from '@/components/ui/Hyperspeed';
 import realMarketingPhoto from '/assets/img2.jpg';
 
 export const ABMLeadership = () => {
-  const hyperspeedOptions = useMemo(() => ({
-    distortion: 'turbulentDistortion',
-    length: 400,
-    roadWidth: 16,
-    islandWidth: 2,
-    lanesPerRoad: 3,
-    fov: 90,
-    fovSpeedUp: 140,
-    speedUp: 1.8,
-    carLightsFade: 0.4,
-    totalSideLightSticks: 20,
-    lightPairsPerRoadWay: 28,
-    shoulderLinesWidthPercentage: 0.05,
-    brokenLinesWidthPercentage: 0.1,
-    brokenLinesLengthPercentage: 0.5,
-    lightStickWidth: [0.12, 0.5] as [number, number],
-    lightStickHeight: [1.3, 1.7] as [number, number],
-    movingAwaySpeed: [60, 80] as [number, number],
-    movingCloserSpeed: [-120, -160] as [number, number],
-    carLightsLength: [400 * 0.03, 400 * 0.2] as [number, number],
-    carLightsRadius: [0.05, 0.14] as [number, number],
-    carWidthPercentage: [0.3, 0.5] as [number, number],
-    carShiftX: [-0.6, 0.6] as [number, number],
-    carFloorSeparation: [0, 4] as [number, number],
-    colors: {
-      roadColor: 0xf8fafc,
-      islandColor: 0xf1f5f9,
-      background: 0xffffff,
-      shoulderLines: 0x059669,
-      brokenLines: 0x0284c7,
-      leftCars: [0x059669, 0x10b981, 0x34d399],
-      rightCars: [0x0284c7, 0x6366f1, 0x818cf8],
-      sticks: 0x059669
-    }
-  }), []);
-
   const adFeatures = [
     {
       icon: Target,
-      title: 'Target the right accounts',
-      description: 'Leverage intent data to ensure your message is reaching relevant, in-market audiences.'
+      title: 'Target in-market accounts',
+      description: 'Leverage multi-source intent data to isolate active buying groups before competitors.'
     },
     {
       icon: TrendingUp,
-      title: 'Influence across the funnel',
-      description: 'Drive continuous engagement with display ads supporting each stage, from awareness through decision.'
+      title: 'Full-funnel influence',
+      description: 'Deploy coordinated display touches supporting every milestone from awareness to contract.'
     },
     {
       icon: BarChart3,
-      title: 'Optimize for engagement',
-      description: 'Use real-time metrics to refine placements and maximize your return on investment across accounts.'
+      title: 'Real-time optimization',
+      description: 'Continuous algorithmic bid adjustment and creative testing to maximize pipeline velocity.'
     }
   ];
 
   const stats = [
-    { metric: '350%', label: 'Average ROI Increase', description: 'Higher returns on marketing investment' },
-    { metric: '85%', label: 'Lead Quality Score', description: 'Better qualified prospects' },
-    { metric: '4.2x', label: 'Conversion Rate', description: 'Faster sales cycles' },
-    { metric: '100+', label: 'Enterprise Clients', description: 'Trusted by industry leaders' }
+    { metric: '350%', label: 'Average ROI Increase', description: 'Documented return on marketing investment' },
+    { metric: '85%', label: 'Verified Lead Quality', description: 'Deterministic ICP fit scoring' },
+    { metric: '4.2x', label: 'Pipeline Velocity Lift', description: 'Accelerated enterprise sales cycles' },
+    { metric: '100+', label: 'Enterprise Deployments', description: 'Validated by global revenue leaders' }
   ];
 
   const achievements = [
     {
       icon: Target,
-      title: '#1 Buyer Intent Data',
-      description: 'Ensure your ads reach the right decision-makers at the right time with market-leading intent data.',
-      category: 'Marketing Account Intelligence',
-      benefits: ['Real-time intent signals', '95% accuracy rate', '360° prospect view']
+      title: 'Deterministic Intent Intelligence',
+      description: 'Isolate active account research patterns across 42M+ verified decision makers in real time.',
+      category: 'Market Intelligence',
+      benefits: ['Multi-source intent correlation', '99.4% precision ICP match', 'Buying group member mapping']
     },
     {
       icon: TrendingUp,
-      title: '#1 ABM Advertising', 
-      description: 'Engage buying groups with personalized ads tailored to their needs at every stage on their trusted channels.',
-      category: 'Account-Based Advertising',
-      benefits: ['Multi-channel reach', 'Personalized messaging', '3x higher engagement']
+      title: 'Precision Account-Based Advertising', 
+      description: 'Deliver targeted media to buying committees on high-authority business networks.',
+      category: 'Targeted Media',
+      benefits: ['LinkedIn & search orchestration', 'Deterministic company IP matching', '3.8x higher engagement rate']
     },
     {
       icon: BarChart3,
-      title: '#1 ABM Data Analytics',
-      description: 'Access cross-channel insights to measure impact on pipeline and revenue, and refine strategies to maximize ROI.',
-      category: 'Account-Based Analytics',
-      benefits: ['Pipeline attribution', 'ROI optimization', 'Predictive insights']
+      title: 'Revenue & Pipeline Attribution',
+      description: 'Cross-channel telemetry measuring account progression, influence, and pipeline revenue.',
+      category: 'Analytics & Attribution',
+      benefits: ['Multi-touch attribution models', 'Opportunity pipeline reporting', 'Predictive account scoring']
     },
     {
       icon: Users,
-      title: '#1 Client Support',
-      description: 'Collaborate closely with best-in-class experts to innovate ABM strategies and accelerate conversion.',
-      category: 'Account-Based Orchestration Platforms',
-      benefits: ['Dedicated success team', '24/7 support', 'Strategic guidance']
+      title: 'Dedicated Campaign Architecture',
+      description: 'Work directly with dedicated enterprise revenue architects and campaign strategists.',
+      category: 'Strategic Services',
+      benefits: ['Dedicated client architect team', 'SLA-backed lead delivery', 'Custom qualification questions']
     }
   ];
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/50 overflow-hidden border-b border-slate-200">
-      
-      {/* Shared Hyperspeed Background Canvas */}
-      <div className="absolute inset-0 pointer-events-none opacity-40">
-        <Hyperspeed effectOptions={hyperspeedOptions} />
-      </div>
-
-      {/* Light Vignette Gradients */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-white/70 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-20">
+    <section className="py-20 lg:py-28 bg-[#f4f4f4] border-b border-[#e0e0e0] text-[#161616]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
         
-        {/* ================= PART 1: ABM DISPLAY ADVERTISING SPOTLIGHT ================= */}
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          
-          {/* Left Column (7 cols): Original Crisp White Card */}
-          <div className="lg:col-span-7 space-y-6 bg-white p-5 sm:p-10 rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl text-slate-900">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider">
-              <Monitor className="h-3.5 w-3.5 text-slate-700" />
-              <span>ABM Display Advertising</span>
-            </div>
+        {/* ================= PART 1: ABM DISPLAY ADVERTISING SHOWCASE ================= */}
+        <div className="border border-[#e0e0e0] bg-white p-8 md:p-12">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            
+            {/* Left Column: 7 cols */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="flex items-center gap-2 text-xs text-[#525252] tracking-[0.16px]">
+                <Monitor className="h-3.5 w-3.5 text-[#0f62fe]" />
+                <span className="font-medium">Enterprise Display Media</span>
+              </div>
 
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              Build the brand with <span className="text-emerald-700">targeted display ads</span>
-            </h2>
+              <h2 className="carbon-display-md text-[#161616]">
+                Build brand authority with account-targeted display media
+              </h2>
 
-            <p className="text-sm sm:text-base lg:text-lg text-slate-600 leading-relaxed">
-              Stay top of mind with display ads that capture the attention of key decision-makers across the digital landscape.
-            </p>
+              <p className="carbon-body text-[#525252]">
+                Stay top-of-mind across the entire buying committee with precision-targeted display and native programmatic media delivered exclusively to qualified accounts.
+              </p>
 
-            {/* 3 Bento Feature Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-              {adFeatures.map((feature, idx) => {
-                const Icon = feature.icon;
-                return (
-                  <div key={idx} className="p-4 rounded-xl sm:rounded-2xl bg-slate-50 border border-slate-200 hover:border-slate-300 hover:bg-white hover:shadow-sm transition-all duration-200 flex flex-col justify-between">
-                    <div>
-                      <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center mb-2.5 sm:mb-3 text-slate-800 shadow-2xs">
-                        <Icon className="w-4 h-4 text-slate-700" />
+              {/* 3 Carbon Feature Tiles */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                {adFeatures.map((feature, idx) => {
+                  const Icon = feature.icon;
+                  return (
+                    <div key={idx} className="p-4 bg-[#f4f4f4] border border-[#e0e0e0] flex flex-col justify-between">
+                      <div>
+                        <Icon className="w-4 h-4 text-[#0f62fe] mb-3" />
+                        <h3 className="text-sm font-medium text-[#161616] mb-1">
+                          {feature.title}
+                        </h3>
+                        <p className="text-xs text-[#525252] leading-relaxed">
+                          {feature.description}
+                        </p>
                       </div>
-                      <h3 className="font-bold text-slate-900 text-xs sm:text-sm mb-1">
-                        {feature.title}
-                      </h3>
-                      <p className="text-slate-600 text-xs leading-relaxed">
-                        {feature.description}
-                      </p>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
+
+              {/* CTA Button */}
+              <div className="pt-2">
+                <Link 
+                  to="/solutions/paid-advertising-ppc"
+                  className="carbon-btn-primary text-xs"
+                >
+                  <span>Explore display advertising solutions</span>
+                  <ArrowRight className="w-3.5 h-3.5 ml-2" />
+                </Link>
+              </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="pt-2">
-              <Link 
-                to="/solutions/paid-advertising-ppc"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-all duration-200 shadow-sm cursor-pointer"
-              >
-                <span>View ABM Display Advertising</span>
-                <ArrowRight className="w-4 h-4 text-white" />
-              </Link>
+            {/* Right Column: 5 cols Media Tile */}
+            <div className="lg:col-span-5 border border-[#e0e0e0] bg-[#f4f4f4] p-5">
+              <div className="flex items-center justify-between pb-3 border-b border-[#e0e0e0] mb-3 text-xs text-[#525252]">
+                <span className="font-mono">PLACEMENT: TIER 1 ACCOUNTS</span>
+                <span className="bg-white border border-[#e0e0e0] px-2 py-0.5 text-[#161616]">Active</span>
+              </div>
+
+              <div className="relative aspect-[4/3] border border-[#e0e0e0] overflow-hidden bg-white mb-4">
+                <img 
+                  src={realMarketingPhoto} 
+                  alt="Enterprise business team analyzing targeted display media campaigns" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-[#161616] text-white px-4 py-2 flex items-center justify-between text-xs">
+                  <span>Targeting Verification</span>
+                  <span className="text-[#0f62fe] font-semibold">8.4x Engagement Lift</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-2 text-xs text-[#525252]">
+                <div className="p-2 bg-white border border-[#e0e0e0] flex items-center gap-1.5">
+                  <Check className="w-3.5 h-3.5 text-[#0f62fe] shrink-0" />
+                  <span>Programmatic Display</span>
+                </div>
+                <div className="p-2 bg-white border border-[#e0e0e0] flex items-center gap-1.5">
+                  <Check className="w-3.5 h-3.5 text-[#0f62fe] shrink-0" />
+                  <span>Native Content</span>
+                </div>
+                <div className="p-2 bg-white border border-[#e0e0e0] flex items-center gap-1.5">
+                  <Check className="w-3.5 h-3.5 text-[#0f62fe] shrink-0" />
+                  <span>Connected TV (CTV)</span>
+                </div>
+                <div className="p-2 bg-white border border-[#e0e0e0] flex items-center gap-1.5">
+                  <Check className="w-3.5 h-3.5 text-[#0f62fe] shrink-0" />
+                  <span>B2B Video Media</span>
+                </div>
+              </div>
             </div>
+
           </div>
-
-          {/* Right Column (5 cols): Original Crisp White Media Card */}
-          <div className="lg:col-span-5 bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-xl text-slate-900">
-            <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-3.5">
-              <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">
-                Targeted Media Placement
-              </span>
-              <span className="text-xs font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">
-                Tier 1 In-Market Accounts
-              </span>
-            </div>
-
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] border border-slate-200 mb-4">
-              <img 
-                src={realMarketingPhoto} 
-                alt="Enterprise business team analyzing targeted display media campaigns" 
-                className="w-full h-full object-cover object-center"
-              />
-              <div className="absolute top-3 left-3 bg-white/95 border border-slate-200 px-3 py-1.5 rounded-lg shadow-sm flex items-center gap-2">
-                <Eye className="w-3.5 h-3.5 text-slate-700" />
-                <span className="text-xs font-bold text-slate-900">8.4x Engagement Lift</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-2">
-              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
-                <span className="text-xs font-medium text-slate-700">Display Advertising</span>
-              </div>
-              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
-                <span className="text-xs font-medium text-slate-700">Programmatic Native</span>
-              </div>
-              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
-                <span className="text-xs font-medium text-slate-700">Connected TV (CTV)</span>
-              </div>
-              <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
-                <span className="text-xs font-medium text-slate-700">B2B Video Media</span>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        {/* ================= PART 2: INDUSTRY RECOGNITION & ABM LEADERSHIP ================= */}
-        <div className="space-y-12">
-          
-          {/* Header */}
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-              <Award className="w-3.5 h-3.5 text-slate-700" />
-              <span>Industry Recognition</span>
+        {/* ================= PART 2: ENTERPRISE ROI & CATEGORY LEADERSHIP ================= */}
+        <div>
+          {/* Section Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-[#e0e0e0]">
+            <div>
+              <span className="carbon-eyebrow block mb-1">
+                Category leadership & outcomes
+              </span>
+              <h2 className="carbon-display-md text-[#161616]">
+                Measurable performance across all core metrics
+              </h2>
             </div>
-            
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
-              Leading the Future of <span className="text-emerald-700">Account-Based Marketing</span>
-            </h2>
-            
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              Recognized as the #1 platform across multiple ABM categories, delivering exceptional results for enterprise clients worldwide.
+            <p className="carbon-body-sm text-[#525252] max-w-md mt-2 md:mt-0">
+              Deterministic targeting and multi-channel orchestration yield predictable conversion improvements.
             </p>
           </div>
 
-          {/* 4 Impact Stats Cards (Original Crisp White Cards) */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {/* 4 Impact Stat Tiles */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border border-[#e0e0e0] bg-white mb-10">
             {stats.map((stat, index) => (
               <div 
                 key={index} 
-                className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-md text-slate-900"
+                className={`p-6 border-[#e0e0e0] hover:bg-[#f4f4f4] transition-colors ${
+                  index % 2 === 0 ? 'border-r' : 'lg:border-r'
+                } ${index < 2 ? 'border-b lg:border-b-0' : ''} ${index === 2 ? 'lg:border-r' : ''}`}
               >
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-1.5">
+                <div className="text-3xl lg:text-4xl font-light text-[#161616] tracking-tight mb-1">
                   {stat.metric}
                 </div>
-                <div className="font-bold text-slate-800 text-sm sm:text-base mb-1">
+                <div className="text-xs font-semibold text-[#161616] mb-1">
                   {stat.label}
                 </div>
-                <div className="text-xs text-slate-500">
+                <div className="text-xs text-[#525252]">
                   {stat.description}
                 </div>
               </div>
             ))}
           </div>
 
-          {/* 4 Achievements Cards (Original Crisp White Cards) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          {/* 4 Achievements Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {achievements.map((achievement, index) => {
               const IconComponent = achievement.icon;
               return (
                 <div 
                   key={index} 
-                  className="p-7 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-xl text-slate-900 flex flex-col justify-between"
+                  className="carbon-feature-card flex flex-col justify-between"
                 >
                   <div>
-                    <div className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">
+                    <div className="text-[11px] font-mono text-[#525252] mb-3">
                       {achievement.category}
                     </div>
 
-                    <div className="flex items-start gap-4 mb-3">
-                      <div className="w-11 h-11 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-800 flex-shrink-0">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-10 h-10 bg-[#f4f4f4] border border-[#e0e0e0] flex items-center justify-center text-[#0f62fe] shrink-0">
                         <IconComponent className="w-5 h-5" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-slate-900 tracking-tight">
+                        <h3 className="text-lg font-normal text-[#161616]">
                           {achievement.title}
                         </h3>
-                        <p className="text-slate-600 text-sm leading-relaxed mt-1">
+                        <p className="text-xs text-[#525252] leading-relaxed mt-1">
                           {achievement.description}
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <div className="pt-5 border-t border-slate-100 space-y-2 mt-4">
+                  <div className="pt-4 border-t border-[#e0e0e0] space-y-2 mt-4">
                     {achievement.benefits.map((benefit, idx) => (
-                      <div key={idx} className="flex items-center gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                        <span className="text-xs sm:text-sm font-medium text-slate-700">{benefit}</span>
+                      <div key={idx} className="flex items-center gap-2 text-xs text-[#525252]">
+                        <Check className="w-3.5 h-3.5 text-[#0f62fe] shrink-0" />
+                        <span>{benefit}</span>
                       </div>
                     ))}
                   </div>

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ContactForm from './ContactForm';
 import { 
@@ -6,138 +5,134 @@ import {
   FileText, 
   Megaphone, 
   Phone, 
-  TrendingUp,
-  Layers,
+  TrendingUp, 
+  Layers, 
   ArrowRight,
-  Sparkles
+  ChevronRight
 } from 'lucide-react';
 
 export const SolutionsOverview = () => {
-  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
-
   const solutions = [
     {
       icon: Target,
       title: 'Lead Generation Strategy',
       badge: 'Strategy & ICP',
-      description: 'Comprehensive strategy development including ICP creation, funnel mapping, and competitive market analysis.',
+      description: 'Comprehensive account targeting architecture including deterministic ICP development, funnel economics, and TAM prioritization.',
       href: '/solutions/lead-generation-strategy'
     },
     {
       icon: FileText,
       title: 'Content-Driven Lead Generation',
-      badge: 'Content & Inbound',
-      description: 'SEO-optimized content, high-converting lead magnets, and webinar strategies that convert visitors into active leads.',
+      badge: 'Syndication & Inbound',
+      description: 'Educational asset syndication across verified industry channels that converts technical researchers into sales opportunities.',
       href: '/solutions/content-driven-lead-generation'
     },
     {
       icon: Megaphone,
       title: 'Paid Advertising (PPC)',
-      badge: 'Multi-Channel PPC',
-      description: 'LinkedIn ads, Google PPC, and high-impact programmatic media with precision landing page conversion optimization.',
+      badge: 'Precision Paid Media',
+      description: 'Account-matched LinkedIn advertising and Google Search PPC campaigns managed for high-intent pipeline ROI.',
       href: '/solutions/paid-advertising-ppc'
     },
     {
       icon: Phone,
       title: 'Outbound Lead Generation',
-      badge: 'Outbound & SDR',
-      description: 'Multi-touch cold email campaigns, LinkedIn prospecting, and dedicated SDR teams for direct C-suite outreach.',
+      badge: 'Direct Outreach',
+      description: 'Verified decision-maker outreach cadences and bespoke buying group coordination delivered directly to your sales team.',
       href: '/solutions/outbound-lead-generation'
     },
     {
       icon: TrendingUp,
       title: 'Full-Funnel Marketing & Nurturing',
-      badge: 'Automation & CRM',
-      description: 'Marketing automation, predictive lead scoring, CRM pipeline synchronization, and multi-touch revenue analytics.',
+      badge: 'Pipeline Acceleration',
+      description: 'Multi-touch engagement workflows, predictive intent scoring, CRM pipeline synchronization, and real-time conversion metrics.',
       href: '/solutions/full-funnel-marketing-nurturing'
     },
     {
       icon: Layers,
-      title: 'Buyer Intent & Intelligence',
+      title: 'Buyer Intent & Telemetry',
       badge: 'Data Intelligence',
-      description: 'Real-time B2B buyer intent telemetry, buying committee mapping, and deterministic in-market account discovery.',
+      description: 'Deterministic buyer intent signals across 42M+ decision makers that isolate active accounts before they contact sales.',
       href: '/company/our-data'
     }
   ];
 
   return (
-    <section className="py-24 bg-white border-b border-slate-200 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="py-20 lg:py-28 bg-white border-b border-[#e0e0e0] text-[#161616]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
-            <span>Comprehensive Solutions</span>
+        {/* Carbon Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-[#e0e0e0]">
+          <div>
+            <span className="carbon-eyebrow block mb-1">
+              Comprehensive capabilities
+            </span>
+            <h2 className="carbon-display-md text-[#161616]">
+              Engineered demand generation solutions
+            </h2>
           </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-            Our B2B <span className="text-emerald-700">Lead Generation Services</span>
-          </h2>
-          
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            From ICP strategy development to full-funnel nurturing, DGenz Media provides everything you need to generate qualified leads and fuel your sales pipeline.
+          <p className="carbon-body-sm text-[#525252] max-w-md mt-2 md:mt-0">
+            Modular enterprise programs that operate independently or synthesize into a single full-funnel revenue engine.
           </p>
         </div>
 
-        {/* Focus Blur Interactive Cards Grid */}
-        <div 
-          className="focus-blur-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-          onMouseLeave={() => setHoveredIdx(null)}
-        >
-          {solutions.map((solution, index) => {
+        {/* Carbon 3x2 Grid (Flat 0px Cards with 1px Hairlines) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {solutions.map((solution) => {
             const IconComponent = solution.icon;
-            const isHovered = hoveredIdx === index;
-            const isOtherHovered = hoveredIdx !== null && !isHovered;
 
             return (
               <Link
                 key={solution.title}
                 to={solution.href}
-                onMouseEnter={() => setHoveredIdx(index)}
-                className={`focus-card p-7 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200/90 hover:border-slate-400 hover:bg-white hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer ${
-                  isOtherHovered ? 'blur-[4px] opacity-40 scale-[0.96]' : ''
-                } ${isHovered ? 'scale-[1.04] shadow-2xl z-10 border-slate-400 bg-white' : ''}`}
+                className="carbon-feature-card flex flex-col justify-between group cursor-pointer border border-[#e0e0e0] hover:border-[#161616] transition-colors"
               >
                 <div>
-                  {/* Top Bar */}
+                  {/* Top Bar with Icon & Badge */}
                   <div className="flex items-center justify-between gap-3 mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-center justify-center text-slate-900 group-hover:scale-110 group-hover:bg-slate-900 group-hover:text-white transition-all duration-300">
-                      <IconComponent className="h-6 w-6 transition-colors" />
+                    <div className="w-10 h-10 bg-[#f4f4f4] border border-[#e0e0e0] flex items-center justify-center text-[#161616] group-hover:bg-[#0f62fe] group-hover:text-white group-hover:border-[#0f62fe] transition-colors">
+                      <IconComponent className="h-5 w-5" />
                     </div>
-                    <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-600">
+                    <span className="text-xs font-normal px-2.5 py-1 bg-[#f4f4f4] border border-[#e0e0e0] text-[#525252]">
                       {solution.badge}
                     </span>
                   </div>
                   
                   {/* Title */}
-                  <h3 className="text-lg font-bold text-slate-900 mb-2.5 group-hover:text-emerald-700 transition-colors">
+                  <h3 className="text-lg font-normal text-[#161616] mb-2 group-hover:text-[#0f62fe] transition-colors leading-snug">
                     {solution.title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                  <p className="text-xs text-[#525252] leading-relaxed mb-6">
                     {solution.description}
                   </p>
                 </div>
                 
-                {/* Learn More Link */}
-                <div className="flex items-center pt-4 border-t border-slate-200/70 text-slate-900 font-semibold text-xs uppercase tracking-wider group-hover:text-emerald-700 transition-colors">
-                  <span>Learn more</span>
-                  <ArrowRight className="ml-2 h-3.5 w-3.5 group-hover:translate-x-1.5 transition-transform duration-200" />
+                {/* Action Link */}
+                <div className="flex items-center justify-between pt-3 border-t border-[#e0e0e0] text-[#0f62fe] text-xs font-medium group-hover:underline">
+                  <span>Explore solution details</span>
+                  <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </Link>
             );
           })}
         </div>
 
-        {/* Bottom CTA Button */}
-        <div className="text-center mt-14">
+        {/* Bottom CTA Row */}
+        <div className="mt-12 pt-8 border-t border-[#e0e0e0] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-sm text-[#525252]">
+            Need a tailored multi-channel demand program for your sales pipeline?
+          </div>
           <ContactForm 
             type="demo"
             trigger={
-              <button className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer">
-                <span>View All Solutions</span>
-                <ArrowRight className="w-4 h-4 text-white" />
+              <button 
+                type="button" 
+                className="carbon-btn-primary"
+              >
+                <span>Schedule architecture consultation</span>
+                <ChevronRight className="w-4 h-4 ml-2" />
               </button>
             }
           />

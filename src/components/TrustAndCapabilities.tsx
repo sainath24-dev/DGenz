@@ -7,328 +7,221 @@ import {
   FileText, 
   Megaphone, 
   Send, 
-  CheckCircle2, 
-  ChevronDown 
+  Check, 
+  TrendingUp
 } from 'lucide-react';
-import FloatingLines from '@/components/ui/FloatingLines';
 import businessMeeting from '@/assets/group-diverse-people-having-business-meeting.jpg';
 import businessPresentation from '@/assets/businesswoman-presenting-strategies-team.jpg';
 import paidMedia from '@/assets/paid-media.jpg';
 import outboundMarketing from '@/assets/outbound-marketing.jpg';
-
-const logos = [
-  { name: 'Oracle', url: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/oracle.svg', color: '#F80000' },
-  { name: 'Microsoft', url: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/microsoft.svg', color: '#00A4EF' },
-  { name: 'Adobe', url: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/adobe.svg', color: '#FF0000' },
-  { name: 'Dell Technologies', url: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/dell.svg', color: '#007DB8' },
-  { name: 'Fujitsu', url: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/fujitsu.svg', color: '#E60012' },
-  { name: 'Intel', url: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/intel.svg', color: '#0071C5' },
-  { name: 'LogMeIn', url: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/logmein.svg', color: '#45B8AC' },
-  { name: 'AMD', url: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/amd.svg', color: '#ED1C24' },
-  { name: 'Cisco', url: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/cisco.svg', color: '#1BA0D7' },
-  { name: 'SAP', url: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/sap.svg', color: '#0FAAFF' },
-  { name: 'Zoom', url: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/zoom.svg', color: '#2D8CFF' },
-  { name: 'Google', url: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/google.svg', color: '#4285F4' }
-];
 
 const services = [
   {
     category: 'Strategic Foundation',
     icon: Target,
     title: 'Lead Generation Strategy',
-    description: 'Build your lead generation strategy from the ground up with ICP development and sales funnel mapping.',
+    description: 'Build your precision lead generation strategy from the ground up with deterministic ICP mapping and sales funnel architecture.',
     image: businessMeeting,
     mainStat: '99.4%',
-    statLabel: 'ICP Match Rate',
+    statLabel: 'ICP match precision',
     href: '/solutions/lead-generation-strategy',
     upperStats: [
-      { label: 'Audit Turnaround', value: '< 24 Hours' },
-      { label: 'Pipeline Coverage', value: 'Full-Funnel' }
+      { label: 'Turnaround', value: '< 24 Hours' },
+      { label: 'Coverage', value: 'Full-funnel' }
     ],
     features: [
       'Ideal Customer Profile (ICP)',
-      'Sales Funnel Blueprint',
-      'TAM Market Discovery'
-    ],
-    statusText: 'Enterprise Strategy',
-    statusBg: 'bg-emerald-600'
+      'Sales funnel blueprint',
+      'TAM market discovery'
+    ]
   },
   {
     category: 'Content Marketing',
     icon: FileText,
     title: 'Content-Driven Lead Gen',
-    description: 'Generate qualified leads through strategic content syndication, whitepapers, and gated educational resources.',
+    description: 'Generate high-intent qualified leads through multi-format content syndication, whitepaper hubs, and verified educational distribution.',
     image: businessPresentation,
     mainStat: '3.8x',
-    statLabel: 'Conversion Lift',
+    statLabel: 'Conversion lift',
     href: '/solutions/content-driven-lead-generation',
     upperStats: [
-      { label: 'Publisher Network', value: '100+ Outlets' },
-      { label: 'Asset Formats', value: 'Whitepaper & Tech' }
+      { label: 'Syndication', value: '100+ Outlets' },
+      { label: 'Format', value: 'Whitepapers & Tech' }
     ],
     features: [
-      'Content Syndication',
-      'Gated Whitepaper Hubs',
-      'Automated Lead Nurture'
-    ],
-    statusText: 'High-Intent Inbound',
-    statusBg: 'bg-sky-600'
+      'Content syndication network',
+      'Gated whitepaper distribution',
+      'Automated nurture scoring'
+    ]
   },
   {
     category: 'Paid Media',
     icon: Megaphone,
     title: 'Paid Advertising (PPC)',
-    description: 'Targeted LinkedIn ads and Google PPC campaigns engineered to capture in-market enterprise prospects.',
+    description: 'Account-targeted LinkedIn advertising and Google Search campaigns engineered specifically to capture active in-market enterprise prospects.',
     image: paidMedia,
     mainStat: '8.4x',
-    statLabel: 'In-Target CTR',
+    statLabel: 'In-target CTR',
     href: '/solutions/paid-advertising-ppc',
     upperStats: [
-      { label: 'Target Channels', value: 'LinkedIn & Search' },
-      { label: 'Bid Optimization', value: 'Real-time AI' }
+      { label: 'Channels', value: 'LinkedIn & Search' },
+      { label: 'Optimization', value: 'Real-time AI' }
     ],
     features: [
-      'Account-Targeted Ads',
-      'Programmatic Native',
-      'Landing Page CRO'
-    ],
-    statusText: 'Active In-Market',
-    statusBg: 'bg-indigo-600'
+      'Account-targeted advertising',
+      'Programmatic ABM display',
+      'Landing page CRO testing'
+    ]
   },
   {
     category: 'Outbound Sales',
     icon: Send,
     title: 'Outbound Lead Gen',
-    description: 'Cold email and LinkedIn prospecting campaigns that identify and engage verified decision-makers.',
+    description: 'High-touch multi-channel cadences across verified decision-maker buying committees with CRM integration.',
     image: outboundMarketing,
     mainStat: '4.2x',
-    statLabel: 'Pipeline Velocity',
+    statLabel: 'Pipeline velocity',
     href: '/solutions/outbound-lead-generation',
     upperStats: [
-      { label: 'Verified Contacts', value: '86.4% Direct' },
-      { label: 'CRM Handoff', value: 'Instant Sync' }
+      { label: 'Direct contacts', value: '86.4% Verified' },
+      { label: 'Integration', value: 'Direct CRM sync' }
     ],
     features: [
-      'Multi-Touch Cold Email',
-      'LinkedIn Outreach',
-      'Buying Group Mapping'
-    ],
-    statusText: 'Decision-Makers',
-    statusBg: 'bg-emerald-700'
+      'Multi-touch executive email',
+      'LinkedIn social outreach',
+      'Buying group matrix'
+    ]
   }
 ];
 
 export const TrustAndCapabilities = () => {
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden border-t border-b border-slate-200 bg-white text-slate-900">
-      
-      {/* Unified Dynamic FloatingLines WebGL Background Simulation from React Bits */}
-      <div className="absolute inset-0 z-0 pointer-events-auto opacity-75">
-        <FloatingLines
-          enabledWaves={['top', 'middle', 'bottom']}
-          lineCount={[8, 12, 16]}
-          lineDistance={[6, 5, 4]}
-          bendRadius={5.0}
-          bendStrength={-0.5}
-          interactive={true}
-          parallax={true}
-          linesGradient={['#059669', '#10b981', '#0284c7', '#6366f1']}
-          mixBlendMode="normal"
-        />
-      </div>
-
-      {/* Subtle light vignette overlays */}
-      <div className="absolute inset-0 z-1 bg-gradient-to-t from-white/90 via-transparent to-white/90 pointer-events-none" />
-      <div className="absolute inset-0 z-1 bg-white/20 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-24 sm:space-y-32">
+    <section className="py-20 lg:py-28 bg-white border-b border-[#e0e0e0] text-[#161616]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
         
-        {/* ================= SECTION 1: TRUST INDICATORS & GLOBAL REACH ================= */}
-        <div>
-          {/* Top Headline & Trust Metric Pills */}
-          <div className="text-center mb-16">
-            <p className="text-xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 mb-6 sm:mb-8 max-w-4xl mx-auto leading-relaxed tracking-tight px-2">
-              Trusted by <span className="text-emerald-600 font-black">100+ leading brands</span> to engage over <span className="text-teal-600 font-black">42M professionals</span> globally
+        {/* ================= SECTION 1: ENTERPRISE TRUST & SCALE ================= */}
+        <div className="border border-[#e0e0e0] bg-[#f4f4f4] p-8 md:p-12">
+          <div className="max-w-3xl mb-8">
+            <span className="carbon-eyebrow block mb-2">
+              Enterprise validation & scale
+            </span>
+            <h2 className="carbon-display-md text-[#161616] mb-4">
+              Proven pipeline acceleration across 100+ global brands.
+            </h2>
+            <p className="carbon-body text-[#525252]">
+              Our deterministic intent graph continuously evaluates over 42M active B2B business professionals across North America, EMEA, and APAC to isolate real purchase intent.
             </p>
-            
-            <div className="flex justify-center items-center gap-4 sm:gap-8 flex-wrap">
-              {/* 100+ Brands Clean White Card */}
-              <div className="group flex items-center gap-3.5 sm:gap-4 px-5 sm:px-8 py-3.5 sm:py-4 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-md hover:shadow-xl hover:scale-102 transition-all duration-300 w-full sm:w-auto">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <Users className="h-5 w-5 sm:h-6 sm:w-6 text-emerald-700" />
-                </div>
-                <div className="text-left">
-                  <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">100+</div>
-                  <div className="text-xs sm:text-sm font-bold text-slate-500">Leading Brands</div>
-                </div>
-              </div>
-              
-              {/* 42M+ Professionals Clean White Card */}
-              <div className="group flex items-center gap-3.5 sm:gap-4 px-5 sm:px-8 py-3.5 sm:py-4 rounded-2xl sm:rounded-3xl bg-white border border-slate-200 shadow-md hover:shadow-xl hover:scale-102 transition-all duration-300 w-full sm:w-auto">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-teal-50 border border-teal-200 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <Globe className="h-5 w-5 sm:h-6 sm:w-6 text-teal-700" />
-                </div>
-                <div className="text-left">
-                  <div className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">42M+</div>
-                  <div className="text-xs sm:text-sm font-bold text-slate-500">Professionals</div>
-                </div>
-              </div>
-            </div>
           </div>
 
-          {/* Trusted by Industry Leaders & Fast Brand Logo Marquee */}
-          <div className="text-center pt-2">
-            <div className="mb-8">
-              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mb-2">
-                Trusted by Industry Leaders
-              </h3>
-              <p className="text-sm text-slate-600 max-w-xl mx-auto font-medium">
-                Join thousands of global companies using our ABM platform to drive pipeline growth
-              </p>
+          {/* 3-Column Metric Highlights */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#e0e0e0] bg-white">
+            <div className="p-6 border-b md:border-b-0 md:border-r border-[#e0e0e0]">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs text-[#525252] tracking-[0.32px]">Brand Adoption</span>
+                <Users className="w-4 h-4 text-[#0f62fe]" />
+              </div>
+              <div className="text-3xl font-light text-[#161616]">100+</div>
+              <div className="text-xs text-[#525252] mt-1">Enterprise B2B leaders deployed</div>
             </div>
 
-            {/* Fast Marquee Wrapper with White Gradient Edge Fades */}
-            <div 
-              className="relative w-full overflow-hidden py-2"
-              style={{
-                maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
-                WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
-              }}
-            >
-              <div className="marquee-track flex gap-8 sm:gap-10 items-center w-max py-2">
-                {[...logos, ...logos, ...logos].map((logo, index) => (
-                  <div 
-                    key={`${logo.name}-${index}`} 
-                    className="flex-shrink-0 flex items-center justify-center px-7 py-4 rounded-2xl bg-white border border-slate-200 shadow-md hover:shadow-lg hover:border-slate-300 transition-all duration-300 hover:scale-105 cursor-pointer"
-                    title={logo.name}
-                  >
-                    <div 
-                      className="h-8 w-28 sm:w-32 transition-transform duration-300"
-                      style={{
-                        WebkitMask: `url(${logo.url}) no-repeat center / contain`,
-                        mask: `url(${logo.url}) no-repeat center / contain`,
-                        backgroundColor: logo.color
-                      }}
-                      aria-label={logo.name}
-                    />
-                  </div>
-                ))}
+            <div className="p-6 border-b md:border-b-0 md:border-r border-[#e0e0e0]">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs text-[#525252] tracking-[0.32px]">Global Footprint</span>
+                <Globe className="w-4 h-4 text-[#0f62fe]" />
               </div>
+              <div className="text-3xl font-light text-[#161616]">42M+</div>
+              <div className="text-xs text-[#525252] mt-1">Verified decision-maker profiles</div>
+            </div>
+
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs text-[#525252] tracking-[0.32px]">Average Lift</span>
+                <TrendingUp className="w-4 h-4 text-[#0f62fe]" />
+              </div>
+              <div className="text-3xl font-light text-[#161616]">3.8x</div>
+              <div className="text-xs text-[#525252] mt-1">Qualified pipeline conversion increase</div>
             </div>
           </div>
         </div>
 
-        {/* Soft elegant separator line */}
-        <div className="w-full max-w-5xl mx-auto h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-
-        {/* ================= SECTION 2: OUR CORE CAPABILITIES ================= */}
+        {/* ================= SECTION 2: CORE CAPABILITIES GRID ================= */}
         <div>
-          {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-xs">
-              <span>Our Core Capabilities</span>
+          {/* Section Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-[#e0e0e0]">
+            <div>
+              <span className="carbon-eyebrow block mb-1">
+                Core solutions
+              </span>
+              <h2 className="carbon-display-md text-[#161616]">
+                Target precisely, convert consistently
+              </h2>
             </div>
-
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight mb-4">
-              Target Precisely, <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700">Convert Consistently</span>
-            </h2>
-            
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              Our multi-channel ABM solutions work together seamlessly to identify, engage, and convert high-value accounts at every stage of the buying journey.
+            <p className="carbon-body-sm text-[#525252] max-w-md mt-2 md:mt-0">
+              Coordinated multi-channel demand programs engineered to identify and convert high-value accounts at every phase of the buying cycle.
             </p>
           </div>
 
-          {/* Expandable Layered Drawer Cards Grid with Uiverse Hover Physics */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 items-start">
+          {/* 4-Up Carbon Feature Card Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service) => {
               const Icon = service.icon;
 
               return (
                 <div 
                   key={service.title} 
-                  className="weather-drawer-container group relative flex flex-col items-center w-full"
+                  className="carbon-feature-card flex flex-col justify-between group"
                 >
-                  {/* ================= FRONT PRIMARY CARD (Layer 1 - Clean White) ================= */}
-                  <Link 
-                    to={service.href}
-                    className="weather-drawer-front w-full rounded-2xl bg-white border border-slate-200 shadow-md group-hover:shadow-xl group-hover:border-slate-300 transition-all duration-300 p-5 overflow-hidden flex flex-col justify-between cursor-pointer block text-left"
-                  >
-                    {/* Photo Header */}
-                    <div className="relative rounded-xl overflow-hidden aspect-[16/10] mb-4 border border-slate-100">
+                  <div>
+                    {/* Square Flat Image Frame (0px corners) */}
+                    <div className="relative aspect-[16/10] mb-4 border border-[#e0e0e0] overflow-hidden bg-[#f4f4f4]">
                       <img 
                         src={service.image} 
                         alt={service.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                        className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300" 
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
                       
-                      {/* Category Tag */}
-                      <div className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-xs border border-white/20 text-slate-900 text-xs font-bold shadow-xs flex items-center gap-1.5">
-                        <Icon className="w-3.5 h-3.5 text-slate-700" />
-                        <span>{service.category}</span>
-                      </div>
-
-                      {/* Main Stat Overlay */}
-                      <div className="absolute bottom-2.5 right-2.5 px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-xs border border-slate-200 text-right shadow-xs">
-                        <div className="text-sm font-extrabold text-emerald-700">{service.mainStat}</div>
-                        <div className="text-[10px] text-slate-600 font-medium">{service.statLabel}</div>
+                      {/* Metric Badge */}
+                      <div className="absolute bottom-0 right-0 bg-[#161616] text-white px-3 py-1 text-right">
+                        <div className="text-xs font-semibold">{service.mainStat}</div>
+                        <div className="text-[9px] text-[#c6c6c6]">{service.statLabel}</div>
                       </div>
                     </div>
 
-                    {/* Title & Description */}
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-900 mb-1.5 group-hover:text-emerald-700 transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="text-slate-600 text-xs leading-relaxed line-clamp-2 mb-3">
-                        {service.description}
-                      </p>
+                    {/* Category */}
+                    <div className="flex items-center gap-1.5 text-xs text-[#525252] mb-1.5">
+                      <Icon className="w-3.5 h-3.5 text-[#0f62fe]" />
+                      <span>{service.category}</span>
                     </div>
 
-                    {/* View Details Link + Hover Drawer Indicator */}
-                    <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-xs font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
-                      <span className="inline-flex items-center">
-                        <span>Inspect solution</span>
-                        <ArrowRight className="w-3.5 h-3.5 ml-1 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                      <span className="text-[10px] font-semibold text-slate-400 group-hover:text-emerald-600 flex items-center gap-0.5">
-                        <span>Telemetry</span>
-                        <ChevronDown className="w-3 h-3 group-hover:translate-y-0.5 transition-transform" />
-                      </span>
-                    </div>
+                    {/* Title */}
+                    <h3 className="text-lg font-normal text-[#161616] mb-2 group-hover:text-[#0f62fe] transition-colors leading-snug">
+                      {service.title}
+                    </h3>
 
-                  </Link>
+                    {/* Description */}
+                    <p className="text-xs text-[#525252] leading-relaxed mb-4">
+                      {service.description}
+                    </p>
 
-                  {/* ================= BACK EXPANDABLE DRAWER CARD (Layer 2 & 3) ================= */}
-                  <div className="weather-drawer-back w-[92%] bg-slate-50 text-slate-900 rounded-b-2xl border-x border-b border-slate-200 shadow-xl -mt-2 pt-5 px-4 pb-3">
-                    
-                    {/* Upper Stats Row */}
-                    <div className="grid grid-cols-2 gap-2 pb-3 border-b border-slate-200 text-center">
-                      {service.upperStats.map((stat, sIdx) => (
-                        <div key={sIdx} className="p-2 rounded-lg bg-white border border-slate-200">
-                          <div className="text-[10px] text-slate-500 font-medium">{stat.label}</div>
-                          <div className="text-xs font-extrabold text-slate-900 mt-0.5">{stat.value}</div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Lower Feature Checklist */}
-                    <div className="py-2.5 space-y-1.5">
+                    {/* Feature List */}
+                    <div className="pt-3 border-t border-[#e0e0e0] space-y-1.5 mb-6">
                       {service.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-center gap-2 text-[11px] text-slate-700">
-                          <CheckCircle2 className="w-3 h-3 text-emerald-600 flex-shrink-0" />
+                        <div key={fIdx} className="flex items-center gap-2 text-xs text-[#525252]">
+                          <Check className="w-3.5 h-3.5 text-[#0f62fe] flex-shrink-0" />
                           <span className="truncate">{feat}</span>
                         </div>
                       ))}
                     </div>
-
-                    {/* Bottom Status Pill */}
-                    <div className={`w-full py-1.5 rounded-lg ${service.statusBg} text-white text-[11px] font-bold text-center tracking-wide uppercase shadow-xs mt-1`}>
-                      {service.statusText}
-                    </div>
-
                   </div>
 
+                  {/* Bottom Action Link */}
+                  <Link 
+                    to={service.href}
+                    className="inline-flex items-center justify-between text-xs font-medium text-[#0f62fe] pt-3 border-t border-[#e0e0e0] group-hover:underline"
+                  >
+                    <span>Inspect methodology</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </div>
               );
             })}
@@ -337,24 +230,6 @@ export const TrustAndCapabilities = () => {
         </div>
 
       </div>
-
-      <style>{`
-        @keyframes brandFastMarquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-33.333%);
-          }
-        }
-        .marquee-track {
-          animation: brandFastMarquee 20s linear infinite;
-          will-change: transform;
-        }
-        .marquee-track:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   );
 };

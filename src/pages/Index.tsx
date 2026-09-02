@@ -1,5 +1,6 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
+import BrandLogos from '@/components/BrandLogos';
 import TrustAndCapabilities from '@/components/TrustAndCapabilities';
 import { WorldMapDemo } from '@/components/WorldMapDemo';
 import InteractiveContentSyndication from '@/components/InteractiveContentSyndication';
@@ -13,6 +14,7 @@ const Index = () => {
       <Navigation />
       <main>
         <Hero />
+        <BrandLogos />
         <TrustAndCapabilities />
         <InteractiveContentSyndication />
         <SolutionsOverview />
