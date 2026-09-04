@@ -102,13 +102,13 @@ export const ABMLeadership = () => {
             {/* Left Column: 7 cols */}
             <div className="lg:col-span-7 space-y-6">
               <div>
-                <span className="carbon-eyebrow block mb-1">
+                <span className="carbon-eyebrow text-[#0f62fe] block mb-1 font-mono">
                   Enterprise Display Media
                 </span>
               </div>
 
               <h2 className="carbon-display-md text-[#161616]">
-                Build brand authority with account-targeted display media
+                Build brand authority with <span className="text-[#0f62fe]">account-targeted display media</span>
               </h2>
 
               <p className="carbon-body text-[#525252] leading-relaxed font-normal">
@@ -201,11 +201,11 @@ export const ABMLeadership = () => {
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-3 border-b border-[#e0e0e0]">
             <div>
-              <span className="carbon-eyebrow block mb-1">
-                Case studies
+              <span className="carbon-eyebrow text-[#0f62fe] block mb-1 font-mono">
+                Case studies & verified outcomes
               </span>
               <h2 className="carbon-display-md text-[#161616]">
-                Real world results
+                Real world <span className="text-[#0f62fe]">results & performance</span>
               </h2>
             </div>
             <p className="carbon-body-sm text-[#525252] max-w-md mt-2 md:mt-0 font-normal">

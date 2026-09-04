@@ -14,53 +14,53 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-0 lg:min-h-[82vh] flex flex-col justify-center overflow-hidden pt-28 sm:pt-32 pb-16 lg:pb-20 border-b border-[#e0e0e0] bg-white">
+    <section className="relative min-h-[88vh] lg:min-h-[92vh] flex flex-col justify-center overflow-hidden pt-32 sm:pt-36 pb-20 sm:pb-24 border-b border-[#e0e0e0] bg-white">
 
-      {/* Motion Video Layer */}
+      {/* High-Fidelity Video Layer (Vibrant & rich on the right side) */}
       <HeroVideoBackground />
 
       {/* Hero Content Container centered on global 7xl grid */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-start text-left">
 
         {/* Upper Hero Copy */}
-        <div className="max-w-4xl w-full flex flex-col items-start text-left">
+        <div className="max-w-4xl w-full flex flex-col items-start text-left mb-14 sm:mb-16">
 
           {/* Workflow Sequence Strip */}
-          <div className="hidden sm:flex flex-wrap items-center justify-start gap-2 text-xs text-[#525252] font-normal tracking-[0.16px] mb-6">
+          <div className="hidden sm:flex flex-wrap items-center justify-start gap-2 text-xs sm:text-sm text-[#525252] font-normal tracking-[0.16px] mb-6">
             <span className="text-[#0f62fe] font-medium font-mono">Workflow:</span>
             {steps.map((step, index) => (
               <div key={step.id} className="flex items-center gap-2">
-                <span className="text-[#161616] hover:text-[#0f62fe] transition-colors">
+                <span className="text-[#161616] hover:text-[#0f62fe] transition-colors font-medium">
                   {step.label}
                 </span>
                 {index < steps.length - 1 && (
-                  <ChevronRight className="w-3 h-3 text-[#8c8c8c] flex-shrink-0" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#8c8c8c] flex-shrink-0" />
                 )}
               </div>
             ))}
           </div>
 
-          {/* Display Headline */}
-          <h1 className="carbon-display-xl text-[#161616] max-w-3xl mb-6 font-medium">
+          {/* Display Headline - Expansive and Commanding Scale */}
+          <h1 className="text-4xl sm:text-5xl lg:text-[56px] xl:text-[62px] font-normal text-[#161616] max-w-4xl mb-6 leading-[1.08] tracking-tight">
             Deterministic intent intelligence engineered for <span className="text-[#0f62fe]">enterprise B2B revenue</span>.
           </h1>
 
           {/* Lead Body */}
-          <p className="carbon-body-lg text-[#525252] max-w-2xl mb-8 leading-relaxed font-normal">
-            Unify multi-source buyer intent telemetry, account-based orchestration, and verified decision-maker networks to generate qualified enterprise opportunities with predictable ROI.
+          <p className="text-base sm:text-lg lg:text-xl text-[#525252] max-w-2xl mb-10 leading-relaxed font-normal">
+            Unify multi-source buyer intent signals, account-based orchestration, and verified decision-maker networks to generate qualified enterprise opportunities with predictable ROI.
           </p>
 
           {/* CTA Actions */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 w-full sm:w-auto mb-12">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 w-full sm:w-auto">
             <ContactForm
               type="get-started"
               trigger={
                 <button
                   type="button"
-                  className="carbon-btn-primary h-12 px-6 text-sm font-normal cursor-pointer"
+                  className="bg-[#0f62fe] hover:bg-[#0353e9] text-white h-13 px-7 text-sm sm:text-base font-normal cursor-pointer transition-colors inline-flex items-center justify-between gap-3 shadow-xs"
                 >
                   <span>Start your campaign</span>
-                  <ArrowRight className="w-4 h-4 ml-3 flex-shrink-0" />
+                  <ArrowRight className="w-4 h-4 ml-1 flex-shrink-0" />
                 </button>
               }
             />
@@ -68,7 +68,7 @@ const Hero = () => {
             <button
               onClick={() => navigate('/resources')}
               type="button"
-              className="h-12 px-6 text-sm font-normal cursor-pointer bg-white border border-[#0f62fe] text-[#0f62fe] hover:bg-[#edf5ff] transition-colors inline-flex items-center justify-between gap-3"
+              className="h-13 px-7 text-sm sm:text-base font-normal cursor-pointer bg-white border border-[#0f62fe] text-[#0f62fe] hover:bg-[#edf5ff] transition-colors inline-flex items-center justify-between gap-3 shadow-xs"
             >
               <span>Explore data methodology</span>
               <ArrowRight className="w-4 h-4 flex-shrink-0" />
@@ -77,43 +77,43 @@ const Hero = () => {
         </div>
 
         {/* 4-Column Stat Tile Grid with IBM Color Accents */}
-        <div className="w-full max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-0 border border-[#e0e0e0] bg-white text-[#161616] shadow-xs">
-          <div className="relative p-6 border-r border-b md:border-b-0 border-[#e0e0e0] hover:bg-[#fafbfc] transition-all duration-300 flex flex-col justify-between group overflow-hidden">
+        <div className="w-full max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-0 border border-[#e0e0e0] bg-white text-[#161616] shadow-sm">
+          <div className="relative p-6 sm:p-7 border-r border-b md:border-b-0 border-[#e0e0e0] hover:bg-[#fafbfc] transition-all duration-300 flex flex-col justify-between group overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#0f62fe] opacity-80 group-hover:h-[3px] transition-all" />
-            <div className="text-3xl lg:text-4xl font-light text-[#161616] tracking-tight group-hover:text-[#0f62fe] transition-colors">
+            <div className="text-3xl sm:text-4xl lg:text-[42px] font-light text-[#161616] tracking-tight group-hover:text-[#0f62fe] transition-colors">
               3.8M+
             </div>
-            <div className="text-xs text-[#525252] tracking-[0.32px] mt-2 font-normal">
+            <div className="text-xs sm:text-sm text-[#525252] tracking-[0.32px] mt-2 font-normal">
               Global Verified Companies
             </div>
           </div>
 
-          <div className="relative p-6 border-r-0 md:border-r border-b md:border-b-0 border-[#e0e0e0] hover:bg-[#fafbfc] transition-all duration-300 flex flex-col justify-between group overflow-hidden">
+          <div className="relative p-6 sm:p-7 border-r-0 md:border-r border-b md:border-b-0 border-[#e0e0e0] hover:bg-[#fafbfc] transition-all duration-300 flex flex-col justify-between group overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#007d79] opacity-80 group-hover:h-[3px] transition-all" />
-            <div className="text-3xl lg:text-4xl font-light text-[#161616] tracking-tight group-hover:text-[#007d79] transition-colors">
+            <div className="text-3xl sm:text-4xl lg:text-[42px] font-light text-[#161616] tracking-tight group-hover:text-[#007d79] transition-colors">
               42M+
             </div>
-            <div className="text-xs text-[#525252] tracking-[0.32px] mt-2 font-normal">
+            <div className="text-xs sm:text-sm text-[#525252] tracking-[0.32px] mt-2 font-normal">
               Active Decision Makers
             </div>
           </div>
 
-          <div className="relative p-6 border-r border-[#e0e0e0] hover:bg-[#fafbfc] transition-all duration-300 flex flex-col justify-between group overflow-hidden">
+          <div className="relative p-6 sm:p-7 border-r border-[#e0e0e0] hover:bg-[#fafbfc] transition-all duration-300 flex flex-col justify-between group overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#0f62fe] opacity-100 group-hover:h-[3px] transition-all" />
-            <div className="text-3xl lg:text-4xl font-light text-[#0f62fe] tracking-tight font-normal">
+            <div className="text-3xl sm:text-4xl lg:text-[42px] font-light text-[#0f62fe] tracking-tight font-normal">
               99.4%
             </div>
-            <div className="text-xs text-[#525252] tracking-[0.32px] mt-2 font-normal">
+            <div className="text-xs sm:text-sm text-[#525252] tracking-[0.32px] mt-2 font-normal">
               Deterministic ICP Match
             </div>
           </div>
 
-          <div className="relative p-6 hover:bg-[#fafbfc] transition-all duration-300 flex flex-col justify-between group overflow-hidden">
+          <div className="relative p-6 sm:p-7 hover:bg-[#fafbfc] transition-all duration-300 flex flex-col justify-between group overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#8a3ffc] opacity-80 group-hover:h-[3px] transition-all" />
-            <div className="text-3xl lg:text-4xl font-light text-[#161616] tracking-tight group-hover:text-[#8a3ffc] transition-colors">
+            <div className="text-3xl sm:text-4xl lg:text-[42px] font-light text-[#161616] tracking-tight group-hover:text-[#8a3ffc] transition-colors">
               12+
             </div>
-            <div className="text-xs text-[#525252] tracking-[0.32px] mt-2 font-normal">
+            <div className="text-xs sm:text-sm text-[#525252] tracking-[0.32px] mt-2 font-normal">
               Enterprise Verticals
             </div>
           </div>

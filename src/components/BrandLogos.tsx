@@ -146,11 +146,11 @@ const BrandLogos = () => {
         {/* Eyebrow + Section Headline */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 pb-3 border-b border-[#e0e0e0]">
           <div>
-            <span className="carbon-eyebrow block mb-1 text-[#525252]">
+            <span className="carbon-eyebrow text-[#0f62fe] block mb-1 font-mono">
               Enterprise customer ecosystem
             </span>
             <h2 className="text-xl md:text-2xl font-medium text-[#161616] tracking-tight">
-              Trusted by global revenue and demand marketing teams
+              Trusted by <span className="text-[#0f62fe]">global revenue & demand</span> marketing teams
             </h2>
           </div>
           <p className="text-xs text-[#525252] tracking-[0.32px] mt-2 md:mt-0 font-mono">

@@ -73,11 +73,11 @@ export const SolutionsOverview = () => {
         {/* ================= 2-COLUMN SECTION HEADER ================= */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-3 border-b border-[#e0e0e0]">
           <div>
-            <span className="carbon-eyebrow block mb-1">
+            <span className="carbon-eyebrow text-[#0f62fe] block mb-1 font-mono">
               Capabilities directory
             </span>
             <h2 className="carbon-display-md text-[#161616]">
-              Comprehensive B2B revenue infrastructure
+              Comprehensive <span className="text-[#0f62fe]">B2B revenue</span> infrastructure
             </h2>
           </div>
           <p className="carbon-body-sm text-[#525252] max-w-md mt-2 md:mt-0 font-normal">

@@ -159,11 +159,11 @@ export function WorldMapDemo() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-3 border-b border-[#e0e0e0]">
           <div>
-            <span className="carbon-eyebrow block mb-1">
+            <span className="carbon-eyebrow text-[#0f62fe] block mb-1 font-mono">
               Deterministic global coverage
             </span>
             <h2 className="carbon-display-md text-[#161616]">
-              Global footprint, verified local accuracy
+              Global footprint, <span className="text-[#0f62fe]">verified local accuracy</span>
             </h2>
           </div>
           <p className="carbon-body-sm text-[#525252] max-w-md mt-2 md:mt-0">
@@ -314,11 +314,11 @@ export function WorldMapDemo() {
         <div className="mb-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 pb-3 border-b border-[#e0e0e0]">
             <div>
-              <span className="carbon-eyebrow block mb-1">
+              <span className="carbon-eyebrow text-[#0f62fe] block mb-1 font-mono">
                 Taxonomy coverage
               </span>
               <h3 className="carbon-headline text-[#161616]">
-                Deep representation across core industry verticals
+                Deep representation across <span className="text-[#0f62fe]">core industry verticals</span>
               </h3>
             </div>
             <p className="text-xs text-[#525252] font-mono tracking-[0.32px] mt-2 md:mt-0">

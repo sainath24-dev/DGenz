@@ -48,11 +48,11 @@ export const TrustAndCapabilities = () => {
         {/* ================= SECTION 1: ENTERPRISE TRUST & SCALE (Royal Blue / Cobalt Accent Section) ================= */}
         <div className="bg-gradient-to-r from-[#0038a8] via-[#0f62fe] to-[#002d9c] text-white p-8 md:p-12 border border-[#002d9c] shadow-lg">
           <div className="max-w-3xl mb-8">
-            <span className="text-xs font-mono text-white/80 block mb-2 tracking-[0.32px] uppercase">
+            <span className="text-xs font-mono text-[#a6c8ff] block mb-2 tracking-[0.32px] uppercase">
               Enterprise validation & scale
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-white mb-4">
-              Proven pipeline acceleration across 100+ global brands.
+              Proven pipeline acceleration across <span className="text-[#a6c8ff]">100+ global brands</span>.
             </h2>
             <p className="text-white/90 text-sm sm:text-base leading-relaxed">
               Our deterministic intent graph continuously evaluates over 42M active B2B business professionals across North America, EMEA, and APAC to isolate real purchase intent.
@@ -101,11 +101,11 @@ export const TrustAndCapabilities = () => {
           
           {/* Left Column: Title (4 cols) */}
           <div className="lg:col-span-4">
-            <span className="carbon-eyebrow block mb-2">
+            <span className="carbon-eyebrow text-[#0f62fe] block mb-2 font-mono">
               Core solutions
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#161616] tracking-tight leading-[1.1]">
-              Target precisely, convert consistently
+              Target precisely, <span className="text-[#0f62fe]">convert consistently</span>
             </h2>
             <p className="text-sm text-[#525252] leading-relaxed mt-4">
               Coordinated multi-channel demand programs engineered to identify and convert high-value accounts at every phase of the buying cycle.
@@ -156,11 +156,11 @@ export const TrustAndCapabilities = () => {
           
           {/* Left Column: Title (4 cols) */}
           <div className="lg:col-span-4">
-            <span className="carbon-eyebrow block mb-2">
+            <span className="carbon-eyebrow text-[#0f62fe] block mb-2 font-mono">
               Enterprise scale
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#161616] tracking-tight leading-[1.1]">
-              Inside our revenue engine
+              Inside our <span className="text-[#0f62fe]">revenue engine</span>
             </h2>
           </div>
 
