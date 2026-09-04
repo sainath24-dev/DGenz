@@ -50,8 +50,8 @@ const About = () => {
       <Navigation />
       
       <main>
-        {/* Hero Section with WebGL FloatingLines Simulation */}
-        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-slate-50 pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-slate-900 border-b border-slate-200">
+        {/* Hero Section with Lightfall WebGL Simulation */}
+        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-gradient-to-b from-slate-50 via-slate-100/60 to-white pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-slate-900 border-b border-slate-200">
           
           {/* Subtle Geometric Dot Mesh Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
@@ -150,7 +150,7 @@ const About = () => {
         </section>
 
         {/* Mission & Vision Section (Clean White Cards) */}
-        <section className="py-24 bg-[#f8fafc] border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-8">
               
@@ -183,7 +183,7 @@ const About = () => {
         </section>
 
         {/* Values Section (Clean White Feature Cards) */}
-        <section className="py-24 bg-white border-b border-slate-200">
+        <section className="py-24 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5] border-b border-[#cdbfe8]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
@@ -221,7 +221,7 @@ const About = () => {
         </section>
 
         {/* Timeline / Journey Section (Wavy Timeline Form) */}
-        <section className="py-28 bg-[#f8fafc] border-b border-slate-200 relative overflow-hidden">
+        <section className="py-28 bg-gradient-to-b from-[#dfd5f5] via-[#d6eff0] to-[#bfe3e5] border-b border-[#a8d6d9] relative overflow-hidden">
           
           {/* Subtle background ambient glow */}
           <div className="absolute top-1/4 -left-48 w-96 h-96 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none" />

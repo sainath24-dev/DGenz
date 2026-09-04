@@ -85,8 +85,8 @@ const Blog = () => {
       <Navigation />
       
       <main>
-        {/* Hero Section with Lightfall WebGL Simulation */}
-        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-slate-50 pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-[#161616] border-b border-slate-200">
+        {/* Hero Section with LightPillar WebGL Simulation */}
+        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-gradient-to-b from-[#f0f4f8] via-[#e5ecf6] to-[#dbe8f5] pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-[#161616] border-b border-[#cbdff0]">
           
           {/* Subtle Geometric Dot Mesh Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
@@ -197,7 +197,7 @@ const Blog = () => {
 
         {/* Section 3: Featured Article (Clean White Card) */}
         {selectedCategory === 'All' && searchQuery === '' && (
-          <section className="py-16 bg-[#f8fafc] border-b border-slate-200">
+          <section className="py-16 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="mb-6 flex items-center justify-between">
                 <span className="text-xs font-bold uppercase tracking-wider text-emerald-700">
@@ -249,8 +249,8 @@ const Blog = () => {
           </section>
         )}
 
-        {/* Section 3: All Articles Grid */}
-        <section className="py-24 bg-white border-b border-slate-200">
+        {/* Section 4: Articles Grid (Clean White Cards) */}
+        <section className="py-24 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5] border-b border-[#cdbfe8]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -304,8 +304,8 @@ const Blog = () => {
           </div>
         </section>
 
-        {/* Section 4: Newsletter & Resources CTA */}
-        <section className="py-24 bg-[#f8fafc]">
+        {/* Section 5: Grand Finale CTA Card (Clean White) */}
+        <section className="py-24 bg-gradient-to-b from-[#dfd5f5] via-[#d6eff0] to-[#bfe3e5]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="rounded-3xl bg-white border border-slate-200 p-8 sm:p-12 text-slate-900 shadow-2xl space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">

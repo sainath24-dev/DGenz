@@ -123,7 +123,7 @@ const WhyDGenz = () => {
       
       <main>
         {/* Hero Section with Lightfall WebGL Simulation */}
-        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-slate-50 pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-[#161616] border-b border-slate-200">
+        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-gradient-to-b from-[#f0f4f8] via-[#e5ecf6] to-[#dbe8f5] pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-[#161616] border-b border-[#cbdff0]">
           
           {/* Subtle Geometric Dot Mesh Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
@@ -214,13 +214,60 @@ const WhyDGenz = () => {
           </div>
         </section>
 
-        {/* Section 2: Comparison vs Traditional Agencies */}
-        <section className="py-24 bg-[#f8fafc] border-b border-slate-200">
+        {/* Section 2: Core Differentiators (Clean White Cards) */}
+        <section className="py-24 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
+                Core Differentiators
+              </div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+                Engineered for <span className="text-emerald-700">Predictable Revenue</span>
+              </h2>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Traditional ABM tools provide disjointed signals. We deliver a complete, deterministic revenue engine.
+              </p>
+            </div>
+
+            {/* Differentiators Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {differentiators.map((item) => (
+                <div 
+                  key={item.title}
+                  className="rounded-3xl bg-white border border-slate-200 p-8 shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div>
+                    <span className="inline-block px-3 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold uppercase tracking-wider mb-4">
+                      {item.badge}
+                    </span>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                      {item.description}
+                    </p>
+                  </div>
+                  
+                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-emerald-700">
+                    <span>{item.benefit}</span>
+                    <CheckCircle className="w-4 h-4 text-emerald-600" />
+                  </div>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+
+        {/* Section 3: Competitive Comparison (Clean White Card Table) */}
+        <section className="py-24 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5] border-b border-[#cdbfe8]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            {/* Header */}
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
                 Side-by-Side Comparison
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
@@ -263,57 +310,12 @@ const WhyDGenz = () => {
                 </table>
               </div>
             </div>
+
           </div>
         </section>
 
-        {/* Section 3: 4 Core Differentiators */}
-        <section className="py-24 bg-white border-b border-slate-200">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            {/* Header */}
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
-                Core Differentiators
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-                Engineered for <span className="text-emerald-700">Predictable Revenue</span>
-              </h2>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                Traditional ABM tools provide disjointed signals. We deliver a complete, deterministic revenue engine.
-              </p>
-            </div>
-
-            {/* Differentiators Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {differentiators.map((item) => (
-                <div 
-                  key={item.title}
-                  className="rounded-3xl bg-white border border-slate-200 p-8 shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
-                >
-                  <div>
-                    <span className="inline-block px-3 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold uppercase tracking-wider mb-4">
-                      {item.badge}
-                    </span>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                      {item.description}
-                    </p>
-                  </div>
-                  
-                  <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-emerald-700">
-                    <span>{item.benefit}</span>
-                    <CheckCircle className="w-4 h-4 text-emerald-600" />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 4: Verified ROI Metrics */}
-        <section className="py-24 bg-[#f8fafc] border-b border-slate-200">
+        {/* Section 4: Proven ROI Impact (Clean White Metric Cards) */}
+        <section className="py-24 bg-gradient-to-b from-[#dfd5f5] via-[#d6eff0] to-[#bfe3e5] border-b border-[#a8d6d9]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -345,11 +347,12 @@ const WhyDGenz = () => {
                 </div>
               ))}
             </div>
+
           </div>
         </section>
 
-        {/* Section 5: Trust & Compliance Badges */}
-        <section className="py-24 bg-white border-b border-slate-200">
+        {/* Section 5: Grand Finale CTA Card (Clean White) */}
+        <section className="py-24 bg-gradient-to-b from-[#bfe3e5] via-[#cbdcf7] to-[#b8d1f7]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="rounded-3xl bg-white border border-slate-200 p-8 sm:p-12 text-slate-900 shadow-2xl space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">

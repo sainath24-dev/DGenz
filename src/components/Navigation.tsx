@@ -148,7 +148,7 @@ const Navigation = () => {
       </div>
 
       {/* 2. Carbon Top Nav (48px height, #ffffff canvas, 1px bottom border #e0e0e0) */}
-      <div className={`h-14 md:h-12 bg-white border-b border-[#e0e0e0] px-4 lg:px-8 flex items-center justify-between transition-shadow ${scrolled ? 'shadow-xs' : ''}`}>
+      <div className="h-14 md:h-12 bg-white border-b border-[#e0e0e0] px-4 lg:px-8 flex items-center justify-between">
         
         {/* Left: Brand Identity */}
         <div className="flex items-center gap-8">
@@ -186,7 +186,7 @@ const Navigation = () => {
                   {/* Mega Dropdown Panel */}
                   {isOpen && item.children && (
                     <div 
-                      className="absolute top-12 left-0 w-[520px] bg-white border border-[#e0e0e0] shadow-sm p-4 grid grid-cols-1 gap-1 z-50 animate-in fade-in-0 slide-in-from-top-1 duration-150 rounded-none"
+                      className="absolute top-12 left-0 w-[520px] bg-white border border-[#e0e0e0] p-4 grid grid-cols-1 gap-1 z-50 animate-in fade-in-0 slide-in-from-top-1 duration-150 rounded-none"
                     >
                       {item.children.map((child) => (
                         <Link

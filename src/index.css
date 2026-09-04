@@ -227,45 +227,45 @@
 
 .carbon-display-xl {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: clamp(36px, 5.5vw, 76px);
-  font-weight: 400;
-  line-height: 1.17;
-  letter-spacing: -0.5px;
+  font-size: clamp(32px, 3.8vw, 52px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.4px;
   color: #161616;
 }
 
 .carbon-display-lg {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: clamp(30px, 4.2vw, 60px);
+  font-size: clamp(26px, 3.0vw, 40px);
   font-weight: 500;
-  line-height: 1.17;
-  letter-spacing: -0.4px;
+  line-height: 1.20;
+  letter-spacing: -0.3px;
   color: #161616;
 }
 
 .carbon-display-md {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: clamp(24px, 3.2vw, 42px);
+  font-size: clamp(22px, 2.4vw, 32px);
   font-weight: 500;
-  line-height: 1.20;
+  line-height: 1.25;
   letter-spacing: -0.2px;
   color: #161616;
 }
 
 .carbon-headline {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: clamp(22px, 2.5vw, 32px);
+  font-size: clamp(18px, 1.8vw, 24px);
   font-weight: 500;
-  line-height: 1.25;
+  line-height: 1.30;
   letter-spacing: 0;
   color: #161616;
 }
 
 .carbon-card-title {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 1.33;
+  line-height: 1.35;
   letter-spacing: 0;
   color: #161616;
 }

@@ -129,21 +129,21 @@ const regions: Record<RegionKey, RegionData> = {
 };
 
 const industriesRow1 = [
-  { name: 'Technology & Cloud', icon: Cpu, professionals: '8.4M', companies: '620K' },
-  { name: 'Financial Services', icon: Landmark, professionals: '5.2M', companies: '390K' },
-  { name: 'Healthcare & Pharma', icon: HeartPulse, professionals: '4.6M', companies: '340K' },
-  { name: 'Industrial & Manufacturing', icon: Factory, professionals: '3.8M', companies: '290K' },
-  { name: 'Professional Services', icon: Briefcase, professionals: '3.4M', companies: '260K' },
-  { name: 'Energy & Utilities', icon: Flame, professionals: '1.9M', companies: '180K' }
+  { name: 'Technology & Cloud', icon: Cpu, professionals: '8.4M', companies: '620K', accentColor: '#0f62fe' },
+  { name: 'Financial Services', icon: Landmark, professionals: '5.2M', companies: '390K', accentColor: '#007d79' },
+  { name: 'Healthcare & Pharma', icon: HeartPulse, professionals: '4.6M', companies: '340K', accentColor: '#ee538b' },
+  { name: 'Industrial & Manufacturing', icon: Factory, professionals: '3.8M', companies: '290K', accentColor: '#8a3ffc' },
+  { name: 'Professional Services', icon: Briefcase, professionals: '3.4M', companies: '260K', accentColor: '#1192e8' },
+  { name: 'Energy & Utilities', icon: Flame, professionals: '1.9M', companies: '180K', accentColor: '#b25e00' }
 ];
 
 const industriesRow2 = [
-  { name: 'Telecom & Networks', icon: Radio, professionals: '1.8M', companies: '160K' },
-  { name: 'Engineering & Construction', icon: HardHat, professionals: '1.5M', companies: '150K' },
-  { name: 'Media & Communications', icon: Tv, professionals: '1.4M', companies: '130K' },
-  { name: 'Logistics & Supply Chain', icon: Truck, professionals: '1.2M', companies: '140K' },
-  { name: 'Hospitality & Retail', icon: Building2, professionals: '1.1M', companies: '120K' },
-  { name: 'Metals & Mining', icon: Layers, professionals: '1.0M', companies: '90K' }
+  { name: 'Telecom & Networks', icon: Radio, professionals: '1.8M', companies: '160K', accentColor: '#0f62fe' },
+  { name: 'Engineering & Construction', icon: HardHat, professionals: '1.5M', companies: '150K', accentColor: '#b25e00' },
+  { name: 'Media & Communications', icon: Tv, professionals: '1.4M', companies: '130K', accentColor: '#8a3ffc' },
+  { name: 'Logistics & Supply Chain', icon: Truck, professionals: '1.2M', companies: '140K', accentColor: '#007d79' },
+  { name: 'Hospitality & Retail', icon: Building2, professionals: '1.1M', companies: '120K', accentColor: '#ee538b' },
+  { name: 'Metals & Mining', icon: Layers, professionals: '1.0M', companies: '90K', accentColor: '#1192e8' }
 ];
 
 export function WorldMapDemo() {
@@ -153,26 +153,26 @@ export function WorldMapDemo() {
   const is3D = selectedRegion === 'all';
 
   return (
-    <section className="py-20 lg:py-28 bg-[#090d16] border-b border-slate-800 text-white">
+    <section className="py-16 lg:py-20 bg-white border-b border-[#e0e0e0] text-[#161616]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-slate-800">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-3 border-b border-[#e0e0e0]">
           <div>
-            <span className="carbon-eyebrow block mb-1 text-blue-400 font-mono">
+            <span className="carbon-eyebrow block mb-1">
               Deterministic global coverage
             </span>
-            <h2 className="carbon-display-md text-white">
+            <h2 className="carbon-display-md text-[#161616]">
               Global footprint, verified local accuracy
             </h2>
           </div>
-          <p className="carbon-body-sm text-slate-400 max-w-md mt-2 md:mt-0">
+          <p className="carbon-body-sm text-[#525252] max-w-md mt-2 md:mt-0">
             Query 42M+ verified decision-makers across 100+ countries with deterministic verification and SLA guarantees.
           </p>
         </div>
 
         {/* Tab Strip for Region Selection */}
-        <div className="flex flex-wrap items-center justify-start border-b border-slate-800 mb-8 overflow-x-auto">
+        <div className="flex flex-wrap items-center justify-start border-b border-[#e0e0e0] mb-8 overflow-x-auto">
           {(Object.keys(regions) as RegionKey[]).map((key) => {
             const isActive = selectedRegion === key;
             const region = regions[key];
@@ -184,8 +184,8 @@ export function WorldMapDemo() {
                 onClick={() => setSelectedRegion(key)}
                 className={`px-5 py-3.5 text-sm font-normal border-b-2 transition-all ${
                   isActive 
-                    ? 'border-blue-500 bg-slate-800/90 text-blue-400 font-medium shadow-xs' 
-                    : 'border-transparent text-slate-400 hover:bg-slate-800/50 hover:text-white'
+                    ? 'border-[#0f62fe] bg-white text-[#0f62fe] font-medium shadow-xs' 
+                    : 'border-transparent text-[#525252] hover:bg-white/60 hover:text-[#161616]'
                 }`}
               >
                 <span>{region.name}</span>
@@ -197,40 +197,32 @@ export function WorldMapDemo() {
           })}
         </div>
 
-        {/* Master Screen Container (Flat 0px Box with 1px Hairlines) */}
+        {/* Master Screen Container (Obsidian Telemetry Console) */}
         <div 
-          className={`border border-slate-800 p-6 lg:p-10 mb-16 relative overflow-hidden transition-colors ${
-            is3D 
-              ? 'bg-[#0d1422] text-white border-slate-800' 
-              : 'bg-[#0f172a] text-white border-slate-800'
-          }`}
+          className="border border-[#1c2840] p-6 lg:p-10 mb-16 relative overflow-hidden bg-[#0d1422] text-white shadow-xl"
         >
           {/* Status Header */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b mb-6 border-slate-800">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#1c2840] mb-6">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs font-mono px-2 py-0.5 border bg-slate-800 text-blue-400 border-slate-700">
+                <span className="text-xs font-mono px-2 py-0.5 border bg-[#162238] text-[#4589ff] border-[#243452]">
                   {currentData.badge}
                 </span>
-                <span className="text-xs text-[#8c8c8c]">{currentData.countries}</span>
+                <span className="text-xs text-[#8d95a5]">{currentData.countries}</span>
               </div>
-              <h3 className={`text-2xl font-light tracking-tight ${is3D ? 'text-white' : 'text-[#161616]'}`}>
+              <h3 className="text-2xl font-light tracking-tight text-white">
                 {currentData.name} Audience Telemetry
               </h3>
             </div>
 
             {/* Hubs Badges */}
             <div className="flex items-center flex-wrap gap-1.5 text-xs">
-              <span className={`mr-1 flex items-center gap-1 ${is3D ? 'text-[#8c8c8c]' : 'text-[#525252]'}`}>
-                <MapPin className="w-3.5 h-3.5 text-[#0f62fe]" />
+              <span className="mr-1 flex items-center gap-1 text-[#8d95a5]">
+                <MapPin className="w-3.5 h-3.5 text-[#4589ff]" />
                 Regional Hubs:
               </span>
               {currentData.hubs.slice(0, 4).map((hub) => (
-                <span key={hub} className={`px-2 py-0.5 border ${
-                  is3D 
-                    ? 'bg-[#262626] border-[#393939] text-[#c6c6c6]' 
-                    : 'bg-[#f4f4f4] border-[#e0e0e0] text-[#525252]'
-                }`}>
+                <span key={hub} className="px-2 py-0.5 border bg-[#162238] border-[#243452] text-[#c6c6c6]">
                   {hub}
                 </span>
               ))}
@@ -253,7 +245,7 @@ export function WorldMapDemo() {
               <WorldMap
                 dots={currentData.dots}
                 lineColor="#0f62fe"
-                variant="light"
+                variant="dark"
               />
 
               {/* Back to 3D Earth Button */}
@@ -261,9 +253,9 @@ export function WorldMapDemo() {
                 <button
                   type="button"
                   onClick={() => setSelectedRegion('all')}
-                  className="carbon-btn-secondary text-xs py-2 px-3"
+                  className="inline-flex items-center gap-2 bg-[#162238] hover:bg-[#1c2840] border border-[#243452] text-white text-xs py-2 px-3 transition-colors cursor-pointer"
                 >
-                  <Globe className="w-3.5 h-3.5" />
+                  <Globe className="w-3.5 h-3.5 text-[#4589ff]" />
                   <span>Global Globe View</span>
                 </button>
               </div>
@@ -271,67 +263,65 @@ export function WorldMapDemo() {
           </div>
 
           {/* 4 Bottom Metric Counters */}
-          <div className={`grid grid-cols-2 lg:grid-cols-4 gap-0 border-t mt-6 pt-6 ${
-            is3D ? 'border-[#262626] divide-[#262626]' : 'border-[#e0e0e0] divide-[#e0e0e0]'
-          }`}>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border-t border-[#1c2840] divide-[#1c2840] mt-6 pt-6">
             <div className="p-4">
-              <div className="text-xs text-[#8c8c8c] flex items-center gap-1.5 mb-1">
-                <Building2 className="w-3.5 h-3.5 text-[#0f62fe]" />
+              <div className="text-xs text-[#8d95a5] flex items-center gap-1.5 mb-1">
+                <Building2 className="w-3.5 h-3.5 text-[#4589ff]" />
                 <span>Verified Accounts</span>
               </div>
-              <div className={`text-2xl font-light ${is3D ? 'text-white' : 'text-[#161616]'}`}>
+              <div className="text-2xl font-light text-white">
                 {currentData.companies}
               </div>
-              <div className="text-[11px] text-[#8c8c8c] mt-0.5">Enterprise & Mid-Market</div>
+              <div className="text-[11px] text-[#8d95a5] mt-0.5">Enterprise & Mid-Market</div>
             </div>
 
-            <div className="p-4 border-l">
-              <div className="text-xs text-[#8c8c8c] flex items-center gap-1.5 mb-1">
-                <Users className="w-3.5 h-3.5 text-[#0f62fe]" />
+            <div className="p-4 border-l border-[#1c2840]">
+              <div className="text-xs text-[#8d95a5] flex items-center gap-1.5 mb-1">
+                <Users className="w-3.5 h-3.5 text-[#4589ff]" />
                 <span>Decision Makers</span>
               </div>
-              <div className={`text-2xl font-light ${is3D ? 'text-white' : 'text-[#161616]'}`}>
+              <div className="text-2xl font-light text-white">
                 {currentData.professionals}
               </div>
-              <div className="text-[11px] text-[#8c8c8c] mt-0.5">Buying Committee Leads</div>
+              <div className="text-[11px] text-[#8d95a5] mt-0.5">Buying Committee Leads</div>
             </div>
 
-            <div className="p-4 border-l">
-              <div className="text-xs text-[#8c8c8c] flex items-center gap-1.5 mb-1">
-                <Layers className="w-3.5 h-3.5 text-[#0f62fe]" />
+            <div className="p-4 border-l border-[#1c2840]">
+              <div className="text-xs text-[#8d95a5] flex items-center gap-1.5 mb-1">
+                <Layers className="w-3.5 h-3.5 text-[#4589ff]" />
                 <span>Industry Sectors</span>
               </div>
-              <div className={`text-2xl font-light ${is3D ? 'text-white' : 'text-[#161616]'}`}>
+              <div className="text-2xl font-light text-white">
                 12 Verticals
               </div>
-              <div className="text-[11px] text-[#8c8c8c] mt-0.5">Standardized Taxonomy</div>
+              <div className="text-[11px] text-[#8d95a5] mt-0.5">Standardized Taxonomy</div>
             </div>
 
-            <div className="p-4 border-l">
-              <div className="text-xs text-[#8c8c8c] flex items-center gap-1.5 mb-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#0f62fe]" />
+            <div className="p-4 border-l border-[#1c2840]">
+              <div className="text-xs text-[#8d95a5] flex items-center gap-1.5 mb-1">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#4589ff]" />
                 <span>ICP Accuracy</span>
               </div>
-              <div className={`text-2xl font-light text-[#0f62fe]`}>
+              <div className="text-2xl font-light text-[#4589ff]">
                 {currentData.accuracy}
               </div>
-              <div className="text-[11px] text-[#8c8c8c] mt-0.5">Dual-Stage Verified</div>
+              <div className="text-[11px] text-[#8d95a5] mt-0.5">Dual-Stage Verified</div>
             </div>
           </div>
         </div>
 
         {/* ================= INDUSTRY VERTICALS CONTINUOUS DUAL-LOOP MARQUEE ================= */}
-        <div className="mb-20">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-slate-800">
+        <div className="mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-6 pb-3 border-b border-[#e0e0e0]">
             <div>
-              <span className="carbon-eyebrow block mb-1 text-blue-400 font-mono">
+              <span className="carbon-eyebrow block mb-1">
                 Taxonomy coverage
               </span>
-              <h3 className="carbon-headline text-white">
+              <h3 className="carbon-headline text-[#161616]">
                 Deep representation across core industry verticals
               </h3>
             </div>
-            <p className="text-xs text-slate-400 font-mono tracking-[0.32px] mt-2 md:mt-0">
+            <p className="text-xs text-[#525252] font-mono tracking-[0.32px] mt-2 md:mt-0">
               12 ACTIVE ENTERPRISE VERTICALS
             </p>
           </div>
@@ -351,22 +341,31 @@ export function WorldMapDemo() {
                 return (
                   <div
                     key={`row1-${ind.name}-${idx}`}
-                    className="w-72 sm:w-80 flex-shrink-0 p-5 bg-[#0f172a] border border-slate-800 hover:border-blue-500 hover:bg-[#131d35] transition-all cursor-pointer group shadow-2xs"
+                    className="relative w-72 sm:w-80 flex-shrink-0 p-5 bg-white border border-[#e0e0e0] hover:bg-[#fafbfc] hover:border-[#161616] hover:-translate-y-1 hover:shadow-md transition-all duration-300 cursor-pointer group overflow-hidden"
                   >
-                    <div className="flex items-center justify-between gap-3 mb-3">
-                      <div className="w-8 h-8 bg-slate-800 border border-slate-700 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-colors">
-                        <IndIcon className="w-4 h-4" />
+                    {/* Top Accent Hairline */}
+                    <div 
+                      className="absolute top-0 left-0 right-0 h-[2px] opacity-75 group-hover:h-[3px] transition-all"
+                      style={{ backgroundColor: ind.accentColor }}
+                    />
+
+                    <div className="flex items-center justify-between gap-3 mb-3 pt-1">
+                      <div 
+                        className="w-8 h-8 border border-[#e0e0e0] flex items-center justify-center transition-colors"
+                        style={{ backgroundColor: '#f4f4f4' }}
+                      >
+                        <IndIcon className="w-4 h-4" style={{ color: ind.accentColor }} />
                       </div>
-                      <span className="text-xs font-mono text-slate-400">{ind.companies} Accounts</span>
+                      <span className="text-xs font-mono text-[#525252]">{ind.companies} Accounts</span>
                     </div>
 
-                    <h4 className="text-sm font-medium text-white mb-1 group-hover:text-blue-400 transition-colors">
+                    <h4 className="text-sm font-medium text-[#161616] mb-1 group-hover:text-[#0f62fe] transition-colors">
                       {ind.name}
                     </h4>
 
-                    <div className="flex items-baseline gap-1.5 pt-2 border-t border-slate-800 mt-2">
-                      <span className="text-base font-semibold text-blue-400">{ind.professionals}</span>
-                      <span className="text-xs text-slate-400">verified decision-makers</span>
+                    <div className="flex items-baseline gap-1.5 pt-2 border-t border-[#e0e0e0] mt-2">
+                      <span className="text-base font-semibold text-[#161616]">{ind.professionals}</span>
+                      <span className="text-xs text-[#525252]">verified decision-makers</span>
                     </div>
                   </div>
                 );
@@ -380,22 +379,31 @@ export function WorldMapDemo() {
                 return (
                   <div
                     key={`row2-${ind.name}-${idx}`}
-                    className="w-72 sm:w-80 flex-shrink-0 p-5 bg-[#0f172a] border border-slate-800 hover:border-blue-500 hover:bg-[#131d35] transition-all cursor-pointer group shadow-2xs"
+                    className="relative w-72 sm:w-80 flex-shrink-0 p-5 bg-white border border-[#e0e0e0] hover:bg-[#fafbfc] hover:border-[#161616] hover:-translate-y-1 hover:shadow-md transition-all duration-300 cursor-pointer group overflow-hidden"
                   >
-                    <div className="flex items-center justify-between gap-3 mb-3">
-                      <div className="w-8 h-8 bg-slate-800 border border-slate-700 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-colors">
-                        <IndIcon className="w-4 h-4" />
+                    {/* Top Accent Hairline */}
+                    <div 
+                      className="absolute top-0 left-0 right-0 h-[2px] opacity-75 group-hover:h-[3px] transition-all"
+                      style={{ backgroundColor: ind.accentColor }}
+                    />
+
+                    <div className="flex items-center justify-between gap-3 mb-3 pt-1">
+                      <div 
+                        className="w-8 h-8 border border-[#e0e0e0] flex items-center justify-center transition-colors"
+                        style={{ backgroundColor: '#f4f4f4' }}
+                      >
+                        <IndIcon className="w-4 h-4" style={{ color: ind.accentColor }} />
                       </div>
-                      <span className="text-xs font-mono text-slate-400">{ind.companies} Accounts</span>
+                      <span className="text-xs font-mono text-[#525252]">{ind.companies} Accounts</span>
                     </div>
 
-                    <h4 className="text-sm font-medium text-white mb-1 group-hover:text-blue-400 transition-colors">
+                    <h4 className="text-sm font-medium text-[#161616] mb-1 group-hover:text-[#0f62fe] transition-colors">
                       {ind.name}
                     </h4>
 
-                    <div className="flex items-baseline gap-1.5 pt-2 border-t border-slate-800 mt-2">
-                      <span className="text-base font-semibold text-blue-400">{ind.professionals}</span>
-                      <span className="text-xs text-slate-400">verified decision-makers</span>
+                    <div className="flex items-baseline gap-1.5 pt-2 border-t border-[#e0e0e0] mt-2">
+                      <span className="text-base font-semibold text-[#161616]">{ind.professionals}</span>
+                      <span className="text-xs text-[#525252]">verified decision-makers</span>
                     </div>
                   </div>
                 );
@@ -405,16 +413,16 @@ export function WorldMapDemo() {
           </div>
         </div>
 
-        {/* Custom TAM Request Card */}
-        <div className="border border-slate-800 bg-[#0f172a] p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl">
+        {/* Custom TAM Request Card (Royal Blue Gradient Banner) */}
+        <div className="bg-gradient-to-r from-[#0038a8] via-[#0f62fe] to-[#002d9c] text-white p-8 md:p-12 border border-[#002d9c] shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>
-            <span className="carbon-eyebrow block mb-1 text-blue-400 font-mono">
+            <span className="text-xs font-mono text-white/80 block mb-1 uppercase tracking-wider">
               Custom market sizing
             </span>
             <h3 className="text-2xl font-medium text-white mb-2">
               Request a custom Total Addressable Market (TAM) count
             </h3>
-            <p className="text-xs text-slate-400 max-w-xl">
+            <p className="text-sm text-white/90 max-w-xl leading-relaxed">
               Receive a comprehensive TAM audit segmented by company headcount, revenue tiers, tech install-base, and geographic parameters.
             </p>
           </div>
@@ -423,10 +431,10 @@ export function WorldMapDemo() {
             trigger={
               <button
                 type="button"
-                className="carbon-btn-primary shrink-0"
+                className="inline-flex items-center justify-between gap-3 bg-white text-[#0f62fe] hover:bg-[#f0f6fc] text-sm font-medium px-6 py-4 shrink-0 cursor-pointer transition-all shadow-md"
               >
                 <span>Request TAM Audit</span>
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="w-4 h-4" />
               </button>
             }
           />

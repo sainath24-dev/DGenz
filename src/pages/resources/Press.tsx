@@ -83,8 +83,8 @@ const Press = () => {
       <Navigation />
       
       <main>
-        {/* Hero Section with Lightfall WebGL Simulation */}
-        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-slate-50 pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-[#161616] border-b border-slate-200">
+        {/* Hero Section with LightPillar WebGL Simulation */}
+        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-gradient-to-b from-[#f0f4f8] via-[#e5ecf6] to-[#dbe8f5] pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-[#161616] border-b border-[#cbdff0]">
           
           {/* Subtle Geometric Dot Mesh Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
@@ -175,8 +175,8 @@ const Press = () => {
           </div>
         </section>
 
-        {/* Section 2: Press Releases & News Grid (Clean White Cards) */}
-        <section className="py-24 bg-[#f8fafc] border-b border-slate-200">
+        {/* Section 2: Press Releases (Clean White Cards) */}
+        <section className="py-24 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -230,7 +230,7 @@ const Press = () => {
         </section>
 
         {/* Section 3: Brand Assets & Media Kit (Clean White Cards) */}
-        <section id="media-kit" className="py-24 bg-white border-b border-slate-200 scroll-mt-20">
+        <section id="media-kit" className="py-24 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5] border-b border-[#cdbfe8] scroll-mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -281,8 +281,8 @@ const Press = () => {
           </div>
         </section>
 
-        {/* Section 4: Media Contact & Spokespeople (Clean White Cards) */}
-        <section className="py-24 bg-[#f8fafc] border-b border-slate-200">
+        {/* Section 4: Press Inquiries Contacts (Clean White Cards) */}
+        <section className="py-24 bg-gradient-to-b from-[#dfd5f5] via-[#d6eff0] to-[#bfe3e5] border-b border-[#a8d6d9]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -325,8 +325,8 @@ const Press = () => {
           </div>
         </section>
 
-        {/* Section 5: Media Inquiries CTA (Clean White) */}
-        <section className="py-24 bg-white border-b border-slate-200">
+        {/* Section 5: Grand Finale CTA Card (Clean White) */}
+        <section className="py-24 bg-gradient-to-b from-[#bfe3e5] via-[#cbdcf7] to-[#b8d1f7]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="rounded-3xl bg-slate-900 border border-slate-800 p-8 sm:p-12 text-white shadow-2xl space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">

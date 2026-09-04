@@ -15,7 +15,7 @@ export const HeroVideoBackground: React.FC = () => {
   }, []);
 
   return (
-    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-[#edf2f7]">
+    <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-white">
       {/* High-Fidelity Video Layer */}
       <video
         ref={videoRef}
@@ -26,13 +26,13 @@ export const HeroVideoBackground: React.FC = () => {
         muted
         playsInline
         preload="auto"
-        className="w-full h-full object-cover object-right lg:object-center opacity-85 filter brightness-105 contrast-105"
+        className="w-full h-full object-cover object-right lg:object-center opacity-85 filter brightness-100 contrast-105"
       />
 
-      {/* Gentle Platinum Scrim */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#f8fafc]/95 via-[#f8fafc]/75 to-transparent w-full lg:w-4/5 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#f1f5f9] via-transparent to-transparent pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc]/70 via-transparent to-[#f1f5f9] pointer-events-none" />
+      {/* Clean White Scrim for crisp text contrast */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent w-full lg:w-4/5 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-white pointer-events-none" />
     </div>
   );
 };
