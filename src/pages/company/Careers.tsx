@@ -153,7 +153,7 @@ const Careers = () => {
       
       <main>
         {/* Hero Section with Lightfall WebGL Simulation */}
-        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-gradient-to-b from-slate-50 via-slate-100/60 to-white pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-slate-900 border-b border-slate-200">
+        <section className="relative min-h-0 sm:min-h-[80vh] flex items-center bg-slate-50 pt-28 sm:pt-32 pb-16 lg:py-28 overflow-hidden text-slate-900 border-b border-slate-200">
           
           {/* Subtle Geometric Dot Mesh Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
@@ -251,46 +251,36 @@ const Careers = () => {
           </div>
         </section>
 
-        {/* Section 2: Perks & Benefits (Clean White Cards) */}
-        <section className="py-24 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0]">
+        {/* Section 2: Culture & Values Pillars (Clean White Cards) */}
+        <section className="py-24 bg-[#f8fafc] border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
-                Perks & Benefits
+                How We Operate
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-                Why Work at DGenz <span className="text-emerald-700">Media</span>
+                Our Core Culture Values
               </h2>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                We believe exceptional work happens when high-performing individuals are supported with comprehensive benefits and autonomy.
+                These principles define our team ethos and guide how we collaborate every single day.
               </p>
             </div>
 
-            {/* Benefits Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {benefits.map((item) => (
+            {/* Values Grid */}
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {values.map((item) => (
                 <div 
                   key={item.title}
-                  className="rounded-3xl bg-white border border-slate-200 p-8 shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                  className="rounded-3xl bg-white border border-slate-200 p-8 shadow-md hover:shadow-lg transition-all duration-300"
                 >
-                  <div>
-                    <div className="inline-flex items-center px-3 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold uppercase tracking-wider mb-5">
-                      {item.badge}
-                    </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-emerald-700">
-                    <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                    <span>{item.proof}</span>
-                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -298,8 +288,8 @@ const Careers = () => {
           </div>
         </section>
 
-        {/* Section 3: Open Positions (Clean White Cards) */}
-        <section id="open-positions" className="py-24 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5] border-b border-[#cdbfe8] scroll-mt-20">
+        {/* Section 3: Open Job Positions Table */}
+        <section id="open-positions" className="py-24 bg-white border-b border-slate-200 scroll-mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -372,36 +362,46 @@ const Careers = () => {
           </div>
         </section>
 
-        {/* Section 4: Culture & Values (Clean White Cards) */}
-        <section className="py-24 bg-gradient-to-b from-[#dfd5f5] via-[#d6eff0] to-[#bfe3e5] border-b border-[#a8d6d9]">
+        {/* Section 4: Benefits & Perks (Clean White Cards) */}
+        <section className="py-24 bg-[#f8fafc] border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
             <div className="text-center max-w-3xl mx-auto mb-16">
               <div className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider mb-4 shadow-2xs">
-                How We Operate
+                Perks & Benefits
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-                Our Core Culture Values
+                Why Work at DGenz <span className="text-emerald-700">Media</span>
               </h2>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                These principles define our team ethos and guide how we collaborate every single day.
+                We believe exceptional work happens when high-performing individuals are supported with comprehensive benefits and autonomy.
               </p>
             </div>
 
-            {/* Values Grid */}
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              {values.map((item) => (
+            {/* Benefits Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {benefits.map((item) => (
                 <div 
                   key={item.title}
-                  className="rounded-3xl bg-white border border-slate-200 p-8 shadow-md hover:shadow-lg transition-all duration-300"
+                  className="rounded-3xl bg-white border border-slate-200 p-8 shadow-md hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
                 >
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {item.description}
-                  </p>
+                  <div>
+                    <div className="inline-flex items-center px-3 py-1 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold uppercase tracking-wider mb-5">
+                      {item.badge}
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-slate-100 flex items-center gap-2 text-xs font-bold text-emerald-700">
+                    <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <span>{item.proof}</span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -409,8 +409,8 @@ const Careers = () => {
           </div>
         </section>
 
-        {/* Section 5: Transparent Hiring Process (Clean White Process Cards) */}
-        <section className="py-24 bg-gradient-to-b from-[#bfe3e5] via-[#cbdcf7] to-[#b8d1f7] border-b border-[#9ec0f4]">
+        {/* Section 5: Hiring Process Steps (Clean White Cards) */}
+        <section className="py-24 bg-white border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             {/* Header */}
@@ -452,7 +452,7 @@ const Careers = () => {
         </section>
 
         {/* Section 6: Grand Finale CTA Card (Clean White) */}
-        <section className="py-24 bg-gradient-to-b from-[#b8d1f7] via-[#a8c6f7] to-[#99baf5]">
+        <section className="py-24 bg-[#f8fafc]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="rounded-3xl bg-white border border-slate-200 p-8 sm:p-12 text-slate-900 shadow-2xl space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">

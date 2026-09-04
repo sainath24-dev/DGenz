@@ -96,11 +96,11 @@ const services = [
 
 export const TrustAndCapabilities = () => {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-[#ede3d4] via-[#e2f1e8] to-[#d4eadc] border-b border-[#c2ded0] text-[#161616]">
+    <section className="py-20 lg:py-28 bg-white border-b border-slate-200 text-[#161616]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
         
         {/* ================= SECTION 1: ENTERPRISE TRUST & SCALE ================= */}
-        <div className="border border-[#e0e0e0] bg-white p-8 md:p-12 shadow-sm">
+        <div className="border border-slate-200 bg-slate-50/60 p-8 md:p-12 shadow-xs">
           <div className="max-w-3xl mb-8">
             <span className="carbon-eyebrow block mb-2">
               Enterprise validation & scale
@@ -108,38 +108,38 @@ export const TrustAndCapabilities = () => {
             <h2 className="carbon-display-md text-[#161616] mb-4">
               Proven pipeline acceleration across 100+ global brands.
             </h2>
-            <p className="carbon-body text-[#525252]">
+            <p className="carbon-body text-slate-600">
               Our deterministic intent graph continuously evaluates over 42M active B2B business professionals across North America, EMEA, and APAC to isolate real purchase intent.
             </p>
           </div>
 
           {/* 3-Column Metric Highlights */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#e0e0e0] bg-white">
-            <div className="p-6 border-b md:border-b-0 md:border-r border-[#e0e0e0] hover:bg-[#f4f4f4] transition-colors">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-slate-200 bg-white">
+            <div className="p-6 border-b md:border-b-0 md:border-r border-slate-200 hover:bg-slate-50 transition-colors">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs text-[#525252] tracking-[0.32px]">Brand Adoption</span>
-                <Users className="w-4 h-4 text-[#0f62fe]" />
+                <span className="text-xs text-slate-500 tracking-[0.32px]">Brand Adoption</span>
+                <Users className="w-4 h-4 text-blue-600" />
               </div>
               <div className="text-3xl font-light text-[#161616]">100+</div>
-              <div className="text-xs text-[#525252] mt-1">Enterprise B2B leaders deployed</div>
+              <div className="text-xs text-slate-500 mt-1">Enterprise B2B leaders deployed</div>
             </div>
 
-            <div className="p-6 border-b md:border-b-0 md:border-r border-[#e0e0e0] hover:bg-[#f4f4f4] transition-colors">
+            <div className="p-6 border-b md:border-b-0 md:border-r border-slate-200 hover:bg-slate-50 transition-colors">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs text-[#525252] tracking-[0.32px]">Global Footprint</span>
-                <Globe className="w-4 h-4 text-[#0f62fe]" />
+                <span className="text-xs text-slate-500 tracking-[0.32px]">Global Footprint</span>
+                <Globe className="w-4 h-4 text-blue-600" />
               </div>
               <div className="text-3xl font-light text-[#161616]">42M+</div>
-              <div className="text-xs text-[#525252] mt-1">Verified decision-maker profiles</div>
+              <div className="text-xs text-slate-500 mt-1">Verified decision-maker profiles</div>
             </div>
 
-            <div className="p-6 hover:bg-[#f4f4f4] transition-colors">
+            <div className="p-6 hover:bg-slate-50 transition-colors">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-xs text-[#525252] tracking-[0.32px]">Average Lift</span>
-                <TrendingUp className="w-4 h-4 text-[#0f62fe]" />
+                <span className="text-xs text-slate-500 tracking-[0.32px]">Average Lift</span>
+                <TrendingUp className="w-4 h-4 text-blue-600" />
               </div>
-              <div className="text-3xl font-light text-[#0f62fe]">3.8x</div>
-              <div className="text-xs text-[#525252] mt-1">Qualified pipeline conversion increase</div>
+              <div className="text-3xl font-light text-blue-600">3.8x</div>
+              <div className="text-xs text-slate-500 mt-1">Qualified pipeline conversion increase</div>
             </div>
           </div>
         </div>
@@ -147,7 +147,7 @@ export const TrustAndCapabilities = () => {
         {/* ================= SECTION 2: CORE CAPABILITIES GRID ================= */}
         <div>
           {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-[#c2ded0]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-slate-200">
             <div>
               <span className="carbon-eyebrow block mb-1">
                 Core solutions

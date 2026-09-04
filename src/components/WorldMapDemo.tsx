@@ -153,26 +153,26 @@ export function WorldMapDemo() {
   const is3D = selectedRegion === 'all';
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-[#f2dfc5] via-[#d6eff0] to-[#bfe3e5] border-b border-[#a8d6d9] text-[#161616]">
+    <section className="py-20 lg:py-28 bg-[#090d16] border-b border-slate-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-[#a8d6d9]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-slate-800">
           <div>
-            <span className="carbon-eyebrow block mb-1">
+            <span className="carbon-eyebrow block mb-1 text-blue-400 font-mono">
               Deterministic global coverage
             </span>
-            <h2 className="carbon-display-md text-[#161616]">
+            <h2 className="carbon-display-md text-white">
               Global footprint, verified local accuracy
             </h2>
           </div>
-          <p className="carbon-body-sm text-[#525252] max-w-md mt-2 md:mt-0">
+          <p className="carbon-body-sm text-slate-400 max-w-md mt-2 md:mt-0">
             Query 42M+ verified decision-makers across 100+ countries with deterministic verification and SLA guarantees.
           </p>
         </div>
 
         {/* Tab Strip for Region Selection */}
-        <div className="flex flex-wrap items-center justify-start border-b border-[#a8d6d9] mb-8 overflow-x-auto">
+        <div className="flex flex-wrap items-center justify-start border-b border-slate-800 mb-8 overflow-x-auto">
           {(Object.keys(regions) as RegionKey[]).map((key) => {
             const isActive = selectedRegion === key;
             const region = regions[key];
@@ -184,8 +184,8 @@ export function WorldMapDemo() {
                 onClick={() => setSelectedRegion(key)}
                 className={`px-5 py-3.5 text-sm font-normal border-b-2 transition-all ${
                   isActive 
-                    ? 'border-[#0f62fe] bg-white text-[#0f62fe] font-medium shadow-xs' 
-                    : 'border-transparent text-[#525252] hover:bg-white/60 hover:text-[#161616]'
+                    ? 'border-blue-500 bg-slate-800/90 text-blue-400 font-medium shadow-xs' 
+                    : 'border-transparent text-slate-400 hover:bg-slate-800/50 hover:text-white'
                 }`}
               >
                 <span>{region.name}</span>
@@ -199,23 +199,17 @@ export function WorldMapDemo() {
 
         {/* Master Screen Container (Flat 0px Box with 1px Hairlines) */}
         <div 
-          className={`border border-[#e0e0e0] p-6 lg:p-10 mb-16 relative overflow-hidden transition-colors ${
+          className={`border border-slate-800 p-6 lg:p-10 mb-16 relative overflow-hidden transition-colors ${
             is3D 
-              ? 'bg-[#161616] text-white border-[#262626]' 
-              : 'bg-[#ffffff] text-[#161616]'
+              ? 'bg-[#0d1422] text-white border-slate-800' 
+              : 'bg-[#0f172a] text-white border-slate-800'
           }`}
         >
           {/* Status Header */}
-          <div className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b mb-6 ${
-            is3D ? 'border-[#262626]' : 'border-[#e0e0e0]'
-          }`}>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b mb-6 border-slate-800">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className={`text-xs font-mono px-2 py-0.5 border ${
-                  is3D 
-                    ? 'bg-[#262626] text-[#0f62fe] border-[#262626]' 
-                    : 'bg-[#f4f4f4] text-[#0f62fe] border-[#e0e0e0]'
-                }`}>
+                <span className="text-xs font-mono px-2 py-0.5 border bg-slate-800 text-blue-400 border-slate-700">
                   {currentData.badge}
                 </span>
                 <span className="text-xs text-[#8c8c8c]">{currentData.countries}</span>
@@ -328,16 +322,16 @@ export function WorldMapDemo() {
 
         {/* ================= INDUSTRY VERTICALS CONTINUOUS DUAL-LOOP MARQUEE ================= */}
         <div className="mb-20">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-[#a8d6d9]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-slate-800">
             <div>
-              <span className="carbon-eyebrow block mb-1">
+              <span className="carbon-eyebrow block mb-1 text-blue-400 font-mono">
                 Taxonomy coverage
               </span>
-              <h3 className="carbon-headline text-[#161616]">
+              <h3 className="carbon-headline text-white">
                 Deep representation across core industry verticals
               </h3>
             </div>
-            <p className="text-xs text-[#525252] font-mono tracking-[0.32px] mt-2 md:mt-0">
+            <p className="text-xs text-slate-400 font-mono tracking-[0.32px] mt-2 md:mt-0">
               12 ACTIVE ENTERPRISE VERTICALS
             </p>
           </div>
@@ -357,22 +351,22 @@ export function WorldMapDemo() {
                 return (
                   <div
                     key={`row1-${ind.name}-${idx}`}
-                    className="w-72 sm:w-80 flex-shrink-0 p-5 bg-white border border-[#e0e0e0] hover:bg-white hover:border-[#161616] transition-all cursor-pointer group shadow-2xs"
+                    className="w-72 sm:w-80 flex-shrink-0 p-5 bg-[#0f172a] border border-slate-800 hover:border-blue-500 hover:bg-[#131d35] transition-all cursor-pointer group shadow-2xs"
                   >
                     <div className="flex items-center justify-between gap-3 mb-3">
-                      <div className="w-8 h-8 bg-[#f4f4f4] border border-[#e0e0e0] flex items-center justify-center text-[#0f62fe] group-hover:bg-[#0f62fe] group-hover:text-white group-hover:border-[#0f62fe] transition-colors">
+                      <div className="w-8 h-8 bg-slate-800 border border-slate-700 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-colors">
                         <IndIcon className="w-4 h-4" />
                       </div>
-                      <span className="text-xs font-mono text-[#525252]">{ind.companies} Accounts</span>
+                      <span className="text-xs font-mono text-slate-400">{ind.companies} Accounts</span>
                     </div>
 
-                    <h4 className="text-sm font-medium text-[#161616] mb-1 group-hover:text-[#0f62fe] transition-colors">
+                    <h4 className="text-sm font-medium text-white mb-1 group-hover:text-blue-400 transition-colors">
                       {ind.name}
                     </h4>
 
-                    <div className="flex items-baseline gap-1.5 pt-2 border-t border-[#e0e0e0] mt-2">
-                      <span className="text-base font-semibold text-[#161616]">{ind.professionals}</span>
-                      <span className="text-xs text-[#525252]">verified decision-makers</span>
+                    <div className="flex items-baseline gap-1.5 pt-2 border-t border-slate-800 mt-2">
+                      <span className="text-base font-semibold text-blue-400">{ind.professionals}</span>
+                      <span className="text-xs text-slate-400">verified decision-makers</span>
                     </div>
                   </div>
                 );
@@ -386,22 +380,22 @@ export function WorldMapDemo() {
                 return (
                   <div
                     key={`row2-${ind.name}-${idx}`}
-                    className="w-72 sm:w-80 flex-shrink-0 p-5 bg-white border border-[#e0e0e0] hover:bg-white hover:border-[#161616] transition-all cursor-pointer group shadow-2xs"
+                    className="w-72 sm:w-80 flex-shrink-0 p-5 bg-[#0f172a] border border-slate-800 hover:border-blue-500 hover:bg-[#131d35] transition-all cursor-pointer group shadow-2xs"
                   >
                     <div className="flex items-center justify-between gap-3 mb-3">
-                      <div className="w-8 h-8 bg-[#f4f4f4] border border-[#e0e0e0] flex items-center justify-center text-[#0f62fe] group-hover:bg-[#0f62fe] group-hover:text-white group-hover:border-[#0f62fe] transition-colors">
+                      <div className="w-8 h-8 bg-slate-800 border border-slate-700 flex items-center justify-center text-blue-400 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-colors">
                         <IndIcon className="w-4 h-4" />
                       </div>
-                      <span className="text-xs font-mono text-[#525252]">{ind.companies} Accounts</span>
+                      <span className="text-xs font-mono text-slate-400">{ind.companies} Accounts</span>
                     </div>
 
-                    <h4 className="text-sm font-medium text-[#161616] mb-1 group-hover:text-[#0f62fe] transition-colors">
+                    <h4 className="text-sm font-medium text-white mb-1 group-hover:text-blue-400 transition-colors">
                       {ind.name}
                     </h4>
 
-                    <div className="flex items-baseline gap-1.5 pt-2 border-t border-[#e0e0e0] mt-2">
-                      <span className="text-base font-semibold text-[#161616]">{ind.professionals}</span>
-                      <span className="text-xs text-[#525252]">verified decision-makers</span>
+                    <div className="flex items-baseline gap-1.5 pt-2 border-t border-slate-800 mt-2">
+                      <span className="text-base font-semibold text-blue-400">{ind.professionals}</span>
+                      <span className="text-xs text-slate-400">verified decision-makers</span>
                     </div>
                   </div>
                 );
@@ -412,15 +406,15 @@ export function WorldMapDemo() {
         </div>
 
         {/* Custom TAM Request Card */}
-        <div className="border border-[#e0e0e0] bg-white p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-sm">
+        <div className="border border-slate-800 bg-[#0f172a] p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-xl">
           <div>
-            <span className="carbon-eyebrow block mb-1">
+            <span className="carbon-eyebrow block mb-1 text-blue-400 font-mono">
               Custom market sizing
             </span>
-            <h3 className="text-2xl font-medium text-[#161616] mb-2">
+            <h3 className="text-2xl font-medium text-white mb-2">
               Request a custom Total Addressable Market (TAM) count
             </h3>
-            <p className="text-xs text-[#525252] max-w-xl">
+            <p className="text-xs text-slate-400 max-w-xl">
               Receive a comprehensive TAM audit segmented by company headcount, revenue tiers, tech install-base, and geographic parameters.
             </p>
           </div>

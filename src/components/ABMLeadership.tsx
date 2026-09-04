@@ -60,7 +60,7 @@ export const ABMLeadership = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-[#bfe3e5] via-[#cbdcf7] to-[#b8d1f7] border-b border-[#a0beee] text-[#161616]">
+    <section className="py-20 lg:py-28 bg-white border-b border-slate-200 text-[#161616]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
         
         {/* ================= PART 1: ABM DISPLAY ADVERTISING SHOWCASE ================= */}

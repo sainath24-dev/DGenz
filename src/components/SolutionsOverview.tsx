@@ -58,13 +58,13 @@ const solutions = [
 
 export const SolutionsOverview = () => {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-[#dfd5f5] via-[#f7ebd9] to-[#f2dfc5] border-b border-[#e5ceae] text-[#161616]">
+    <section className="py-20 lg:py-28 bg-[#f8fafc] border-b border-slate-200 text-[#161616]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-[#e5ceae]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-slate-200">
           <div>
-            <span className="carbon-eyebrow block mb-1">
+            <span className="carbon-eyebrow block mb-1 text-slate-500">
               Capabilities directory
             </span>
             <h2 className="carbon-display-md text-[#161616]">

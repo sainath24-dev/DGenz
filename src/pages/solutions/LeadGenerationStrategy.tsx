@@ -89,7 +89,7 @@ const LeadGenerationStrategy = () => {
       
       <main>
         {/* Hero Section with WebGL FloatingLines Simulation */}
-        <section className="relative min-h-[90vh] flex items-center bg-gradient-to-b from-[#f0f4f8] via-[#e5ecf6] to-[#dbe8f5] py-20 lg:py-28 overflow-hidden text-[#161616] border-b border-[#cbdff0]">
+        <section className="relative min-h-[90vh] flex items-center bg-slate-50 py-20 lg:py-28 overflow-hidden text-[#161616] border-b border-slate-200">
           
           {/* Subtle Geometric Dot Mesh Texture */}
           <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-50 pointer-events-none" />
@@ -176,7 +176,7 @@ const LeadGenerationStrategy = () => {
         </section>
 
         {/* Strategic Foundation Components Section with Curved Gradient Card Design */}
-        <section className="py-24 bg-gradient-to-b from-[#dbe8f5] via-[#ede3d4] to-[#e2f1e8] border-b border-[#c2ded0] relative overflow-hidden">
+        <section className="py-24 bg-[#f8fafc] border-b border-slate-200 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             
             {/* Header */}
@@ -542,7 +542,7 @@ const LeadGenerationStrategy = () => {
         </section>
 
         {/* Combined Process & Grand Finale CTA Master Section with LiquidEther Fluid Background */}
-        <section className="relative py-24 lg:py-32 bg-gradient-to-b from-[#e2f1e8] via-[#ece5f8] to-[#dfd5f5] overflow-hidden border-t border-[#cdbfe8]">
+        <section className="relative py-24 lg:py-32 bg-slate-50 overflow-hidden border-t border-slate-200">
           
           {/* Dynamic Liquid Ether WebGL Fluid Simulation Background */}
           <div className="absolute inset-0 pointer-events-auto z-0 opacity-40">

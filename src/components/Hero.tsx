@@ -14,7 +14,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-[88vh] flex flex-col justify-center items-start overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-8 lg:px-16 border-b border-[#cbdff0] bg-gradient-to-b from-[#f0f4f8] via-[#e5ecf6] to-[#dbe8f5]">
+    <section className="relative min-h-[88vh] flex flex-col justify-center items-start overflow-hidden pt-28 sm:pt-32 pb-16 sm:pb-20 px-4 sm:px-8 lg:px-16 border-b border-slate-200 bg-slate-50/80">
       
       {/* Motion Video Layer */}
       <HeroVideoBackground />

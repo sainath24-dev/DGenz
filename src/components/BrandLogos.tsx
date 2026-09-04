@@ -140,13 +140,13 @@ const brandLogos: BrandItem[] = [
 
 const BrandLogos = () => {
   return (
-    <section className="py-14 bg-gradient-to-b from-[#dbe8f5] via-[#f3ede4] to-[#ede3d4] border-b border-[#e0d6c5] relative overflow-hidden">
+    <section className="py-14 bg-[#f8fafc] border-b border-slate-200 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Eyebrow + Section Headline */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-[#e0d6c5]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-slate-200">
           <div>
-            <span className="carbon-eyebrow block mb-1 text-[#525252]">
+            <span className="carbon-eyebrow block mb-1 text-slate-500">
               Enterprise customer ecosystem
             </span>
             <h2 className="text-xl md:text-2xl font-medium text-[#161616] tracking-tight">
