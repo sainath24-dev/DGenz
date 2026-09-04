@@ -51,16 +51,16 @@ const Hero = () => {
           </p>
 
           {/* CTA Actions */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 sm:gap-5 w-full sm:w-auto">
             <ContactForm
               type="get-started"
               trigger={
                 <button
                   type="button"
-                  className="bg-[#0f62fe] hover:bg-[#0353e9] text-white h-13 px-7 text-sm sm:text-base font-normal cursor-pointer transition-colors inline-flex items-center justify-between gap-3 shadow-xs"
+                  className="bg-[#0f62fe] hover:bg-[#0353e9] active:bg-[#002d9c] text-white min-h-[48px] sm:min-h-[52px] px-6 sm:px-7 text-sm sm:text-base font-normal cursor-pointer transition-colors inline-flex items-center justify-center sm:justify-between gap-4"
                 >
                   <span>Start your campaign</span>
-                  <ArrowRight className="w-4 h-4 ml-1 flex-shrink-0" />
+                  <ArrowRight className="w-4 h-4 flex-shrink-0" />
                 </button>
               }
             />
@@ -68,7 +68,7 @@ const Hero = () => {
             <button
               onClick={() => navigate('/resources')}
               type="button"
-              className="h-13 px-7 text-sm sm:text-base font-normal cursor-pointer bg-white border border-[#0f62fe] text-[#0f62fe] hover:bg-[#edf5ff] transition-colors inline-flex items-center justify-between gap-3 shadow-xs"
+              className="min-h-[48px] sm:min-h-[52px] px-6 sm:px-7 text-sm sm:text-base font-normal cursor-pointer bg-white border border-[#0f62fe] text-[#0f62fe] hover:bg-[#edf5ff] transition-colors inline-flex items-center justify-center sm:justify-between gap-4"
             >
               <span>Explore data methodology</span>
               <ArrowRight className="w-4 h-4 flex-shrink-0" />

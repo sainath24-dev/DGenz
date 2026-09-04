@@ -16,7 +16,7 @@ export const HeroVideoBackground: React.FC = () => {
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none bg-white">
-      {/* High-Fidelity Video Layer with Full Opacity on Right */}
+      {/* High-Fidelity Video Layer with previous opacity */}
       <video
         ref={videoRef}
         src="/assets/madisonlogic-hero.mp4"
@@ -26,15 +26,13 @@ export const HeroVideoBackground: React.FC = () => {
         muted
         playsInline
         preload="auto"
-        className="w-full h-full object-cover object-right opacity-100 filter brightness-100 contrast-105"
+        className="w-full h-full object-cover object-right lg:object-center opacity-85 filter brightness-105 contrast-105"
       />
 
-      {/* Left-Side Scrim Only: Solid/clean white for text readability on left, completely transparent on right */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 via-white/70 to-transparent w-full md:w-3/5 lg:w-[52%] pointer-events-none" />
-      
-      {/* Subtle Top & Bottom Hairline Blends */}
-      <div className="absolute top-0 inset-x-0 h-12 bg-gradient-to-b from-white to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+      {/* Previous 3-layer gradient wash: protects text while letting video shine naturally */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-white/20 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#edf5ff]/40 via-transparent to-white/80 pointer-events-none" />
     </div>
   );
 };
